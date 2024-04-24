@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+
+    <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            
+
+            /* --------------- Cabecera  ----------------  */
+
+            body {
+                padding-top: 200px;
+            }
+
+
+            .cabecera {
+                width: 100%;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                position: fixed;
+                background-color: white;
+                background-color: rgb(0, 128, 0, 0.1);
+                top: 0;
+            }
+
+            .cabecera div  {
+                border: 1px solid green;
+            }
+
+
+            /*Contenedor del logo*/
+
+            .d1 {
+                width: 90%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .cabecera .d1 .logo {
+                width: 300px;
+            }
+
+
+            /*Contenedor del icono de compra*/
+
+            .d2 {
+                width: 10%;
+                display: flex;
+                justify-content: center;
+                vertical-align: bottom;
+                align-items: flex-end;
+            }
+            
+            .icoCompra {
+                width: 80px;
+                height: 80px;
+                text-align: left;
+            }
+
+            .d2 .icoCompra:hover {
+                scale: 1.3;
+            }
+
+            /* ------------ Menú ----------- */
+
+            
+            /*Título del menú*/
+            .menu .titMenu { 
+                margin: 40px 0;
+                text-decoration: underline;
+
+            }
+
+              
+           h1, h2 {
+                text-align: center;
+                text-transform:uppercase;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                margin-top: 30px;
+            }
+
+
+            .contenedorEtiquetas {
+                display: flex;
+                flex-direction: column;
+                text-align:start;
+                margin: 20px;
+                border: 1px solid green;
+            }
+
+            .etiqueta {
+                margin: 5%;
+            }
+
+            .prueba1 {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid green;
+
+            }
+
+            /* Contenedor de las imagenes con los textos*/
+
+            .imgTexto {
+                display: flex;
+                align-items: center;
+                width: 80%;
+            }
+
+            .fotoCom {
+                width: 20%;
+                margin: 5px;
+                border-radius: 10%;
+            }
+
+            .etiqueta h3 {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 20px;
+                text-align: justify;
+            }
+
+            .icoMas {
+                width: 50px;
+            }
+
+            .info {
+                display: flex;
+                align-items: center;
+            }
+
+            .info p {
+                text-align: justify;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            .precio {
+                display: flex;
+                align-items: center;
+            }
+
+            .precio img {
+                margin: 0 5px;
+                width: 30px;
+            }
+
+            .precio p {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+
+            .footer{
+                background-color: rgb(228, 125, 36);
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: space-around;
+                padding: 50px;
+            }
+
+
+            .icoMas:hover{
+                scale: 1.3;
+            }
+
+    </style>
+
+</head>
+<body>
+    <div class="cabecera">
+       <div class="d1">
+            <img class="logo" src="Imagenes/logo.png" alt="Logo página"/>
+       </div> 
+        <div class="d2">
+            <img class="icoCompra" src="Imagenes/iconocompra.png"/>
+        </div>
+    </div>
+
+    
+    <!--Carta de la página-->
+
+    <div class="cuerpo">
+
+        <div class="menu">
+                
+            <h1 class="titMenu">Nuestra Carta</h1>
+            
+            <h2>GOURMET</h2>
+            
+            <div class="contenedorEtiquetas">
+                
+               
+                    <div class="etiqueta">
+                        <div class="prueba1">              
+                            <h3>Menú de salmón</h3>
+                            <div class="precio">
+                                <p>12,95€</p>
+                                <img class="icoMas" src="Imagenes/iconoMas1.png"/>
+                            </div>   
+                        </div>
+                        <div class="imgTexto">
+                            <img class="fotoCom" src="Imagenes/salmon.jpg">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, qui deleniti cum, perferendis natus minima fugit dolore nihil rem nesciunt quam in nobis suscipit cumque nostrum! Totam officiis quae perspiciatis!</p>
+                        </div>
+                    
+                    
+                    </div>
+                    
+                    <div class="etiqueta">
+                        
+                        <div class="prueba1">              
+                            <h3>Menú de pollo</h3>
+                            <div class="precio">
+                                <p>12,95€</p>
+                                <img class="icoMas" src="Imagenes/iconoMas1.png"/>
+                            </div>   
+                        </div>
+                        
+                        <div class="imgTexto">
+                            <img class="fotoCom" src="Imagenes/polloPerros2.jpg">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, qui deleniti cum, perferendis natus minima fugit dolore nihil rem nesciunt quam in nobis suscipit cumque nostrum! Totam officiis quae perspiciatis!</p>
+                        </div>
+                    
+                    </div>
+
+                    <div class="etiqueta">
+                        <div class="prueba1">              
+                            <h3>Menú de buey</h3>
+                            <div class="precio">
+                                <p>12,95€</p>
+                                <img class="icoMas" src="Imagenes/iconoMas1.png"/>
+                            </div>   
+                        </div>
+                    
+                        <div class="imgTexto">
+                            <img class="fotoCom" src="Imagenes/buey.png">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, qui deleniti cum, perferendis natus minima fugit dolore nihil rem nesciunt quam in nobis suscipit cumque nostrum! Totam officiis quae perspiciatis!</p>    
+                        </div>
+                    
+                    </div>
+
+
+                  <!--  <div class="etiqueta">
+                        <h3>Menú de pollo</h3>
+                        <img class="fotoCom" src="Imagenes/polloPerros2.jpg">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus alias, id sapiente officia velit aperiam et corporis neque iusto deleniti quae recusandae dignissimos, tenetur repudiandae? Possimus labore quam illum eligendi!</p>
+                    </div>
+
+                    
+                    <div class="etiqueta">
+                        <h3>Menú de buey</h3>
+                     
+                     <div class="info">
+                        <img class="fotoCom" src="Imagenes/buey.png">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eaque blanditiis dolore, repudiandae ut consectetur modi fugit vel sunt quasi ad tenetur id dolor, rerum ratione veritatis animi a autem?</p>
+                     </div>
+
+                         <div class="precio">
+                            <p>12,95€</p>
+                            <img class="icoMas" src="Imagenes/iconoMas1.png"/>
+                        </div>   
+                    </div> -->
+            </div>
+         
+         
+         
+                <h2>SNACKS</h2>
+
+                <div class="contenedorEtiquetas">
+            
+                        <div class="etiqueta">
+                            <p>Menú de salmón</p>
+                            <P></P>
+                            <img src="">
+                        </div>
+                        <div class="etiqueta">
+                            <p>Menú de pollo</p>
+                        </div>
+                        <div class="etiqueta">
+                            <p>Menú de buey</p>
+                        </div>
+
+
+                </div>
+
+                <h2>POSTRES</h2>
+
+                <div class="contenedorEtiquetas">
+                    
+                    <div class="etiqueta">
+                        <p>Menú de salmón</p>
+                    </div>
+                    <div class="etiqueta">
+                        <p>Menú de pollo</p>
+                    </div>
+                    <div class="etiqueta">
+                        <p>Menú de buey</p>
+                    </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Pup´s Pantry</p>
+            <p>600 630 621</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
