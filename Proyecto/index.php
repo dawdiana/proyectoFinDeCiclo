@@ -214,9 +214,6 @@
                     data: { productId: productId },
                     success: function(response) {
                         $("#cantidadCarrito").text(response);
-                     /*   if (response == 0) {   // Deshabilitar el botón de restar si el producto no está en el carrito
-                            button.prop('disabled', true);
-                        }*/
                     },
                     error: function(xhr, status, error) {
                         console.error('Error al eliminar producto del carrito:', error);

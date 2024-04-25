@@ -1,31 +1,22 @@
 <?php
-session_start(); // Iniciar sesión si aún no está iniciada
+session_start(); // Iniciamos sesión
 
-// Verificar si se recibió el ID del producto a eliminar del carrito
-if(isset($_POST['productId'])) {
-    $productId = $_POST['productId']; // Obtener el ID del producto
+//Método para restar productos del carrito
 
-    // Verificar si el carrito está definido en la sesión
-    if(isset($_SESSION['cart'])) {
-        // Buscar el índice del producto en el carrito
-        $index = array_search($productId, $_SESSION['cart']);
-
-        // Si el producto está en el carrito
-        if($index !== false) {
-            // Eliminar el producto del carrito
-            unset($_SESSION['cart'][$index]);
-
-            // Devolver la cantidad total de productos en el carrito como respuesta
-            echo count($_SESSION['cart']);
+if(isset($_POST['productId'])) { // Verificamos que se haya recibido la id del producto
+    $productId = $_POST['productId']; // Obtenemos el ID del producto
+    if(isset($_SESSION['cart'])) {  // Si el carrito está definido en la sesión
+        $index = array_search($productId, $_SESSION['cart']); // Buscamos el índice del producto en el carrito
+        if($index !== false) { // Y si el producto está en el carrito
+            unset($_SESSION['cart'][$index]); // lo eliminamos del carrito
+            echo count($_SESSION['cart']); // Devolvemos la cantidad total de productos actual
         } else {
-            echo "-";
+            echo "-"; //si la cantidad de un mismo producto en el carrito es menor a 0, marcamos el sñimbolo "-"
         }
     } else {
-        // Si el carrito no está definido en la sesión, devolver un mensaje de error
-        echo "Error: El carrito no está definido en la sesión.";
+        echo "Error: El carrito no está definido en la sesión."; // Si el carrito no está definido en la sesión, devolvemos un mensaje de error
     }
 } else {
-    // Si no se recibió el ID del producto, devolver un mensaje de error
-    echo "Error: No se recibió el ID del producto.";
+    echo "Error: No se recibió el ID del producto."; // Si no se ha recibido el ID del producto, devolvemos un mensaje de error
 }
 ?>
