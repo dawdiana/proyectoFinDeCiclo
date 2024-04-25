@@ -6,6 +6,9 @@
     $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
     mysqli_set_charset($db, "utf8");
 
+
+    //Guardar consultas en variables
+
     $queryMenu = "SELECT * FROM plato WHERE tipo = 'menu'";
     $resMenu = mysqli_query($db, $queryMenu);
     
@@ -37,13 +40,16 @@
        </div> 
         <div class="d2">
             <img class="icoCompra" src="Imagenes/iconocompra.png"/>
+            <p id="cantidadCarrito">0</p> <!--Se actualiza cuando añadimos productos al carrito-->
         </div>
     </div>
 
     
-    <!--Carta de la página-->
-
     <div class="cuerpo">
+
+
+        <!--Carta de la página-->
+
 
         <div class="menu">
                 
@@ -64,7 +70,8 @@
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $item['precio'];?>€</p>
-                                        <img class="icoMas" src="Imagenes/iconoMas1.png"/>
+                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconoMas1.png"/></button>
+                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconoMenos.png"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
@@ -95,7 +102,9 @@
                             <h3><?php echo $item['nombre'];?></h3>
                             <div class="precio">
                                 <p><?php echo $item['precio'];?>€</p>
-                                <img class="icoMas" src="Imagenes/iconoMas1.png"/>
+                              <!--<img class="icoMas" src="Imagenes/iconoMas1.png"/>-->
+                                <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconoMas1.png"/></button>
+                                <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconoMenos.png"/></button>
                             </div>   
                         </div>
                         <div class="imgTexto">
@@ -125,7 +134,8 @@
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $item['precio'];?>€</p>
-                                        <img class="icoMas" src="Imagenes/iconoMas1.png"/>
+                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconoMas1.png"/></button>
+                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconoMenos.png"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
@@ -138,6 +148,7 @@
                     ?>
                     
                 </div>
+
         </div>
 
         <div class="footer">
@@ -154,6 +165,66 @@
         </div>
 
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+
+
+            // Cuando la página se carga, hace una solicitud al servidor para obtener el valor actual del carrito
+            $(document).ready(function() {
+                $.ajax({
+                    url: 'valor_carrito.php', // Ruta al script PHP que obtiene el valor del carrito
+                    type: 'GET', // Método de solicitud
+                    success: function(response) { // Función a ejecutar cuando la solicitud tiene éxito
+                        $("#cantidadCarrito").text(response); // Actualizar el contador del carrito en el DOM
+                    },
+                    error: function(xhr, status, error) { // Función a ejecutar si hay un error en la solicitud
+                        console.error('Error al obtener el valor del carrito:', error);
+                    }
+                });
+            });                
+
+
+            $(".botonAñadir").click(function() {
+                console.log("Botón de sumar pulsado");
+                var productId = $(this).attr('id'); // Obtener el ID del producto del botón
+                console.log("ID del producto: " + productId);
+               
+                $.ajax({
+                    url: 'sumar_carrito.php', 
+                    type: 'POST', 
+                    data: { productId: productId }, // Datos a enviar al servidor (ID del producto)
+                    success: function(response) {
+                        $("#cantidadCarrito").text(response); 
+                    },
+                    error: function(xhr, status, error) { // Función a ejecutar si hay un error en la solicitud
+                        console.error('Error al agregar producto al carrito:', error);
+                    }
+                });
+            });
+
+            $(".botonEliminar").click(function() {
+                console.log("Botón de restar pulsado");
+                var productId = $(this).attr('id');
+                console.log("ID del producto: " + productId);
+
+                $.ajax({
+                    url: 'restar_carrito.php',
+                    type: 'POST',
+                    data: { productId: productId },
+                    success: function(response) {
+                        $("#cantidadCarrito").text(response);
+                     /*   if (response == 0) {   // Deshabilitar el botón de restar si el producto no está en el carrito
+                            button.prop('disabled', true);
+                        }*/
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error al eliminar producto del carrito:', error);
+                    }
+                });
+            });
+
+    </script>
 
 </body>
 </html>
