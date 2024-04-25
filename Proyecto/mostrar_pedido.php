@@ -5,12 +5,11 @@ $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
 mysqli_set_charset($db, "utf8");
 
 // Función para obtener el nombre del producto
-function obtenerNombreProducto($productId, $db) {
-    // Consulta SQL para obtener el nombre del producto
-    $query = "SELECT nombre FROM productos WHERE id = $productId";
+function obtenerNombrePlato($productId, $db) {
+    $query = "SELECT nombre FROM plato WHERE idPlato = $productId";     // Consulta SQL para obtener el nombre del producto
 
-    // Ejecutar la consulta
-    $result = $db->query($query);
+    
+    $result = $db->query($query); // Ejecutar la consulta
 
     // Verificar si la consulta fue exitosa
     if ($result && $result->num_rows > 0) {
@@ -22,9 +21,9 @@ function obtenerNombreProducto($productId, $db) {
 }
 
 // Función para obtener la imagen del producto
-function obtenerImagenProducto($productId, $db) {
+function obtenerImagenPlato($productId, $db) {
     // Consulta SQL para obtener la imagen del producto
-    $query = "SELECT imagen FROM productos WHERE id = $productId";
+    $query = "SELECT imagen FROM plato WHERE idPlato = $productId";
 
     // Ejecutar la consulta
     $result = $db->query($query);
@@ -39,9 +38,9 @@ function obtenerImagenProducto($productId, $db) {
 }
 
 // Función para obtener el precio del producto
-function obtenerPrecioProducto($productId, $db) {
+function obtenerPrecioPlato($productId, $db) {
     // Consulta SQL para obtener el precio del producto
-    $query = "SELECT precio FROM productos WHERE id = $productId";
+    $query = "SELECT precio FROM plato WHERE idPlato = $productId";
 
     // Ejecutar la consulta
     $result = $db->query($query);
@@ -57,15 +56,21 @@ function obtenerPrecioProducto($productId, $db) {
 
 
 // Función para mostrar el pedido
+
 function mostrar_pedido($productId, $db) {
-    // Resto del código para mostrar el pedido...
-    
     // Ejemplo de uso de las funciones de productos
-    $nombreProducto = obtenerNombreProducto($productId, $db);
-    $imagenProducto = obtenerImagenProducto($productId, $db);
-    $precioProducto = obtenerPrecioProducto($productId, $db);
+    $nombrePlato = obtenerNombrePlato($productId, $db);
+    $imagenPlato = obtenerImagenPlato($productId, $db);
+    $precioPlato = obtenerPrecioPlato($productId, $db);
     
     // Aquí puedes mostrar la información del producto en el pedido
-    echo "Producto: $nombreProducto, Precio: $precioProducto, Imagen: $imagenProducto";
+    echo "Plato: $nombrePlato, Precio: $precioPlato, Imagen: $imagenPlato";
 }
+
+// Ejemplo de uso de la función mostrar_pedido
+$productId = 1; // Aquí debes establecer el ID del producto que deseas mostrar
+mostrar_pedido($productId, $db);
+
+// Cerrar la conexión a la base de datos al final del script
+$db->close();
 ?>

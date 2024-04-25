@@ -1,13 +1,3 @@
-<?php
-    //session_start(); // Iniciamos sesión (ya está iniciado en mostrar_pedido)
-
-     $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
-     mysqli_set_charset($db, "utf8");
-
-    include 'mostrar_pedido.php'; 
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,25 +20,23 @@
      
      <div class="cuerpo">
         <h1>Tu pedido</h1>
-        <div class="contenedorPedido">
-                 <?php mostrar_pedido($nombreProducto, $cantidad); ?>
-        </div>
-     </div>
+        <div class="contenedorPedido">  
+        <?php
+                 $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
+                 mysqli_set_charset($db, "utf8");
 
-     <div class="cuerpo">
-        <h1>Tu pedido</h1>
-        <div class="contenedorPedido">
-            <?php
-            session_start();
-            if (isset($_SESSION['pedido'])) {
-                $nombreProducto = $_SESSION['pedido']['nombre'];
-                $cantidad = $_SESSION['pedido']['cantidad'];
-                mostrar_pedido($nombreProducto, $cantidad);
-            } else {
-                echo "No hay detalles de pedido disponibles.";
-            }
-            ?>
+                include 'mostrar_pedido.php'; 
+         ?>
         </div>
+   
+        <div class="contenedorPago">
+
+
+        </div>
+   
+    </div>
+
+   
     </div>
 
 </body>

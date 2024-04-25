@@ -1,7 +1,7 @@
 <?php
     header('Content-Type: text/html; charset=utf-8');
     session_start(); // Iniciamos sesión 
-    
+
     //Conexión a la BD
     $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
     mysqli_set_charset($db, "utf8");
@@ -18,7 +18,7 @@
     $queryPostre = "SELECT * FROM plato WHERE tipo = 'postre'";
     $resPostre = mysqli_query($db, $queryPostre);
     
-
+    $db->close();
 ?>
 
 
