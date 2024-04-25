@@ -1,7 +1,7 @@
 <?php
-
     header('Content-Type: text/html; charset=utf-8');
-
+    session_start(); // Iniciamos sesión 
+    
     //Conexión a la BD
     $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
     mysqli_set_charset($db, "utf8");
@@ -39,8 +39,10 @@
             <img class="logo" src="Imagenes/logo.png" alt="Logo página"/>
        </div> 
         <div class="d2">
-            <img class="icoCompra" src="Imagenes/iconocompra.png"/>
-            <p id="cantidadCarrito">0</p> <!--Se actualiza cuando añadimos productos al carrito-->
+            <a href="pagina_pago.php"> 
+                <img class="icoCompra" src="Imagenes/iconocompra.png"/>
+            </a> <!--Se actualiza cuando añadimos productos al carrito-->
+            <p id="cantidadCarrito">0</p>
         </div>
     </div>
 
