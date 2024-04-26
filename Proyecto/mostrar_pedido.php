@@ -55,22 +55,14 @@ function obtenerPrecioPlato($productId, $db) {
 }
 
 
-// Función para mostrar el pedido
 
-function mostrar_pedido($productId, $db) {
-    // Ejemplo de uso de las funciones de productos
-    $nombrePlato = obtenerNombrePlato($productId, $db);
-    $imagenPlato = obtenerImagenPlato($productId, $db);
-    $precioPlato = obtenerPrecioPlato($productId, $db);
-    
-    // Aquí puedes mostrar la información del producto en el pedido
-    echo "Plato: $nombrePlato, Precio: $precioPlato, Imagen: $imagenPlato";
-}
 
-// Ejemplo de uso de la función mostrar_pedido
-$productId = 1; // Aquí debes establecer el ID del producto que deseas mostrar
+
+
+
+print_r($_SESSION);
+
 mostrar_pedido($productId, $db);
 
-// Cerrar la conexión a la base de datos al final del script
 $db->close();
 ?>

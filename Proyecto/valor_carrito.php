@@ -2,8 +2,12 @@
 session_start();
 
 if(isset($_SESSION['cart'])) {
-    $cartItemCount = count($_SESSION['cart']);
-    echo $cartItemCount;
+
+    $sum=0;
+    foreach ($_SESSION['cart'] as $key => $value) {        
+        $sum = $sum + intval($value['cantidad']);
+    }    
+    echo $sum;
 } else {
     echo 0;
 }
