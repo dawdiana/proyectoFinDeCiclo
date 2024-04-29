@@ -1,8 +1,4 @@
 <?php
-session_start(); // Iniciamos sesión 
-
-$db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
-mysqli_set_charset($db, "utf8");
 
 // Función para obtener el nombre del producto
 function obtenerNombrePlato($productId, $db) {
@@ -55,14 +51,4 @@ function obtenerPrecioPlato($productId, $db) {
 }
 
 
-
-
-
-
-
-print_r($_SESSION);
-
-mostrar_pedido($productId, $db);
-
-$db->close();
 ?>

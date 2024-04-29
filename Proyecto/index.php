@@ -30,6 +30,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pups Pantry</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel='stylesheet' href='index.css'/>
 
 </head>
@@ -40,8 +41,8 @@
        </div> 
         <div class="d2">
             <a href="pagina_pago.php"> 
-                <img class="icoCompra" src="Imagenes/iconocompra.png"/>
-            </a> <!--Se actualiza cuando añadimos productos al carrito-->
+                <img class="icoCompra" src="Imagenes/iconocompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
+            </a>
             <p id="cantidadCarrito">0</p>
         </div>
     </div>
@@ -71,7 +72,7 @@
                                 <div class="prueba1">              
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
-                                        <p><?php echo $item['precio'];?>€</p>
+                                        <p><?php echo $item['precio'];?> €</p>
                                         <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconoMas1.png"/></button>
                                         <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconoMenos.png"/></button>
                                     </div>   
@@ -103,7 +104,7 @@
                         <div class="prueba1">              
                             <h3><?php echo $item['nombre'];?></h3>
                             <div class="precio">
-                                <p><?php echo $item['precio'];?>€</p>
+                                <p><?php echo $item['precio'];?> €</p>
                               <!--<img class="icoMas" src="Imagenes/iconoMas1.png"/>-->
                                 <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconoMas1.png"/></button>
                                 <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconoMenos.png"/></button>
@@ -135,7 +136,7 @@
                                 <div class="prueba1">              
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
-                                        <p><?php echo $item['precio'];?>€</p>
+                                        <p><?php echo $item['precio'];?> €</p>
                                         <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconoMas1.png"/></button>
                                         <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconoMenos.png"/></button>
                                     </div>   
@@ -168,7 +169,6 @@
 
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
 
 

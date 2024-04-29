@@ -59,9 +59,9 @@ body {
     position: relative;
 }
 
-.d2 .icoCompra:hover {
+/*.d2 .icoCompra:hover {
     scale: 1.3;
-}
+}*/
 
 
 .d2 #cantidadCarrito {
@@ -161,7 +161,8 @@ h2 {
 
 .precio button {
     margin: 20px;
-    border: 1px solid green;
+   /* border: 1px solid green;*/
+    border: none;
     background-color: transparent; /* Hace que el fondo sea transparente */
     padding: 0; /* Quita el relleno */
     margin: 0; /* Quita el margen */
@@ -181,12 +182,17 @@ img.icoMenos {
 }
 
 .icoMas:hover, .icoMenos:hover{
-    scale: 1.3;
+/*    scale: 1.3;*/
+    border: 1px solid green;
+
 }
 
 .precio p {
     margin: 0 5px;
 }
+
+
+/*---------Footer---------*/
 
 .footer{
     background-color: rgb(228, 125, 36);
