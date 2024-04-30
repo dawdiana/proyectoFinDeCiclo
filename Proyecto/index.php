@@ -37,11 +37,11 @@
 <body>
     <div class="cabecera">
        <div class="d1">
-            <img class="logo" src="Imagenes/logo.png" alt="Logo página"/>
+            <img class="logo" src="Imagenes/iconosLogo/logo.png" alt="Logo página"/>
        </div> 
         <div class="d2">
             <a href="pagina_pago.php"> 
-                <img class="icoCompra" src="Imagenes/iconocompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
+                <img class="icoCompra" src="Imagenes/iconosLogo//iconoCompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
             </a>
             <p id="cantidadCarrito">0</p>
         </div>
@@ -55,9 +55,13 @@
 
 
         <div class="menu">
-                
-            <h1 class="titMenu">Nuestra Carta</h1>
-
+            
+        
+            <div class="tituloPatita">
+                <img class="icoPatita" src="Imagenes/iconosLogo/iconoPatita.png" alt="Icono de patita"/>
+                <h1 class="titMenu">Nuestra Carta</h1>
+            </div>
+            
             
             <!-- Muestra los platos de tipo snack -->
 
@@ -73,12 +77,12 @@
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $item['precio'];?> €</p>
-                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconoMas1.png"/></button>
-                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconoMenos.png"/></button>
+                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconosLogo//iconoMas1.png"/></button>
+                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconosLogo//iconoMenos.png"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
-                                    <img class="fotoCom" src="Imagenes/<?php echo $item['imagen'];?>">
+                                    <img class="fotoCom" src="Imagenes/platos/<?php echo $item['imagen'];?>">
                                     <p><?php echo $item['descripcion'];?></p>
                                 </div>
                             </div>
@@ -106,12 +110,12 @@
                             <div class="precio">
                                 <p><?php echo $item['precio'];?> €</p>
                               <!--<img class="icoMas" src="Imagenes/iconoMas1.png"/>-->
-                                <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconoMas1.png"/></button>
-                                <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconoMenos.png"/></button>
+                                <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconosLogo/iconoMas1.png"/></button>
+                                <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconosLogo/iconoMenos.png"/></button>
                             </div>   
                         </div>
                         <div class="imgTexto">
-                            <img class="fotoCom" src="Imagenes/<?php echo $item['imagen'];?>">
+                            <img class="fotoCom" src="Imagenes/platos/<?php echo $item['imagen'];?>">
                             <p><?php echo $item['descripcion'];?></p>
                         </div>
                     </div>
@@ -137,12 +141,12 @@
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $item['precio'];?> €</p>
-                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconoMas1.png"/></button>
-                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconoMenos.png"/></button>
+                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconosLogo/iconoMas1.png"/></button>
+                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconosLogo/iconoMenos.png"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
-                                    <img class="fotoCom" src="Imagenes/<?php echo $item['imagen'];?>">
+                                    <img class="fotoCom" src="Imagenes/platos/<?php echo $item['imagen'];?>">
                                     <p><?php echo $item['descripcion'];?></p>
                                 </div>
                             </div>

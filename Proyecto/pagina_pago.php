@@ -26,11 +26,11 @@
     <div class="cabecera">
         <div class="d1">
             <a href="index.php">
-             <img class="logo" src="Imagenes/logo.png" alt="Logo página"/>
+             <img class="logo" src="Imagenes/iconosLogo/logo.png" alt="Logo página"/>
             </a>
         </div> 
          <div class="d2">
-             <img class="icoCompra" src="Imagenes/iconocompra.png"/>
+             <img class="icoCompra" src="Imagenes/iconosLogo/iconoCompra.png" alt="Icono de compra"/>
              <p id="cantidadCarrito">0</p> 
 
         </div>
@@ -48,82 +48,82 @@
                 
                 if(count($_SESSION['cart']) > 0){
 
-                foreach ($_SESSION['cart'] as $productId => $aDatos) {
-                
-                    $productoNombre = obtenerNombrePlato($productId, $db);
-                    $productoPrecio = obtenerPrecioPlato($productId, $db);
+                    foreach ($_SESSION['cart'] as $productId => $aDatos) {
                     
-                    $totalLinea = $aDatos['cantidad'] * $productoPrecio;
-                    $precio=$precio + $totalLinea;
-        
-                    echo "<div class='lineaP'>";
-                    echo "<a href='?idBorrar=$productId' class='botonEliminar' id='$productId'><img class='icoMenos' src='Imagenes/iconoMenos.png'/></a>";
-                    echo "<p class='cantidad'>x".$aDatos['cantidad']."</p>";
-                    echo "<p class='nombreP'>".$productoNombre."</p>";
-                    echo "<p class='precioL'>".$totalLinea." €</p>";
-                    echo "<br>";
-                    echo "</div>";
-        
-                    echo "";
+                        $productoNombre = obtenerNombrePlato($productId, $db);
+                        $productoPrecio = obtenerPrecioPlato($productId, $db);
+                        
+                        $totalLinea = $aDatos['cantidad'] * $productoPrecio;
+                        $precio=$precio + $totalLinea;
+            
+                        echo "<div class='lineaP'>";
+                        echo "<a href='?idBorrar=$productId' class='botonEliminar' id='$productId'><img class='icoMenos' src='Imagenes/iconosLogo/iconoMenos.png'/></a>";
+                        echo "<p class='cantidad'>x".$aDatos['cantidad']."</p>";
+                        echo "<p class='nombreP'>".$productoNombre."</p>";
+                        echo "<p class='precioL'>".$totalLinea." €</p>";
+                        echo "<br>";
+                        echo "</div>";
+            
+                        echo "";
 
 
-                   // echo $aDatos['cantidad']." ".$productoNombre." ".$totalLinea."<br><br>";            
+                    // echo $aDatos['cantidad']." ".$productoNombre." ".$totalLinea."<br><br>";            
 
-                    
-                    $precioTotal = $precioTotal + $totalLinea;
-                }
+                        
+                        $precioTotal = $precioTotal + $totalLinea;
+                    }
 
-                echo "<hr>";
-                echo "<p class='pTotal'>Precio total = ".$precioTotal." €<p>";
-                echo "<hr>";
-
-
+                    echo "<hr>";
+                    echo "<p class='pTotal'>Precio total = ".$precioTotal." €<p>";
+                    echo "<hr>";
 
 
-                ?>
 
-                <div class="contenedorForm">
-                    <h3>Detalles de la entrega</h3>
 
-                    <form class="formularioPago" action="procesar_pago.php" method="POST">
-                            <div>
-                                <label for="nombre">Nombre completo:</label>
-                                <input type="text" id="nombre" name="nombre" required>
-                            </div>
-                            
-                            <div> <!--Desplegable para indicar el tipo de entrega-->
-                               <label for="tipoEntrega">Tipo de entrega:</label>
-                                <select id="tipoEntrega" name="tipoEntrega" required>
-                                    <option value="recoger">Recoger en el local</option>
-                                    <option value="domicilio">Entrega a domicilio</option>
-                                </select>
-                                </div>
-                            
-                            
-                            
-                            <div id="direcEnvio">
+                    ?>
+
+                    <div class="contenedorForm">
+                        <h3>Detalles de la entrega</h3>
+
+                        <form class="formularioPago" action="procesar_pago.php" method="POST">
                                 <div>
-                                    <label for="direccion">Dirección de envío:</label>
-                                    <input id="direccion" name="direccion" required></textarea>
+                                    <label for="nombre">Nombre completo:</label>
+                                    <input type="text" id="nombre" name="nombre" required>
                                 </div>
-                                <div>
-                                    <label for="cp">Código postal:</label>
-                                    <input id="cp" name="cp" required></textarea>
+                                
+                                <div> <!--Desplegable para indicar el tipo de entrega-->
+                                <label for="tipoEntrega">Tipo de entrega:</label>
+                                    <select id="tipoEntrega" name="tipoEntrega" required>
+                                        <option value="recoger">Recoger en el local</option>
+                                        <option value="domicilio">Entrega a domicilio</option>
+                                    </select>
+                                    </div>
+                                
+                                
+                                
+                                <div id="direcEnvio">
+                                    <div>
+                                        <label for="direccion">Dirección de envío:</label>
+                                        <input id="direccion" name="direccion" required></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="cp">Código postal:</label>
+                                        <input id="cp" name="cp" required></textarea>
+                                    </div>
+                                    <div>
+                                        <label for="pob">Población:</label>
+                                        <input id="pob" name="pob" required></textarea>
+                                    </div>
                                 </div>
-                                <div>
-                                    <label for="pob">Población:</label>
-                                    <input id="pob" name="pob" required></textarea>
-                                </div>
-                            </div>
 
-                            <button type="submit">Confirmar pedido</button>
-                    </form>
+                                <button type="submit">Confirmar pedido</button>
+                        </form>
 
-                </div>
+                    </div>
 
-                <?php
+                    <?php
                 } else {
-                    echo "<h2>No hay productos en la bolsa</h2>";
+                    echo "<h2 class='titCarVacio'>No hay productos en la bolsa</h2>";
                 }    
             ?>
         </div>

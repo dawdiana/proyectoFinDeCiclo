@@ -76,6 +76,10 @@ h1 {
     margin-top: 30px;
 }
 
+.titCarVacio {
+    text-align: center;
+}
+
 .contenedorPedido {
     margin: 30px 0;
     padding: 20px;
@@ -204,9 +208,8 @@ h3 {
     text-align: center;
     justify-content: space-around;
     padding: 50px;
-    position:static;
-    bottom: 0px;
     width: 100%;
+    margin-top: 300px;
 }
 
 .footer p {
