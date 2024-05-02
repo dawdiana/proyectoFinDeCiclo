@@ -6,19 +6,23 @@ if (isset($_GET['id'])) {
 
     // Aquí deberías consultar la base de datos para obtener la información del pedido con el ID proporcionado
     // Supongamos que aquí obtienes la información del pedido correspondiente
+    $query = "SELECT p.idPedido, p.fechaPedido, c.nombre AS nombreCliente
+              FROM pedido p INNER JOIN cliente c ON p.idCliente = c.idCliente
+              WHERE p.idPedido = '$idPedido'";
+    
+    $result = mysqli_query($db, $query);
 
-    // Simulación de información del pedido
-    $nombreCliente = "John Doe";
-    $fechaPedido = "2024-05-03";
-    $estadoPedido = "En proceso";
+    if (!$result) {
+        die("Error en la consulta: " . mysqli_error($db));
+        
+    }
+
+
 } else {
     // Si no se proporciona el ID del pedido, redirigir a alguna otra página o mostrar un mensaje de error
-    header("Location: alguna_pagina_de_error.php");
+    echo "Error en la página de detalles del pedido";
     exit; // Salir del script para evitar que se siga ejecutando
 }
-
-    $query = "select * from pedido where idPedido like '' "
-
 
 
 ?>
@@ -44,6 +48,27 @@ if (isset($_GET['id'])) {
 
         <h2>Detalle del Pedido</h2>
         <p>Información del pedido:</p>
+
+        <table  class="tablaPedidos">
+            <tr>
+                <th>unidades del Pedido</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Precio Total</th>
+                <th>Estado</th>
+            </tr>
+        <?php
+            while ($row = mysqli_fetch_assoc($result)) { //destacar pedidos no entregados
+                echo "<tr>";
+                echo "<td>" . $row['unidadesPlato'] . "</td>";
+                echo "<td>" . $row['nombrePlato'] . "</td>";
+                echo "<td>" . $row['precioPlato'] . "</td>";
+                echo "<td>" . $row['precioLinea'] . "</td>";
+                echo "<td>" . $row['estadoEnvio'] . "€</td>";
+                echo "</tr>";
+                 }
+            ?>
+        </table>
 </body>
 </html>
 

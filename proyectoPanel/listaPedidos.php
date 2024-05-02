@@ -63,7 +63,7 @@
                 echo "<br><input type='submit' value='Actualizar'>";
                 echo "</form>";
                 echo "<td>" . $row['precioPedido'] . "€</td>";
-                echo "<td><a href='detallePedido.php?id=" . $row['idPedido'] . "' title='Detalles de pedido'><img class='iconoPedido' src='imagenesPanel/iconoVerMas.png' alt='Icono pedido'></a></td>";
+                echo "<td><a href='index.php?pag=detallepedido&id=" . $row['idPedido'] . "' title='Detalles de pedido'><img class='iconoPedido' src='imagenesPanel/iconoVerMas.png' alt='Icono pedido'></a></td>";
                 echo "</tr>";
                  }
             ?>

@@ -14,7 +14,7 @@ mysqli_set_charset($db, "utf8");
 
 if(empty($_GET['pag'])){
     
-    include ("login.php"); //luego cambiar a php
+    include ("login.php"); 
 
 }elseif($_GET['pag']=='pedidos'){
 

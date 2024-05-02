@@ -7,21 +7,42 @@
 
 .cabecera {
     display: flex;
-    flex-direction: column;
 }
+
 
 .contLogo {
     display: flex;
     justify-content: center;
 }
+
+.contLogo {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+
 .cabecera .contLogo .logo {
     width: 200px;
     margin: 20px;
 }
 
-
-.contIcono .iconoCasa {
+.contIcono {
+    width: 20%;
     display: flex;
-    width: 100px;
+    justify-content: center;
+    border: 1px solid black;
 }
 
+
+
+.contIcono {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.contIcono .iconoCasa {
+    width: 100px;
+}
