@@ -33,16 +33,30 @@
     display: flex;
     justify-content: center;
     border: 1px solid black;
-}
-
-
-
-.contIcono {
-    display: flex;
     align-items: center;
-    vertical-align: middle;
 }
+
+
 
 .contIcono .iconoCasa {
     width: 100px;
 }
+
+/*-----------Tabla detalles pedido-------------*/
+
+.tablaDetallesPedido {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.tablaDetallesPedido th, .tablaDetallesPedido td {
+    padding: 10px;
+    text-align: center;
+}
+
+.tablaDetallesPedido th{
+    text-decoration: underline;
+}
+

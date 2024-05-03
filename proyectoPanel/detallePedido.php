@@ -4,11 +4,16 @@ if (isset($_GET['id'])) {
     // Obtener el ID del pedido de la URL
     $idPedido = $_GET['id'];
 
-    // Aquí deberías consultar la base de datos para obtener la información del pedido con el ID proporcionado
-    // Supongamos que aquí obtienes la información del pedido correspondiente
-    $query = "SELECT p.idPedido, p.fechaPedido, c.nombre AS nombreCliente
-              FROM pedido p INNER JOIN cliente c ON p.idCliente = c.idCliente
-              WHERE p.idPedido = '$idPedido'";
+
+    //que me interesa coger del pedido? tipo de pedido? me entra que segun sea a domicilio o 
+    //o a recogida salgan diferentes opciones de select?
+
+        $query = "SELECT plato.nombre AS nombrePlato, lineapedido.cantidad AS unidadesPlato, 
+            plato.precio as precioPlato, pedido.estadoPedido
+            FROM lineapedido
+            INNER JOIN plato ON lineapedido.fk_idPlato = plato.idPlato
+            INNER JOIN pedido ON lineapedido.fk_idPedido = pedido.idPedido
+            WHERE lineapedido.fk_idPedido = '$idPedido'";
     
     $result = mysqli_query($db, $query);
 
@@ -38,7 +43,7 @@ if (isset($_GET['id'])) {
 <body>
     <div class="cabecera">
         <div class="contIcono">
-            <a href="listaPedidos.php"><img class="iconoCasa" src='imagenesPanel/iconoCasa2.png' alt="Icono de casa"/></a>
+            <a href="index.php?pag=pedidos"><img class="iconoCasa" src='imagenesPanel/iconoCasa2.png' alt="Icono de casa"/></a>
         </div>
         <div class="contLogo">
             <img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/>
@@ -49,27 +54,35 @@ if (isset($_GET['id'])) {
         <h2>Detalle del Pedido</h2>
         <p>Información del pedido:</p>
 
-        <table  class="tablaPedidos">
+        <table  class="tablaDetallesPedido">
             <tr>
-                <th>unidades del Pedido</th>
+                <th>Unidades Pedido</th>
                 <th>Nombre</th>
                 <th>Precio</th>
-                <th>Precio Total</th>
                 <th>Estado</th>
             </tr>
         <?php
+            $sum=0;
             while ($row = mysqli_fetch_assoc($result)) { //destacar pedidos no entregados
                 echo "<tr>";
                 echo "<td>" . $row['unidadesPlato'] . "</td>";
                 echo "<td>" . $row['nombrePlato'] . "</td>";
                 echo "<td>" . $row['precioPlato'] . "</td>";
-                echo "<td>" . $row['precioLinea'] . "</td>";
-                echo "<td>" . $row['estadoEnvio'] . "€</td>";
+                echo "<td>" . $row['estadoPedido'] . "</td>";
                 echo "</tr>";
-                 }
-            ?>
-        </table>
-</body>
+                $sum=$sum +  ($row['unidadesPlato'] * $row['precioPlato']);
+            }
+        ?>
+        </table>       
+       
+        <?php
+           echo "<p>Precio total = ". $sum ." €</p>";     
+        ?>
+
+        <hr>
+
+
+    </body>
 </html>
 
 
