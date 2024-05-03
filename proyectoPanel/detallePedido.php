@@ -9,18 +9,19 @@ if (isset($_GET['id'])) {
     //o a recogida salgan diferentes opciones de select?
 
         $query = "SELECT plato.nombre AS nombrePlato, lineapedido.cantidad AS unidadesPlato, 
-            plato.precio as precioPlato, pedido.estadoPedido
+            plato.precio as precioPlato, pedido.estadoPedido,  
+            CONCAT(cliente.nombre, ' ', cliente.apellido1, ' ', cliente.apellido2) AS nombreCliente,
+            cliente.direccion
             FROM lineapedido
             INNER JOIN plato ON lineapedido.fk_idPlato = plato.idPlato
             INNER JOIN pedido ON lineapedido.fk_idPedido = pedido.idPedido
+            INNER JOIN cliente ON pedido.fk_idCliente = cliente.idCliente
             WHERE lineapedido.fk_idPedido = '$idPedido'";
     
     $result = mysqli_query($db, $query);
-
-    if (!$result) {
-        die("Error en la consulta: " . mysqli_error($db));
-        
-    }
+        if (!$result) {
+            die("Error en la consulta: " . mysqli_error($db));
+        }
 
 
 } else {
@@ -76,7 +77,14 @@ if (isset($_GET['id'])) {
         </table>       
        
         <?php
-           echo "<p>Precio total = ". $sum ." €</p>";     
+        mysqli_data_seek($result, 0);
+        // Obtener el primer resultado para mostrar el nombre del cliente
+        $row = mysqli_fetch_assoc($result);
+           echo "<p>Precio total = ". $sum ." €</p>"; 
+           echo "<p>Nombre del cliente: ". $row['nombreCliente'] ."</p>";
+           echo "<p>Dirección: ". $row['direccion'] ."</p>";
+           
+    
         ?>
 
         <hr>
