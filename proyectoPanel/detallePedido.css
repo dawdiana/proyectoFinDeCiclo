@@ -7,40 +7,59 @@
 
 .cabecera {
     display: flex;
+    flex-direction: column-reverse;
 }
 
 
 .contLogo {
     display: flex;
     justify-content: center;
-}
-
-.contLogo {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 
 .cabecera .contLogo .logo {
     width: 200px;
-    margin: 20px;
+    margin: 10px 20px;
 }
 
 .contIcono {
-    width: 20%;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    border: 1px solid black;
+    flex-direction: row-reverse;
+   /* justify-content:end;*/
+    /*border: 1px solid black;*/
+    align-items:end;
+    vertical-align: middle;
     align-items: center;
 }
 
-
-
-.contIcono .iconoCasa {
-    width: 100px;
+.contIcono hr {
+    color:  rgb(68, 105, 156);
 }
+
+
+.contIcono .iconoCasa{
+    width: 50px;
+    margin: 0 10%;
+}
+
+.contIcono .icoCerrarSesion {
+    width: 40px;
+    margin: 0 10%;
+}
+
+/*-----------Título página-----------*/
+
+h2 {
+    text-align: center;
+    margin-top: 20px 0;
+    padding: 10px;
+    background-color: rgb(68, 105, 156);
+    color: white;
+    text-transform: uppercase;
+}
+
 
 /*-----------Tabla detalles pedido-------------*/
 
@@ -48,7 +67,7 @@
     border: 1px solid black;
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    padding: 20px;
 }
 
 .tablaDetallesPedido th, .tablaDetallesPedido td {
@@ -56,7 +75,16 @@
     text-align: center;
 }
 
-.tablaDetallesPedido th{
-    text-decoration: underline;
+.tablaDetallesPedido th, .tablaDetallesPedido td {
+    padding: 10px;
+    text-align: center;
 }
 
+.tablaDetallesPedido th {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tablaDetallesPedido td {
+    font-weight: 600;
+}

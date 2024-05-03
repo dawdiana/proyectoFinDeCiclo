@@ -44,7 +44,8 @@ if (isset($_GET['id'])) {
 <body>
     <div class="cabecera">
         <div class="contIcono">
-            <a href="index.php?pag=pedidos"><img class="iconoCasa" src='imagenesPanel/iconoCasa2.png' alt="Icono de casa"/></a>
+            <img class="icoCerrarSesion" src="imagenesPanel/iconoCerrarSesion.png" alt="Icono cierre de sesión"/>
+            <a href="index.php?pag=pedidos"><img class="iconoCasa" src='imagenesPanel/iconoCasa3.png' alt="Icono de casa"/></a>
         </div>
         <div class="contLogo">
             <img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/>
@@ -52,12 +53,12 @@ if (isset($_GET['id'])) {
     </div>
 
 
-        <h2>Detalle del Pedido</h2>
-        <p>Información del pedido:</p>
+        <!--<h2>Detalle del Pedido</h2>-->
+        <h2>Información del pedido</h2>
 
         <table  class="tablaDetallesPedido">
             <tr>
-                <th>Unidades Pedido</th>
+                <th>Unidades</th>
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Estado</th>
@@ -68,7 +69,7 @@ if (isset($_GET['id'])) {
                 echo "<tr>";
                 echo "<td>" . $row['unidadesPlato'] . "</td>";
                 echo "<td>" . $row['nombrePlato'] . "</td>";
-                echo "<td>" . $row['precioPlato'] . "</td>";
+                echo "<td>" . $row['precioPlato'] . " €</td>";
                 echo "<td>" . $row['estadoPedido'] . "</td>";
                 echo "</tr>";
                 $sum=$sum +  ($row['unidadesPlato'] * $row['precioPlato']);

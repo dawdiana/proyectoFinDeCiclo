@@ -7,12 +7,47 @@
 
 .cabecera {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
 }
 
-.cabecera .logo {
+.contLogo {
+    display: flex;
+    justify-content: center;
+}
+
+.contLogo .logo {
     width: 200px;
     margin: 20px;
+}
+
+.contIcono {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+   /* justify-content:end;*/
+    /*border: 1px solid black;*/
+    align-items:end;
+    vertical-align: middle;
+    align-items: center;
+}
+
+
+.contIcono .icoCerrarSesion {
+    width: 40px;
+    margin: 0 10%;
+}
+
+
+/*-----------Título página-----------*/
+
+h2 {
+    text-align: center;
+    margin-top: 30px 0;
+    padding: 10px;
+    background-color: rgb(68, 105, 156);
+    color: white;
+    text-transform: uppercase;
 }
 
 /*---------Tabla pedidos----------*/
@@ -23,6 +58,7 @@
     border: 1px solid black;
     display: flex;
     justify-content: center;
+    padding: 20px;
 }
 
 .tablaPedidos th, .tablaPedidos td {
@@ -32,9 +68,19 @@
 
 .tablaPedidos th {
     text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tablaPedidos td {
+    font-weight: 600;
 }
 
 .iconoPedido {
     width: 45px;
 }
+
+.tablaPedidos option[value='Entregado'] {
+    background-color: #adaba3; /* Amarillo */
+}
+
 

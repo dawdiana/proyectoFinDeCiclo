@@ -32,8 +32,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div class="cabecera">
-        <img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/>
+<div class="cabecera">
+        <div class="contIcono">
+            <img class="icoCerrarSesion" src="imagenesPanel/iconoCerrarSesion.png" alt="Icono cierre de sesión"/>
+        </div>
+        <div class="contLogo">
+            <img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/>
+        </div>    
     </div>
 
     <div class="cuerpo">
