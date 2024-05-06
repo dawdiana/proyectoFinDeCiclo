@@ -64,8 +64,6 @@
                         echo "<br>";
                         echo "</div>";
             
-                        echo "";
-
 
                     // echo $aDatos['cantidad']." ".$productoNombre." ".$totalLinea."<br><br>";            
 
@@ -77,9 +75,6 @@
                     echo "<p class='pTotal'>Precio total = ".$precioTotal." €<p>";
                     echo "<hr>";
 
-
-
-
                     ?>
 
                     <div class="contenedorForm">
@@ -87,10 +82,22 @@
 
                         <form class="formularioPago" action="procesar_pago.php" method="POST">
                                 <div>
-                                    <label for="nombre">Nombre completo:</label>
+                                    <label for="nombre">Nombre:</label>
                                     <input type="text" id="nombre" name="nombre" required>
                                 </div>
-                                
+                                <div>
+                                    <label for="apellido1">Apellido 1:</label>
+                                    <input type="text" id="apellido1" name="apellido1" required>
+                                </div>
+                                <div>
+                                    <label for="apellido2">Apellido 2:</label>
+                                    <input type="text" id="apellido2" name="apellido2">
+                                </div>
+                                <div>
+                                    <label for="correoE">Correo Electrónico:</label>
+                                    <input type="email" id="correoE" name="correoE" required>
+                                </div>
+
                                 <div> <!--Desplegable para indicar el tipo de entrega-->
                                 <label for="tipoEntrega">Tipo de entrega:</label>
                                     <select id="tipoEntrega" name="tipoEntrega" required>
@@ -104,15 +111,15 @@
                                 <div id="direcEnvio">
                                     <div>
                                         <label for="direccion">Dirección de envío:</label>
-                                        <input id="direccion" name="direccion" required></textarea>
+                                        <input type="text" id="direccion" name="direccion" required></textarea>
                                     </div>
                                     <div>
                                         <label for="cp">Código postal:</label>
-                                        <input id="cp" name="cp" required></textarea>
+                                        <input type="number" id="cp" name="cp" required></textarea>
                                     </div>
                                     <div>
                                         <label for="pob">Población:</label>
-                                        <input id="pob" name="pob" required></textarea>
+                                        <input type="text" id="pob" name="pob" required></textarea>
                                     </div>
                                 </div>
 

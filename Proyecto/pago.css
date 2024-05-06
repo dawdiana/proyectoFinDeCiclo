@@ -82,10 +82,10 @@ h1 {
 
 .contenedorPedido {
     margin: 30px 0;
-    padding: 20px;
     border: 1px solid green;
     display: flex;
     flex-direction: column;
+    padding: 40px;
 }
 
 .lineaP {
@@ -129,13 +129,13 @@ hr {
 /*------------Formulario de pago--------------*/
 
 .contenedorForm {
-    background-color: rgba(44, 160, 206);
-
+    border: 1px solid rgba(44, 160, 206);
 }
 
 h3 {
     text-align: center;
     background-color:  rgb(228, 125, 36);
+    padding: 0 50px;
 }
 
 
@@ -159,9 +159,9 @@ h3 {
     width: 60%;
 }
 
-.formularioPago label {
+/*.formularioPago label {
     text-decoration: underline;
-}
+}*/
 
 .formularioPago input, .formularioPago select {
     width: 220px;
@@ -190,7 +190,6 @@ h3 {
 .formularioPago button {
     padding: 5px;
     margin: 20px 0;
-    border-radius: 40%;
     transition: background-color 1s ease;
 }
 
