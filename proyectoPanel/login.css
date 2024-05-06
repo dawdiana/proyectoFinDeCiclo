@@ -30,7 +30,7 @@
     display: flex;
     justify-content: center;
     margin: 20px 0;
-    width: 40%;
+    width: 50%;
     background-color: rgb(50, 87, 136);
     padding: 30px;
 
@@ -61,6 +61,7 @@
 
 .formulario .etiquetaR input {
     font-size: 20px;
+    padding: 5px;
 }
 
 .formulario .icoLabel {
@@ -126,3 +127,4 @@
 Tipo de ltra logo --> league spartan (?)
 
 */
+
