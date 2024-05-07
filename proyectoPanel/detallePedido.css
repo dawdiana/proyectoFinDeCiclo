@@ -7,7 +7,7 @@
 
 .cabecera {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 
@@ -27,8 +27,6 @@
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
-   /* justify-content:end;*/
-    /*border: 1px solid black;*/
     align-items:end;
     vertical-align: middle;
     align-items: center;
@@ -41,12 +39,12 @@
 
 .contIcono .iconoCasa{
     width: 50px;
-    margin: 0 10%;
+    margin: 0;
 }
 
 .contIcono .icoCerrarSesion {
     width: 40px;
-    margin: 0 10%;
+    margin: 0 10px;
 }
 
 /*-----------Título página-----------*/

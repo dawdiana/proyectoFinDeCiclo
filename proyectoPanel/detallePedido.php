@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {
         $query = "SELECT plato.nombre AS nombrePlato, lineapedido.cantidad AS unidadesPlato, 
             plato.precio as precioPlato, pedido.estadoPedido,  
             CONCAT(cliente.nombre, ' ', cliente.apellido1, ' ', cliente.apellido2) AS nombreCliente,
-            cliente.direccion
+            pedido.direccion
             FROM lineapedido
             INNER JOIN plato ON lineapedido.fk_idPlato = plato.idPlato
             INNER JOIN pedido ON lineapedido.fk_idPedido = pedido.idPedido
@@ -45,10 +45,10 @@ if (isset($_GET['id'])) {
     <div class="cabecera">
         <div class="contIcono">
             <img class="icoCerrarSesion" src="imagenesPanel/iconoCerrarSesion.png" alt="Icono cierre de sesión"/>
-            <a href="index.php?pag=pedidos"><img class="iconoCasa" src='imagenesPanel/iconoCasa3.png' alt="Icono de casa"/></a>
+            <a href="index.php?pag=pedidos"><img class="iconoCasa" title="Volver a página principal" src='imagenesPanel/iconoCasa4.png' alt="Icono de casa"/></a>
         </div>
         <div class="contLogo">
-            <img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/>
+        <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/></a>
         </div>    
     </div>
 
@@ -61,7 +61,7 @@ if (isset($_GET['id'])) {
                 <th>Unidades</th>
                 <th>Nombre</th>
                 <th>Precio</th>
-                <th>Estado</th>
+               <!-- <th>Estado</th>-->
             </tr>
         <?php
             $sum=0;
@@ -70,7 +70,7 @@ if (isset($_GET['id'])) {
                 echo "<td>" . $row['unidadesPlato'] . "</td>";
                 echo "<td>" . $row['nombrePlato'] . "</td>";
                 echo "<td>" . $row['precioPlato'] . " €</td>";
-                echo "<td>" . $row['estadoPedido'] . "</td>";
+                //echo "<td>" . $row['estadoPedido'] . "</td>";
                 echo "</tr>";
                 $sum=$sum +  ($row['unidadesPlato'] * $row['precioPlato']);
             }
@@ -83,9 +83,8 @@ if (isset($_GET['id'])) {
         $row = mysqli_fetch_assoc($result);
            echo "<p>Precio total = ". $sum ." €</p>"; 
            echo "<p>Nombre del cliente: ". $row['nombreCliente'] ."</p>";
-           echo "<p>Dirección: ". $row['direccion'] ."</p>";
-           
-    
+           echo "<p>Estado del pedido: ". $row['estadoPedido'] ."</p>";
+           echo "<p>Dirección: ". $row['direccion'] ."</p>"; //hacer que la direccion solo se muestre cuando el pedido es a domicilio    
         ?>
 
         <hr>

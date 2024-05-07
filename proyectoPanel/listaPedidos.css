@@ -7,7 +7,7 @@
 
 .cabecera {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -35,7 +35,7 @@
 
 .contIcono .icoCerrarSesion {
     width: 40px;
-    margin: 0 10%;
+    margin: 5px 10px;
 }
 
 
