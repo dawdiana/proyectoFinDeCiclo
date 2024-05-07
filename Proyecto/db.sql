@@ -56,7 +56,7 @@ CREATE TABLE LineaPedido (
 
 /* Tabla restaurante */
 /*(ID del Restaurante, Dirección, Nombre del Restaurante, Usuario, Contraseña)*/
-insert into restaurante values (1,'Calle del Marqués de Amboage, 25, 15006 A Coruña, España', 'Pups Pantry', 'pupspan', 'abc123.');
+insert into restaurante values (1,'Calle del Marqués de Amboage, 25, 15006 A Coruña, España', 'Pups Pantry', 'pyp', 'abc123.');
 
 
 /* Tabla cliente */
