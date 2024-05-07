@@ -11,16 +11,15 @@ $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
 mysqli_set_charset($db, "utf8");
 
 
-
 if(empty($_GET['pag'])){
     
-    include ("login.php"); 
+    include ("./paginaLogin/login.php"); 
 
 }elseif($_GET['pag']=='pedidos'){
 
 
     if(compruebaCredenciales($_SESSION['user'], $_SESSION['pass'])){
-        include ("listaPedidos.php");
+        include ("./paginaListaPedidos/listaPedidos.php");
     }else{
         header('Location: index.php'); //lo envio al login
     }
@@ -29,7 +28,7 @@ if(empty($_GET['pag'])){
 }elseif($_GET['pag']=='detallepedido'){
 
     if(compruebaCredenciales($_SESSION['user'], $_SESSION['pass'])){
-        include ("detallePedido.php");
+        include ("./paginaDetallesPedido/detallePedido.php");
     }else{
         header('Location: index.php'); //lo envio al login
     }

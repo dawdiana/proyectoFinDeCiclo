@@ -28,16 +28,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de pedidos</title>
-    <link rel='stylesheet' href='listaPedidos.css'/>
+    <link rel='stylesheet' href='./paginaListaPedidos/listaPedidos.css'/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="cabecera">
         <div class="contIcono">
-            <img class="icoCerrarSesion" src="imagenesPanel/iconoCerrarSesion.png" alt="Icono cierre de sesión"/>
+            <img class="icoCerrarSesion" src="./imagenesPanel/iconoCerrarSesion.png" alt="Icono cierre de sesión"/>
         </div>
         <div class="contLogo">
-            <img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/>
+            <img class="logo" src="./imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/>
         </div>    
     </div>
 

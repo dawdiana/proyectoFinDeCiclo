@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del pedido</title>
-    <link rel='stylesheet' href='detallePedido.css'/>
+    <link rel='stylesheet' href='./paginaDetallesPedido/detallePedido.css'/>
 </head>
 <body>
     <div class="cabecera">
@@ -70,7 +70,6 @@ if (isset($_GET['id'])) {
                 echo "<td>" . $row['unidadesPlato'] . "</td>";
                 echo "<td>" . $row['nombrePlato'] . "</td>";
                 echo "<td>" . $row['precioPlato'] . " €</td>";
-                //echo "<td>" . $row['estadoPedido'] . "</td>";
                 echo "</tr>";
                 $sum=$sum +  ($row['unidadesPlato'] * $row['precioPlato']);
             }
@@ -81,13 +80,15 @@ if (isset($_GET['id'])) {
         mysqli_data_seek($result, 0);
         // Obtener el primer resultado para mostrar el nombre del cliente
         $row = mysqli_fetch_assoc($result);
+           echo "<div class='detalles'>";
            echo "<p>Precio total = ". $sum ." €</p>"; 
            echo "<p>Nombre del cliente: ". $row['nombreCliente'] ."</p>";
            echo "<p>Estado del pedido: ". $row['estadoPedido'] ."</p>";
            echo "<p>Dirección: ". $row['direccion'] ."</p>"; //hacer que la direccion solo se muestre cuando el pedido es a domicilio    
+           echo "<div>"; 
         ?>
 
-        <hr>
+        <!--<hr>-->
 
 
     </body>
