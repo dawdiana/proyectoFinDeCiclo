@@ -2,7 +2,7 @@
     header('Content-Type: text/html; charset=utf-8');
     session_start(); // Iniciamos sesión 
 
-    include 'funcionesPedido.php';
+    include '../funcionesPedido.php';
 
 
     //Conexión a la BD
@@ -40,11 +40,11 @@
 <body>
     <div class="cabecera">
        <div class="d1">
-            <img class="logo" src="Imagenes/iconosLogo/logo.png" alt="Logo página"/>
+            <img class="logo" src="../Imagenes/iconosLogo/logo.png" alt="Logo página"/>
        </div> 
         <div class="d2">
-            <a href="paginaPago.php"> 
-                <img class="icoCompra" src="Imagenes/iconosLogo//iconoCompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
+            <a href="../paginaPago/paginaPago.php"> 
+                <img class="icoCompra" src="../Imagenes/iconosLogo//iconoCompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
             </a>
             <p id="cantidadCarrito">0</p>
         </div>
@@ -61,7 +61,7 @@
             
         
             <div class="tituloPatita">
-                <img class="icoPatita" src="Imagenes/iconosLogo/iconoPatita.png" alt="Icono de patita"/>
+                <img class="icoPatita" src="../Imagenes/iconosLogo/iconoPatita.png" alt="Icono de patita"/>
                 <h1 class="titMenu">Nuestra Carta</h1>
             </div>
             
@@ -80,12 +80,12 @@
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $item['precio'];?> €</p>
-                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconosLogo//iconoMas1.png"/></button>
-                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconosLogo//iconoMenos.png"/></button>
+                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="../Imagenes/iconosLogo//iconoMas1.png"/></button>
+                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="../Imagenes/iconosLogo//iconoMenos.png"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
-                                    <img class="fotoCom" src="Imagenes/platos/<?php echo $item['imagen'];?>">
+                                    <img class="fotoCom" src="../Imagenes/platos/<?php echo $item['imagen'];?>">
                                     <p><?php echo $item['descripcion'];?></p>
                                 </div>
                             </div>
@@ -113,12 +113,12 @@
                             <div class="precio">
                                 <p><?php echo $item['precio'];?> €</p>
                               <!--<img class="icoMas" src="Imagenes/iconoMas1.png"/>-->
-                                <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconosLogo/iconoMas1.png"/></button>
-                                <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconosLogo/iconoMenos.png"/></button>
+                                <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="../Imagenes/iconosLogo/iconoMas1.png"/></button>
+                                <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="../Imagenes/iconosLogo/iconoMenos.png"/></button>
                             </div>   
                         </div>
                         <div class="imgTexto">
-                            <img class="fotoCom" src="Imagenes/platos/<?php echo $item['imagen'];?>">
+                            <img class="fotoCom" src="../Imagenes/platos/<?php echo $item['imagen'];?>">
                             <p><?php echo $item['descripcion'];?></p>
                         </div>
                     </div>
@@ -144,12 +144,12 @@
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $item['precio'];?> €</p>
-                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="Imagenes/iconosLogo/iconoMas1.png"/></button>
-                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="Imagenes/iconosLogo/iconoMenos.png"/></button>
+                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="../Imagenes/iconosLogo/iconoMas1.png"/></button>
+                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="../Imagenes/iconosLogo/iconoMenos.png"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
-                                    <img class="fotoCom" src="Imagenes/platos/<?php echo $item['imagen'];?>">
+                                    <img class="fotoCom" src="../Imagenes/platos/<?php echo $item['imagen'];?>">
                                     <p><?php echo $item['descripcion'];?></p>
                                 </div>
                             </div>
@@ -182,7 +182,7 @@
             // Cuando la página se carga, hace una solicitud al servidor para obtener el valor actual del carrito
             $(document).ready(function() {
                 $.ajax({
-                    url: 'mostrarValorCarrito.php', // Ruta al script PHP que obtiene el valor del carrito
+                    url: '../funcionesCarrito/mostrarValorCarrito.php', // Ruta al script PHP que obtiene el valor del carrito
                     type: 'GET', // Método de solicitud
                     success: function(response) { // Función a ejecutar cuando la solicitud tiene éxito
                         $("#cantidadCarrito").text(response); // Actualizar el contador del carrito en el DOM
@@ -200,7 +200,7 @@
                 console.log("ID del producto: " + productId);
                
                 $.ajax({
-                    url: 'sumarCarrito.php', 
+                    url: '../funcionesCarrito/sumarCarrito.php', 
                     type: 'POST', 
                     data: { productId: productId }, // Datos a enviar al servidor (ID del producto)
                     success: function(response) {
@@ -218,7 +218,7 @@
                 console.log("ID del producto: " + productId);
 
                 $.ajax({
-                    url: 'restarCarrito.php',
+                    url: '../funcionesCarrito/restarCarrito.php',
                     type: 'POST',
                     data: { productId: productId },
                     success: function(response) {

@@ -7,9 +7,7 @@
     $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
     mysqli_set_charset($db, "utf8");
 
-    include 'funcionesPedido.php'; 
-
-
+    include '../funcionesPedido.php'; 
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
         
@@ -126,12 +124,12 @@
 <body>
     <div class="cabecera">
         <div class="d1">
-            <a href="index.php">
-             <img class="logo" src="Imagenes/iconosLogo/logo.png" alt="Logo página"/>
+            <a href="../paginaMenu/index.php">
+             <img class="logo" src="../Imagenes/iconosLogo/logo.png" alt="Logo página"/>
             </a>
         </div> 
          <div class="d2">
-             <img class="icoCompra" src="Imagenes/iconosLogo/iconoCompra.png" alt="Icono de compra"/>
+             <img class="icoCompra" src="../Imagenes/iconosLogo/iconoCompra.png" alt="Icono de compra"/>
              <p id="cantidadCarrito">0</p> 
 
         </div>
@@ -146,9 +144,14 @@
     </div>
     
      <div class="cuerpo">
-        <h1>Tu pedido</h1>
+        
+        <div class="tituloPatita">
+                <img class="icoPatita" src="../Imagenes/iconosLogo/iconoPatita.png" alt="Icono de patita"/>
+                <h1 class="tituloPag">Tu pedido</h1>
+        </div>
+
         <div class="contenedorPedido">              
-       
+        
             <?php            
                
                 $precio=0;  //el precio de cada plato
@@ -166,16 +169,13 @@
                         $precio=$precio + $totalLinea;
             
                         echo "<div class='lineaP'>";
-                        echo "<a href='?idBorrar=$productId' class='botonEliminar' id='$productId'><img class='icoMenos' src='Imagenes/iconosLogo/iconoMenos.png'/></a>";
+                        echo "<a href='?idBorrar=$productId' class='botonEliminar' id='$productId'><img class='icoMenos' src='../Imagenes/iconosLogo/iconoMenos.png'/></a>";
                         echo "<p class='cantidad'>x".$aDatos['cantidad']."</p>";
                         echo "<p class='nombreP'>".$productoNombre."</p>";
                         echo "<p class='precioL'>".$totalLinea." €</p>";
                         echo "<br>";
                         echo "</div>";
             
-
-                    // echo $aDatos['cantidad']." ".$productoNombre." ".$totalLinea."<br><br>";            
-
                         
                         $precioTotal = $precioTotal + $totalLinea;
                     }
@@ -265,7 +265,7 @@
     <script>
     $(document).ready(function() {
                 $.ajax({
-                    url: 'mostrarValorCarrito.php', // Ruta al script PHP que obtiene el valor del carrito
+                    url: '../funcionesCarrito/mostrarValorCarrito.php', // Ruta al script PHP que obtiene el valor del carrito
                     type: 'GET', // Método de solicitud
                     success: function(response) { // Función a ejecutar cuando la solicitud tiene éxito
                         $("#cantidadCarrito").text(response); // Actualizar el contador del carrito en el DOM
@@ -282,7 +282,7 @@
                 console.log("ID del producto: " + productId);
 
                 $.ajax({
-                    url: 'restarCarrito.php',
+                    url: '../funcionesCarrito/restarCarrito.php',
                     type: 'POST',
                     data: { productId: productId },
                     success: function(response) {

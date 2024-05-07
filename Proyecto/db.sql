@@ -31,7 +31,7 @@ CREATE TABLE pedido (
     idPedido INT PRIMARY KEY AUTO_INCREMENT,
     fk_idCliente int not null,
     fechaPedido datetime not null,
-    estadoPedido varchar(50) not null DEFAULT 'en proceso',
+    estadoPedido varchar(50) not null DEFAULT 'Pendiente',
     precioPedido decimal(4,2) not null,
     tipoEntrega varchar(30) not null,
     direccion varchar (100) null,

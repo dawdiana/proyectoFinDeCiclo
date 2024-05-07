@@ -8,7 +8,7 @@
 
 /* --------------- Cabecera  ----------------  */
 body {
-    padding-top: 200px;
+    padding-top: 170px;
 }
 
 
@@ -69,12 +69,36 @@ body {
     right: 24;
     color:rgb(228, 125, 36);
 }
+
+
 /*--------------- Cuerpo -------------*/
 
-h1 {
-    text-align: center;
-    margin-top: 30px;
+
+.cuerpo .tituloPatita {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
 }
+
+.cuerpo .tituloPatita .icoPatita {
+    position: relative;
+    text-align: center;
+    width: 150px;
+    z-index: 0;
+    opacity: 0.4;
+    rotate: 180deg;
+    top: 20px;
+}
+
+
+.cuerpo .tituloPag { 
+    padding: 50px;
+    position: absolute;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
 
 .titCarVacio {
     text-align: center;
