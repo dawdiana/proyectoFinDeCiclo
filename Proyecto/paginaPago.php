@@ -6,7 +6,7 @@
     $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
     mysqli_set_charset($db, "utf8");
 
-    include 'mostrar_pedido.php'; 
+    include 'funcionesPedido.php'; 
 
 ?>
 
@@ -80,7 +80,7 @@
                     <div class="contenedorForm">
                         <h3>Detalles de la entrega</h3>
 
-                        <form class="formularioPago" action="procesar_pago.php" method="POST">
+                        <form class="formularioPago" action="guardarPedido.php" method="POST">
                                 <div>
                                     <label for="nombre">Nombre:</label>
                                     <input type="text" id="nombre" name="nombre" required>
@@ -111,15 +111,15 @@
                                 <div id="direcEnvio">
                                     <div>
                                         <label for="direccion">Dirección de envío:</label>
-                                        <input type="text" id="direccion" name="direccion" required></textarea>
+                                        <input type="text" id="direccion" name="direccion"></textarea>
                                     </div>
                                     <div>
                                         <label for="cp">Código postal:</label>
-                                        <input type="number" id="cp" name="cp" required></textarea>
+                                        <input type="number" id="cp" name="cp"></textarea>
                                     </div>
                                     <div>
                                         <label for="pob">Población:</label>
-                                        <input type="text" id="pob" name="pob" required></textarea>
+                                        <input type="text" id="pob" name="pob"></textarea>
                                     </div>
                                 </div>
 
@@ -156,7 +156,7 @@
     <script>
     $(document).ready(function() {
                 $.ajax({
-                    url: 'valor_carrito.php', // Ruta al script PHP que obtiene el valor del carrito
+                    url: 'mostrarValorCarrito.php', // Ruta al script PHP que obtiene el valor del carrito
                     type: 'GET', // Método de solicitud
                     success: function(response) { // Función a ejecutar cuando la solicitud tiene éxito
                         $("#cantidadCarrito").text(response); // Actualizar el contador del carrito en el DOM
@@ -173,7 +173,7 @@
                 console.log("ID del producto: " + productId);
 
                 $.ajax({
-                    url: 'restar_carrito.php',
+                    url: 'restarCarrito.php',
                     type: 'POST',
                     data: { productId: productId },
                     success: function(response) {

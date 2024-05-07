@@ -35,7 +35,7 @@ CREATE TABLE pedido (
     precioPedido decimal(4,2) not null,
     tipoEntrega varchar(30) not null,
     direccion varchar (100) null,
-    codPostal int null, -- en caso de que el pedido sea a domicilio
+    codPostal int null default null, -- en caso de que el pedido sea a domicilio
     poblacion varchar (100) null,
     FOREIGN KEY (fk_idCliente) REFERENCES cliente(idCliente)
 );

@@ -2,6 +2,9 @@
     header('Content-Type: text/html; charset=utf-8');
     session_start(); // Iniciamos sesión 
 
+    include 'funcionesPedido.php';
+
+
     //Conexión a la BD
     $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
     mysqli_set_charset($db, "utf8");
@@ -40,7 +43,7 @@
             <img class="logo" src="Imagenes/iconosLogo/logo.png" alt="Logo página"/>
        </div> 
         <div class="d2">
-            <a href="pagina_pago.php"> 
+            <a href="paginaPago.php"> 
                 <img class="icoCompra" src="Imagenes/iconosLogo//iconoCompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
             </a>
             <p id="cantidadCarrito">0</p>
@@ -179,7 +182,7 @@
             // Cuando la página se carga, hace una solicitud al servidor para obtener el valor actual del carrito
             $(document).ready(function() {
                 $.ajax({
-                    url: 'valor_carrito.php', // Ruta al script PHP que obtiene el valor del carrito
+                    url: 'mostrarValorCarrito.php', // Ruta al script PHP que obtiene el valor del carrito
                     type: 'GET', // Método de solicitud
                     success: function(response) { // Función a ejecutar cuando la solicitud tiene éxito
                         $("#cantidadCarrito").text(response); // Actualizar el contador del carrito en el DOM
@@ -197,7 +200,7 @@
                 console.log("ID del producto: " + productId);
                
                 $.ajax({
-                    url: 'sumar_carrito.php', 
+                    url: 'sumarCarrito.php', 
                     type: 'POST', 
                     data: { productId: productId }, // Datos a enviar al servidor (ID del producto)
                     success: function(response) {
@@ -215,7 +218,7 @@
                 console.log("ID del producto: " + productId);
 
                 $.ajax({
-                    url: 'restar_carrito.php',
+                    url: 'restarCarrito.php',
                     type: 'POST',
                     data: { productId: productId },
                     success: function(response) {
