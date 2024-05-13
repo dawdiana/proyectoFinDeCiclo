@@ -35,6 +35,26 @@ if(empty($_GET['pag'])){
 
     
 
+} elseif($_GET['pag']=='modificarcarta'){
+
+    if(compruebaCredenciales($_SESSION['user'], $_SESSION['pass'])){
+        include ("./paginaModificarCarta/modificarCarta.php");
+    }else{
+        header('Location: index.php'); 
+    }
+
+    
+
+} elseif($_GET['pag']=='anadirproducto'){
+
+    if(compruebaCredenciales($_SESSION['user'], $_SESSION['pass'])){
+        include ("./modificarProducto.php");
+    }else{
+        header('Location: index.php'); 
+    }
+
+    
+
 }
 
 

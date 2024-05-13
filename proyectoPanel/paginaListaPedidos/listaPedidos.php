@@ -35,6 +35,9 @@
 <div class="cabecera">
         <div class="contIcono">
             <img class="icoCerrarSesion" src="./imagenesPanel/iconoCerrarSesion.png" alt="Icono cierre de sesión"/>
+            <a href="index.php?pag=modificarcarta">
+                <img class="icoCarta" src="imagenesPanel/iconoCarta.png" alt="Icono de carta"/>
+            </a>
         </div>
         <div class="contLogo">
             <img class="logo" src="./imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/>

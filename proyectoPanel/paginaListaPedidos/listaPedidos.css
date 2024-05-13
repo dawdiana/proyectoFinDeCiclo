@@ -33,7 +33,7 @@
 }
 
 
-.contIcono .icoCerrarSesion {
+.contIcono .icoCerrarSesion, .contIcono .icoCarta {
     width: 40px;
     margin: 5px 10px;
 }
