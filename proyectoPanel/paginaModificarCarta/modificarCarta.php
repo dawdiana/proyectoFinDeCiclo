@@ -75,7 +75,7 @@
                 <td><?php echo $plato['precio'];?>€</td>
                 <td><?php echo $plato['descripcion'];?></td>
                 <td><?php echo $plato['imagen'];?></td>
-                <td><a href='index.php?pag=modificarProducto&id=' title='Modificar producto'><img class='iconoMod' src='imagenesPanel/iconoModificar.png' alt='Icono modificar'></a></td>
+                <td><a href='index.php?pag=modficarproducto&id=' title='Modificar producto'><img class='iconoMod' src='imagenesPanel/iconoModificar.png' alt='Icono modificar'></a></td>
             </tr>
         
             <?php

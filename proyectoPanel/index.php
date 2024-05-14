@@ -45,10 +45,10 @@ if(empty($_GET['pag'])){
 
     
 
-} elseif($_GET['pag']=='anadirproducto'){
-
+} elseif($_GET['pag']=='modficarproducto'){
+    
     if(compruebaCredenciales($_SESSION['user'], $_SESSION['pass'])){
-        include ("./modificarProducto.php");
+        require ("./modificarProducto.php");
     }else{
         header('Location: index.php'); 
     }
