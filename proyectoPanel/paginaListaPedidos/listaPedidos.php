@@ -20,8 +20,6 @@
 ?>
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,19 +31,36 @@
 </head>
 <body>
 <div class="cabecera">
-        <div class="contIcono">
-            <img class="icoCerrarSesion" src="./imagenesPanel/iconoCerrarSesion.png" alt="Icono cierre de sesión"/>
-            <a href="index.php?pag=modificarcarta">
-                <img class="icoCarta" src="imagenesPanel/iconoCarta.png" alt="Icono de carta"/>
-            </a>
-        </div>
         <div class="contLogo">
-            <img class="logo" src="./imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/>
-        </div>    
-    </div>
+            <a href="#"><img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Imagen logo"/></a>
+        </div>   
+        
+        <div class="menu">  
+            
+            <!-- TÍTULO PÁGINA  -->
+            <div class="contTitulo">
+                <h2>Lista de pedidos</h2>
+            </div>
+
+            <div class="contIconosMenu">
+                <a href="#" class="visitado">
+                            <img class="icoLista" src="imagenesPanel/iconos/iconoVermas.png" alt="Icono lista"/>
+                </a>
+
+                <a href="index.php?pag=modificarcarta"  title="Información Menú">
+                            <img class="icoCarta" src="imagenesPanel/iconos/iconoCarta.png" alt="Icono carta"/>
+                </a>
+
+                <a href="#"  title="Cerrar sesión">
+                            <img class="icoCerrarSesion" src="./imagenesPanel/iconos/iconoCerrarSesion3.png" alt="Icono cierre de sesión"/>
+                </a>
+            </div>
+
+        </div>       
+</div>
+
 
     <div class="cuerpo">
-        <h2>Lista de pedidos</h2>
 
         <table  class="tablaPedidos">
             <tr>
@@ -94,13 +109,21 @@
                 echo "<div class='resultadoAjax' id='resultadoAjax_".$row['idPedido']."'></div>";
                
                 echo "<td>" . $row['precioPedido'] . "€</td>";
-                echo "<td><a href='index.php?pag=detallepedido&id=" . $row['idPedido'] . "' title='Detalles de pedido'><img class='iconoPedido' src='imagenesPanel/iconoVerMas.png' alt='Icono pedido'></a></td>";
+                echo "<td><a href='index.php?pag=detallepedido&id=" . $row['idPedido'] . "' title='Detalles de pedido'><img class='iconoPedido' src='imagenesPanel/iconos/iconoVerDetalles.png' alt='Icono pedido'></a></td>";
                 echo "</tr>";
                  }
             ?>
             
         </table>
+
+
+         <!--PIE DE PÁGINA-->
+
+        <div class="footer">
+        <div>
+
     </div>
+
     <script>
         $(document).ready(function() {
     

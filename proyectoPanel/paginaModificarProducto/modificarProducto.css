@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: league system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/*Cabecera*/
+
+.cabecera {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../imagenesPanel/imagenesFondo/fondoCabecera.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*Contenedor del logo*/
+.contLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 190px;
+    height: 160px;
+    border-radius: 100%;
+    margin: 10px auto;
+
+    background-color: rgb(255, 255, 255, 0.85);
+}
+
+
+/*Logo*/
+.cabecera .contLogo .logo {
+    width: 150px;
+    margin: 10px;
+}
+
+.contIcono {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items:end;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.contIcono hr {
+    color:  rgb(41, 73, 117);
+}
+
+/*Icono volver*/
+.contIcono .icoVolver{
+    width: 50px;
+    margin: 5px;
+}
+
+.contIcono .icoCerrarSesion {
+    width: 40px;
+    margin: 0 10px;
+}
+
+
+
+/*Fondo de imagen para todo el cuerpo*/
+
+.cuerpo {
+    background-image: url("../imagenesPanel/imagenesFondo/fondoPagina.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/*-----Menú horizontal----*/
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Título del menú*/
+
+.menu .contTitulo {
+    width: 100%;
+    background-color: rgb(25, 54, 95, 0.85);
+    padding: 12px;
+}
+
+
+/*Iconos del menú*/
+
+.menu .contTitulo h2 {
+        text-align: center;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+}
+
+.menu .contIconosMenu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(255, 255, 255, 0.85);
+    padding: 5px;
+}
+
+.menu .icoCerrarSesion {
+    width: 30px;
+}
+
+.menu .icoCarta {
+    width: 30px;
+}
+
+.menu .icoLista {
+    width: 40px;
+}
+
+
+.menu img {
+    margin: 0 10px;
+}
+
+
+
+/*------Formulario------*/
+
+.formularioModif {
+    display: flex;
+    flex-direction: column;
+
+    padding: 50px;
+    width: 70%;
+    margin: 10px auto;
+    
+    background-color: hsla(32, 58%, 55%, 0.95);
+    border: 1px solid black;
+    border-radius: 1%;
+}
+
+
+.formularioModif input, textarea {
+    margin-bottom: 25px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 90%;
+
+}
+
+.formularioModif textarea {
+    padding: 10px;
+}
+
+.formularioModif label {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+
+/*------Botón formulario------*/
+
+.formularioModif .boton {
+    width: 150px;
+    padding: 5px;
+   /* margin: 0 15%;*/
+    /* margin: auto;*/
+}
+
+
+/*Footer*/
+
+.footer {
+    background-color: rgb(25, 54, 95, 0.85);
+    padding: 20px;
+}

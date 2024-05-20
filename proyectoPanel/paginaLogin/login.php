@@ -30,11 +30,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Master</title>
-    <link rel='stylesheet' href='./paginaLogin/login.css'/>
+    <link rel='stylesheet' href='./paginaLogin/iconos/login.css'/>
 </head>
 <body>
     <div class="cabecera">
-        <img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Logo de la página"/>
+        <img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Logo de la página"/>
     </div>
 
     <div class="cuerpo">

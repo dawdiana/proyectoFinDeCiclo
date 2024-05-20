@@ -11,6 +11,7 @@ $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
 mysqli_set_charset($db, "utf8");
 
 
+
 if(empty($_GET['pag'])){
     
     include ("./paginaLogin/login.php"); 
@@ -30,13 +31,13 @@ if(empty($_GET['pag'])){
     if(compruebaCredenciales($_SESSION['user'], $_SESSION['pass'])){
         include ("./paginaDetallesPedido/detallePedido.php");
     }else{
-        header('Location: index.php'); //lo envio al login
+        header('Location: index.php'); 
     }
 
     
 
 } elseif($_GET['pag']=='modificarcarta'){
-
+    
     if(compruebaCredenciales($_SESSION['user'], $_SESSION['pass'])){
         include ("./paginaModificarCarta/modificarCarta.php");
     }else{
@@ -45,17 +46,17 @@ if(empty($_GET['pag'])){
 
     
 
-} elseif($_GET['pag']=='modficarproducto'){
-    
+} elseif( $_GET['pag']=='modificarproducto'){
+
     if(compruebaCredenciales($_SESSION['user'], $_SESSION['pass'])){
-        require ("./modificarProducto.php");
+        require ("./paginaModificarProducto/modificarProducto.php");
     }else{
         header('Location: index.php'); 
     }
-
+    
     
 
-}
+} 
 
 
 mysqli_close($db);

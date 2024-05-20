@@ -43,19 +43,42 @@ if (isset($_GET['id'])) {
 </head>
 <body>
     <div class="cabecera">
-        <div class="contIcono">
-            <img class="icoCerrarSesion" src="imagenesPanel/iconoCerrarSesion.png" alt="Icono cierre de sesión"/>
-            <a href="index.php?pag=pedidos"><img class="iconoCasa" title="Volver a página principal" src='imagenesPanel/iconoCasa4.png' alt="Icono de casa"/></a>
-        </div>
-        <div class="contLogo">
-        <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/></a>
-        </div>    
+            <div class="contIcono">
+                <a href="index.php?pag=pedidos">
+                    <img class="icoVolver" src="imagenesPanel/iconos/iconoVolver.png" alt="Icono de volver atrás"/>
+                </a>
+            </div>
+            <div class="contLogo">
+                <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Imagen logo"/></a>
+            </div>   
+            
+            <div class="menu">  
+                
+                <!-- TÍTULO PÁGINA  -->
+                <div class="contTitulo">
+                    <h2>Información del pedido</h2>
+                </div>
+
+                <!--MENÚ HORIZONTAL-->
+                <div class="contIconosMenu">
+                <a href="index.php?pag=pedidos" title="Lista de pedidos">
+                            <img class="icoLista" src="imagenesPanel/iconos/iconoVermas.png" alt="Icono lista"/>
+                </a>
+
+                <a href="index.php?pag=modificarcarta"  title="Información Menú">
+                            <img class="icoCarta" src="imagenesPanel/iconos/iconoCarta.png" alt="Icono carta"/>
+                </a>
+
+                <a href="#"  title="Cerrar sesión">
+                            <img class="icoCerrarSesion" src="./imagenesPanel/iconos/iconoCerrarSesion3.png" alt="Icono cierre de sesión"/>
+                </a>
+            </div>
+
+            </div>       
     </div>
 
 
-        <!--<h2>Detalle del Pedido</h2>-->
-        <h2>Información del pedido</h2>
-
+    <div class="cuerpo">
         <table  class="tablaDetallesPedido">
             <tr>
                 <th>Unidades</th>
@@ -85,10 +108,14 @@ if (isset($_GET['id'])) {
            echo "<p>Nombre del cliente: ". $row['nombreCliente'] ."</p>";
            echo "<p>Estado del pedido: ". $row['estadoPedido'] ."</p>";
            echo "<p>Dirección: ". $row['direccion'] ."</p>"; //hacer que la direccion solo se muestre cuando el pedido es a domicilio    
-           echo "<div>"; 
+           echo "</div>"; 
         ?>
 
-        <!--<hr>-->
+        <!--PIE DE PÁGINA-->
+        <div class="footer">
+        </div>
+
+    <div>
 
 
     </body>

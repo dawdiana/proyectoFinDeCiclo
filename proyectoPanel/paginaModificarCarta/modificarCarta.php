@@ -9,9 +9,6 @@
         
     }
 
-   // $query_plato = "SELECT nombre, precio, descripcion, imagen FROM plato WHERE tipo='$tipo'";
-    //$result_plato = mysqli_query($db, $query_platos);
-
 ?>
 
 
@@ -26,73 +23,100 @@
 </head>
 <body>
 <div class="cabecera">
-        <div class="contIcono">
-            <img class="icoCerrarSesion" src="imagenesPanel/iconoCerrarSesion.png" alt="Icono cierre de sesión"/>
-            <a href="index.php?pag=pedidos"><img class="iconoCasa" title="Volver a página principal" src='imagenesPanel/iconoCasa4.png' alt="Icono de casa"/></a>
-        </div>
-        <div class="contLogo">
-        <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/logoOrderMaster.png" alt="Imagen logo"/></a>
-        </div>    
+            <div class="contIcono">
+                <a href="index.php?pag=pedidos">
+                    <img class="icoVolver" src="imagenesPanel/iconos/iconoVolver.png" alt="Icono de volver atrás"/>
+                </a>
+            </div>
+            <div class="contLogo">
+                <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Imagen logo"/></a>
+            </div>   
+            
+            <div class="menu">  
+                
+                <!-- TÍTULO PÁGINA  -->
+                <div class="contTitulo">
+                    <h2>Información menú</h2>
+                </div>
+
+                <!--MENÚ HORIZONTAL-->
+                <div class="contIconosMenu">
+                    <a href="index.php?pag=pedidos" title="Lista de pedidos">
+                                <img class="icoLista" src="imagenesPanel/iconos/iconoVermas.png" alt="Icono lista"/>
+                    </a>
+
+                    <a href="#" class="visitado">
+                                <img class="icoCarta" src="imagenesPanel/iconos/iconoCarta.png" alt="Icono carta"/>
+                    </a>
+
+                    <a href="#"  title="Cerrar sesión">
+                            <img class="icoCerrarSesion" src="./imagenesPanel/iconos/iconoCerrarSesion3.png" alt="Icono cierre de sesión"/>
+                    </a>
+                </div>
+
+            </div>       
     </div>
-    
-    <h2>Modificar Carta</h2>
 
     <!-- hacer tabla con informacion de la carta, ¿Categorías? ¿Con orden de prioridad?-->
     
-    <div class="contenedorCategorias">
-
-    <?php
-
-        while($tipo_row = mysqli_fetch_array($result_tipo)) {
-            $tipo = $tipo_row['tipo'];
-
-    ?>
+    <div class="cuerpo">
         
-        <hr>
-
-        <h3>Categoría: <?php echo $tipo; ?></h3>
-
-        <table class="categoria"> 
-            <tr>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Descripción</th>
-                    <th>Imagen</th>
-            </tr>
+        <div class="contenedorCategorias">
 
         <?php
 
-            $query_plato = "SELECT nombre, precio, descripcion, imagen FROM plato WHERE tipo='$tipo'";
-            $result_plato = mysqli_query($db, $query_plato);
-            if (!$result_plato) {
-                die("Error en la consulta de platos: " . mysqli_error($db));
-            }
+            while($tipo_row = mysqli_fetch_array($result_tipo)) {
+                $tipo = $tipo_row['tipo'];
 
-            while ($plato = mysqli_fetch_assoc($result_plato)) {
         ?>
-            <tr>
-                <td><?php echo $plato['nombre'];?></td>
-                <td><?php echo $plato['precio'];?>€</td>
-                <td><?php echo $plato['descripcion'];?></td>
-                <td><?php echo $plato['imagen'];?></td>
-                <td><a href='index.php?pag=modficarproducto&id=' title='Modificar producto'><img class='iconoMod' src='imagenesPanel/iconoModificar.png' alt='Icono modificar'></a></td>
-            </tr>
-        
+            
+            <hr>
+
+            <h3>Categoría: <?php echo $tipo; ?></h3>
+
+            <table class="categoria"> 
+                <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Descripción</th>
+                        <th>Imagen</th>
+                </tr>
+
             <?php
-                
+
+                $query_plato = "SELECT idPlato, nombre, precio, descripcion, imagen FROM plato WHERE tipo='$tipo'";
+                $result_plato = mysqli_query($db, $query_plato);
+                if (!$result_plato) {
+                    die("Error en la consulta de platos: " . mysqli_error($db));
                 }
+
+                while ($plato = mysqli_fetch_assoc($result_plato)) {
             ?>
+                <tr>
+                    <td><?php echo $plato['nombre'];?></td>
+                    <td><?php echo $plato['precio'];?>€</td>
+                    <td class="descripcion"><?php echo $plato['descripcion'];?></td>
+                    <td><?php echo $plato['imagen'];?></td>
+                    <td><a href='index.php?pag=modificarproducto&id=<?php echo $plato['idPlato'];?>' title='Modificar producto'><img class='iconoMod' src='imagenesPanel/iconos/iconoModificar.png' alt='Icono modificar'></a></td>
+                </tr>
             
-            
-
-    </table>
-
-
-    <?php
+                <?php
+                    
+                    }
+                ?>
                 
-         }
-     ?>
-    </div>
+                
+
+        </table>
+
+
+        <?php
+                    
+            }
+        ?>
+        </div>
+
+        </div>
 
 </body>
 </html>
