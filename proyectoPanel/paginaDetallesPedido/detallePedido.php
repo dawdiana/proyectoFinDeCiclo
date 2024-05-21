@@ -43,38 +43,46 @@ if (isset($_GET['id'])) {
 </head>
 <body>
     <div class="cabecera">
-            <div class="contIcono">
-                <a href="index.php?pag=pedidos">
+
+        <div class="iconosCab">
+
+            <!--ICONOS ARRIBA-->
+            <div class="contIconoVolver">
+                <a href="index.php?pag=pedidos" title="Volver a la página anterior">
                     <img class="icoVolver" src="imagenesPanel/iconos/iconoVolver.png" alt="Icono de volver atrás"/>
                 </a>
             </div>
-            <div class="contLogo">
-                <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Imagen logo"/></a>
-            </div>   
             
-            <div class="menu">  
-                
-                <!-- TÍTULO PÁGINA  -->
-                <div class="contTitulo">
-                    <h2>Información del pedido</h2>
-                </div>
-
-                <!--MENÚ HORIZONTAL-->
-                <div class="contIconosMenu">
-                <a href="index.php?pag=pedidos" title="Lista de pedidos">
+            <div class="iconosNav">
+                    <div class="contIcono">
+                        <a href="index.php?pag=pedidos" title="Lista de pedidos">
                             <img class="icoLista" src="imagenesPanel/iconos/iconoVermas.png" alt="Icono lista"/>
-                </a>
-
-                <a href="index.php?pag=modificarcarta"  title="Información Menú">
+                        </a>
+                    </div>  
+                    <div class="contIcono">
+                        <a href="index.php?pag=modificarcarta"  title="Información Menú">
                             <img class="icoCarta" src="imagenesPanel/iconos/iconoCarta.png" alt="Icono carta"/>
-                </a>
-
-                <a href="#"  title="Cerrar sesión">
+                        </a>
+                    </div>  
+                    <div class="contIcono">
+                        <a href="index.php?pag=logout"  title="Cerrar sesión">
                             <img class="icoCerrarSesion" src="./imagenesPanel/iconos/iconoCerrarSesion3.png" alt="Icono cierre de sesión"/>
-                </a>
+                        </a>
+                    </div>  
             </div>
+        </div>
 
-            </div>       
+
+        <div class="contLogo">
+            <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Imagen logo"/></a>
+        </div>   
+             
+                
+        <!-- TÍTULO PÁGINA  -->
+        <div class="contTitulo">
+            <h2>Información del pedido</h2>
+        </div>
+        
     </div>
 
 

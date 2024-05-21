@@ -6,7 +6,8 @@
 }
 
 
-/*---------------CABECERA-------------*/
+/*---------------------------CABECERA------------------------------*/
+
 
 .cabecera {
     display: flex;
@@ -16,10 +17,66 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    position:fixed;
+
+    position: fixed;
     top: 0;
-    left: 0;
 }
+
+/*--------------ICONOS DE LA CABECERA-----------*/
+
+.cabecera .iconosCab {
+    display: flex;
+    background-color: rgb(255, 255, 255, 0.85);
+}
+
+/*Icono volver*/
+.contIconoVolver {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+}
+
+.contIconoVolver .icoVolver{
+    width: 40px;
+}
+
+
+.cabecera .iconosNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 95%;
+}
+
+.iconosCab .contIconoVolver , .iconosCab .iconosNav .contIcono {
+    border-radius: 100%;
+}
+
+.iconosCab .iconosNav .icoCerrarSesion {
+    width: 35px;
+}
+
+.iconosCab .iconosNav .icoCarta {
+    width: 35px;
+}
+
+.iconosCab .iconosNav .icoLista {
+    width: 43px;
+    margin: 5px 10px;
+}
+
+.iconosCab .iconosNav img {
+    margin: 0 10px;
+}
+
+
+.contIconoVolver .icoVolver:hover{
+    scale: 1.2;
+}
+
+/*------------LOGO-------------*/
+
 
 /*Contenedor del logo*/
 .contLogo {
@@ -36,81 +93,25 @@
 }
 
 
-/*Logo*/
 .cabecera .contLogo .logo {
     width: 150px;
     margin: 10px;
 }
 
-.contIcono {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items:end;
-    vertical-align: middle;
-    align-items: center;
-}
 
+/*--------------TÍTULO DE LA PÁGINA------------*/
 
-/*Icono volver*/
-.contIcono .icoVolver{
-    width: 50px;
-    margin: 5px;
-}
-
-/*---------------MENÚ CABECERA--------------------*/
-
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*Título del menú*/
-
-.menu .contTitulo {
+.cabecera .contTitulo {
     width: 100%;
     background-color: rgb(25, 54, 95, 0.85);
     padding: 12px;
 }
 
-
-/*Iconos del menú*/
-
-.menu .contTitulo h2 {
-        text-align: center;
-        color: rgb(255, 255, 255);
-        text-transform: uppercase;
+.cabecera .contTitulo h2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
 }
-
-.menu .contIconosMenu {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: rgb(255, 255, 255, 0.85);
-    padding: 6px;
-}
-
-.menu .icoCerrarSesion {
-    width: 30px;
-}
-
-.menu .icoCarta {
-    width: 30px;
-}
-
-.menu .icoLista {
-    width: 40px;
-}
-
-.menu img {
-    margin: 0 10px;
-}
-
-.visitado {
-    filter: invert(100%);
-}
-
 /*--------------------CUERPO PÁGINA-------------------*/
 
 

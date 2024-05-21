@@ -56,7 +56,15 @@ if(empty($_GET['pag'])){
     
     
 
-} 
+} elseif( $_GET['pag']=='logout'){
+
+    if(compruebaCredenciales($_SESSION['user'], $_SESSION['pass'])){
+        require ("logout.php");
+    }else{
+        header('Location: index.php'); 
+    }
+
+} /** ??????? */
 
 
 mysqli_close($db);

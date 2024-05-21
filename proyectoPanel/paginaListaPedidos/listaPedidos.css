@@ -5,7 +5,8 @@
     font-family: league system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/*---------------CABECERA-------------*/
+/*---------------------------CABECERA------------------------------*/
+
 
 .cabecera {
     display: flex;
@@ -15,10 +16,66 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    position:fixed;
+
+    position: fixed;
     top: 0;
-    left: 0;
 }
+
+/*--------------ICONOS DE LA CABECERA-----------*/
+
+.cabecera .iconosCab {
+    display: flex;
+    background-color: rgb(255, 255, 255, 0.85);
+}
+
+/*Icono volver*/
+.contIconoVolver {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+}
+
+.contIconoVolver .icoVolver{
+    width: 40px;
+}
+
+
+.cabecera .iconosNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 95%;
+}
+
+.iconosCab .contIconoVolver , .iconosCab .iconosNav .contIcono {
+    border-radius: 100%;
+}
+
+.iconosCab .iconosNav .icoCerrarSesion {
+    width: 35px;
+}
+
+.iconosCab .iconosNav .icoCarta {
+    width: 35px;
+}
+
+.iconosCab .iconosNav .icoLista {
+    width: 43px;
+    margin: 5px 10px;
+}
+
+.iconosCab .iconosNav img {
+    margin: 0 10px;
+}
+
+
+.contIconoVolver .icoVolver:hover, .iconosNav img:hover {
+    scale: 1.2;
+}
+
+/*------------LOGO-------------*/
+
 
 /*Contenedor del logo*/
 .contLogo {
@@ -35,79 +92,24 @@
 }
 
 
-/*Logo*/
 .cabecera .contLogo .logo {
     width: 150px;
     margin: 10px;
 }
 
-.contIcono {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items:end;
-    vertical-align: middle;
-    align-items: center;
-}
 
+/*--------------TÍTULO DE LA PÁGINA------------*/
 
-/*Icono volver*/
-.contIcono .icoVolver{
-    width: 50px;
-    margin: 5px;
-}
-
-/*---------------MENÚ CABECERA--------------------*/
-
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*Título del menú*/
-
-.menu .contTitulo {
+.cabecera .contTitulo {
     width: 100%;
     background-color: rgb(25, 54, 95, 0.85);
     padding: 12px;
 }
 
-
-/*Iconos del menú*/
-
-.menu .contTitulo h2 {
-        text-align: center;
-        color: rgb(255, 255, 255);
-        text-transform: uppercase;
-}
-
-.menu .contIconosMenu {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 5px;
-    background-color: rgb(255, 255, 255, 0.85);
-}
-
-.menu .icoCerrarSesion {
-    width: 30px;
-}
-
-.menu .icoCarta {
-    width: 30px;
-}
-
-.menu .icoLista {
-    width: 40px;
-}
-
-.menu img {
-    margin: 0 10px;
-}
-
-.visitado {
-    filter: invert(100%);
+.cabecera .contTitulo h2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
 }
 
 
@@ -117,8 +119,6 @@
 /*Fondo de imagen para todo el cuerpo*/
 
 .cuerpo {
-    background-image: url("../imagenesPanel/imagenesFondo/fondoPaginaLista.jpg");
-    background-image: url("../imagenesPanel/imagenesFondo/fondoListaPedidos2.jpg");
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -129,7 +129,7 @@
     align-items: center;
     justify-content: center;
 
-    margin-top: 220px;
+    margin-top: 300px;
     
 }
 
@@ -144,6 +144,7 @@
     background-color: hsla(32, 33%, 56%, 0.95);
     background-color: hsla(32, 58%, 55%, 0.95);
     background-color: hsla(32, 63%, 66%, 0.95);
+    background-color: hsla(32, 97%, 61%, 0.55);
 
     margin: 70px auto;
     padding: 30px;
@@ -167,10 +168,13 @@
 }
 
 .iconoPedido {
-    width: 30px;
+    width: 35px;
 }
 
+
 .iconoPedido:hover{
+    background-color: rgb(255, 255, 255, 0.55);
+    border-radius: 100%;
     scale: 1.2;
 }
 

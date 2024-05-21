@@ -6,13 +6,24 @@
 }
 
 
+
+/*Contenedor del logo*/
 .cabecera {
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    width: 210px;
+    height: 180px;
+    border-radius: 100%;
+    margin: 10px auto;
+
+    background-color: rgb(255, 255, 255, 0.85);
 }
 
+
 .cabecera .logo {
-    width: 200px;
+    width: 180px;
     margin: 20px;
 }
 
@@ -21,7 +32,11 @@
     justify-content: center;
 }
 
-
+body {
+    background-image: url("../imagenesPanel/imagenesFondo/fondoLogin.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 /*------------------Estilo formulario-----------------*/
 
@@ -31,9 +46,11 @@
     justify-content: center;
     margin: 20px 0;
     width: 50%;
-    background-color: rgb(50, 87, 136);
-    padding: 30px;
+    background-color: rgb(50, 87, 136, 0.85);
+    background-color: rgb(25, 54, 95, 0.95);
 
+    padding: 30px;
+    border-radius: 2%;
 }
 
 .contenedorForm .formulario .etiquetaR{
@@ -61,7 +78,8 @@
 
 .formulario .etiquetaR input {
     font-size: 20px;
-    padding: 5px;
+    padding: 7px;
+    border-radius: 25px;
 }
 
 .formulario .icoLabel {

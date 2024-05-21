@@ -30,7 +30,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Master</title>
-    <link rel='stylesheet' href='./paginaLogin/iconos/login.css'/>
+    <link rel='stylesheet' href='./paginaLogin/login.css'/>
 </head>
 <body>
     <div class="cabecera">
@@ -44,14 +44,14 @@
             <form class="formulario" action="index.php" method="post">
                 <div class="etiquetaR">
                     <div class="icoLabel">
-                        <img class="iconoU" src="imagenesPanel/iconoUsuario2.png" alt="Icono de usuario"/>
+                        <img class="iconoU" src="imagenesPanel/iconos/iconoUsuario2.png" alt="Icono de usuario"/>
                         <label for="usuario">Usuario:</label>
                     </div>
                     <input type="text" id="usuario" name="usuario"/>
                 </div>
                 <div class="etiquetaR">
                     <div class="icoLabel">
-                        <img class="iconoC" src="imagenesPanel/iconoCont.png" alt="Icono de contraseña"/>
+                        <img class="iconoC" src="imagenesPanel/iconos/iconoCont.png" alt="Icono de contraseña"/>
                         <label for="contrasena">Contraseña:</label>
                     </div>
                     <input type="password" id="contrasena" name="contrasena"/>
