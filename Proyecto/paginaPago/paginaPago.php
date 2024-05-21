@@ -131,7 +131,6 @@
          <div class="d2">
              <img class="icoCompra" src="../Imagenes/iconosLogo/iconoCompra.png" alt="Icono de compra"/>
              <p id="cantidadCarrito">0</p> 
-
         </div>
     </div>
    
@@ -243,6 +242,9 @@
                 }    
             ?>
         </div>
+
+            <!--BANNER ANUNCIO ORDERMASTER-->
+            <img id="anuncio" src="../imagenes/anuncio_orderMaster.gif" alt="Anuncio de orderMaster"/>
     </div>
 
       <!--Footer-->
