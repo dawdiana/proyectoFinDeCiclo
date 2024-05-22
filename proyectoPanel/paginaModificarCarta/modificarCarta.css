@@ -104,6 +104,7 @@
 .cabecera .contTitulo {
     width: 100%;
     background-color: rgb(25, 54, 95, 0.85);
+    
     padding: 12px;
 }
 
@@ -143,12 +144,13 @@
 .contenedorCategorias h3 {
     text-align: center;
     text-transform: uppercase;
-    margin: 30px 0;
-
+    margin-top: 60px;
+    margin-bottom: 10px;
 }
 
 .contenedorCategorias .descripcion {
     text-align: justify;
+    width: 320px;
 }
 
 .categoria {
@@ -158,8 +160,14 @@
     height: auto;
     flex-wrap: wrap; 
     vertical-align: middle;
-    margin: 20px auto;
+    margin: auto;
     border: 1px solid #44699c;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(184, 208, 241, 0.85);
+    background-color: rgba(206, 230, 163, 0.85);
+    background-color: rgba(184, 208, 241, 0.85);
+    background-color: hsla(32, 97%, 61%, 0.55);
 
 }
 
@@ -179,6 +187,22 @@
     width: 45px;
 }
 
-.iconoMod:hover{
+.iconoAn, .iconoBor {
+    width: 35px;
+    margin: 10px 0;;
+}
+
+.iconoMod:hover, .iconoAn:hover, .iconoBor:hover {
+    background-color: rgb(255, 255, 255, 0.55);
+    border-radius: 100%;
     scale: 1.2;
+}
+
+
+.footer {
+    background-color: rgb(25, 54, 95, 0.85);
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50PX;
 }

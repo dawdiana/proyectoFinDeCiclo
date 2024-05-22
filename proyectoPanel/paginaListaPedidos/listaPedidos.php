@@ -37,12 +37,7 @@
     <div class="iconosCab">
 
         <!--ICONOS ARRIBA-->
-        <div class="contIconoVolver">
-            <a href="index.php?pag=pedidos" title="Volver a la página anterior">
-                <img class="icoVolver" src="imagenesPanel/iconos/iconoVolver.png" alt="Icono de volver atrás"/>
-            </a>
-        </div>
-        
+ 
         <div class="iconosNav">
                 <div class="contIcono">
                     <a href="index.php?pag=pedidos" title="Lista de pedidos">

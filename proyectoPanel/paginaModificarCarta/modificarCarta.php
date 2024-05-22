@@ -1,5 +1,49 @@
 <?php
 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
+            print_r($_POST);
+            if($_POST['idPlato']>0){
+                
+                //Modificar producto existente
+                $idPlato = $_POST['idPlato'];
+                $nuevoNombrePlato = $_POST['nombre']; 
+                $nuevoPrecio = $_POST['precio'];
+                $nuevaDesc = $_POST['descripcion'];
+                $nuevoTipo = $_POST['tipoPlato'];
+                $nuevaImagen = $_POST['imagen'];
+            
+                $modifPlato = "update plato set nombre='$nuevoNombrePlato', precio='$nuevoPrecio', descripcion='$nuevaDesc', tipo='$nuevoTipo', imagen='$nuevaImagen' where idPlato = '$idPlato'";
+
+            }else{
+
+                //Insertar nuevo producto
+                $nuevoNombrePlato = $_POST['nombre']; 
+                $nuevoPrecio = $_POST['precio'];
+                $nuevaDesc = $_POST['descripcion'];
+                $nuevoTipo = $_POST['tipoPlato'];
+                $nuevaImagen = $_POST['imagen'];
+            
+                $modifPlato = "INSERT INTO plato (idPlato, nombre, precio, descripcion, tipo, imagen)
+                VALUES ('','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','$nuevoTipo','$nuevaImagen')";
+
+            }
+
+            if(mysqli_query($db, $modifPlato)){
+                //Mensaje
+                if($_POST['idPlato']>0){
+                    $mensaje="El producto ha sido modificado con exito";
+                } else {
+                    $mensaje="El producto ha sido creado con exito";
+                }
+
+
+
+            }else{
+                //Mensaje
+                $mensaje="NO se ha podido guardar los cambios en la BD";
+            }
+            
+    }
 
     $query_tipo = "SELECT distinct tipo FROM plato";
     $result_tipo = mysqli_query($db, $query_tipo);
@@ -8,6 +52,8 @@
         die("Error en la consulta: " . mysqli_error($db));
         
     }
+
+
 
 ?>
 
@@ -69,7 +115,13 @@
     <!-- hacer tabla con informacion de la carta, ¿Categorías? ¿Con orden de prioridad?-->
     
     <div class="cuerpo">
-        
+    
+        <?php
+            if(!empty($mensaje)){
+                echo "<div>$mensaje</div>";
+            }
+        ?>
+
         <div class="contenedorCategorias">
 
         <?php
@@ -79,8 +131,6 @@
 
         ?>
             
-            <hr>
-
             <h3>Categoría: <?php echo $tipo; ?></h3>
 
             <table class="categoria"> 
@@ -107,14 +157,14 @@
                     <td class="descripcion"><?php echo $plato['descripcion'];?></td>
                     <td><?php echo $plato['imagen'];?></td>
                     <td><a href='index.php?pag=modificarproducto&id=<?php echo $plato['idPlato'];?>' title='Modificar producto'><img class='iconoMod' src='imagenesPanel/iconos/iconoModificar.png' alt='Icono modificar'></a></td>
+                    <td><a href='index.php?pag=modificarcarta&id=<?php echo $plato['idPlato'];?>' title='Eliminar producto'><img class='iconoBor' src='imagenesPanel/iconos/iconoBorrar.png' alt='Icono eliminar'></a></td>
                 </tr>
-            
+                    
                 <?php
                     
                     }
                 ?>
-                
-                
+                    <td><a href='index.php?pag=modificarproducto' title='Crear producto'><img class='iconoAn' src='imagenesPanel/iconos/iconoAnadir2.png' alt='Icono añadir'></a></td>
 
         </table>
 
@@ -124,8 +174,27 @@
             }
         ?>
         </div>
+                    <!--PIE DE PÁGINA-->
+                    <div class="footer">
+                    <div>
+                        
 
         </div>
 
+        <script>
+        
+        function confirmarEliminar() {
+        // Mostrar ventana emergente de confirmación
+        var confirmar = confirm("¿Estás seguro de que deseas eliminar este plato?");
+
+        // Si el usuario confirma, redirigir a la página de eliminación
+        if (confirmar) {
+            window.location.href = "eliminar_producto.php"; // Cambia esto por la URL correcta de tu página de eliminación
+        } else {
+            // Si el usuario cancela, no hacer nada o puedes mostrar un mensaje
+            console.log("El usuario canceló la eliminación.");
+        }
+        }
+        </script>
 </body>
 </html>

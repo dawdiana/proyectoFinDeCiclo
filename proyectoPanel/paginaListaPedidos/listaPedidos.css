@@ -28,19 +28,6 @@
     background-color: rgb(255, 255, 255, 0.85);
 }
 
-/*Icono volver*/
-.contIconoVolver {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-}
-
-.contIconoVolver .icoVolver{
-    width: 40px;
-}
-
-
 .cabecera .iconosNav {
     display: flex;
     align-items: center;

@@ -1,6 +1,10 @@
 <?php
 
+    $query_tipo = "SELECT distinct tipo FROM plato";
+    $result_tipo = mysqli_query($db, $query_tipo);
 
+
+//si hay un id (en caso de que queramos modificar un producto)
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
@@ -13,8 +17,8 @@ if (isset($_GET['id'])) {
 
     //Guardamos los datos del producto en un array
     $producto = mysqli_fetch_assoc($result);
-   
-}
+
+} 
 
 ?>
 
@@ -23,7 +27,7 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Producto</title>
+    <title><?php echo isset($_GET['id']) ? 'Modificar producto' : 'Crear Producto Nuevo'; ?></title>
     <link rel='stylesheet' href='./paginaModificarProducto/modificarProducto.css'/>
 </head>
 <body>
@@ -33,7 +37,7 @@ if (isset($_GET['id'])) {
 
         <!--ICONOS ARRIBA-->
         <div class="contIconoVolver">
-            <a href="index.php?pag=pedidos" title="Volver a la página anterior">
+            <a href="index.php?pag=modificarcarta" title="Volver a la página anterior">
                 <img class="icoVolver" src="imagenesPanel/iconos/iconoVolver.png" alt="Icono de volver atrás"/>
             </a>
         </div>
@@ -65,7 +69,7 @@ if (isset($_GET['id'])) {
             
     <!-- TÍTULO PÁGINA  -->
     <div class="contTitulo">
-        <h2>Información del menú</h2>
+        <h2><?php echo isset($_GET['id']) ? 'Modificar producto' : 'Crear Producto Nuevo'; ?></h2>
     </div>
 
 </div>
@@ -73,20 +77,39 @@ if (isset($_GET['id'])) {
     <div class="cuerpo">
 
         <!-- FORMULARIO MODIFICAR PRODUCTO -->
-        <form class="formularioModif" action="<?php echo isset($_GET['id']) ? 'funcionesProducto/guardarCambios.php' : 'funcionesProducto/guardarProducto'; ?>" method="post" enctype="multipart/form-data">
+        <form class="formularioModif" action="./index.php?pag=modificarcarta" method="post" enctype="multipart/form-data">
 
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" value="<?php echo $producto['nombre']; ?>" required>
 
             <label for="precio">Precio:</label>
-            <input type="number" id="precio" name="precio" value="<?php echo $producto['precio']; ?>" step="0.01" required>
+            <input type="number" id="precio" name="precio" value="<?php echo $producto['precio']; ?>" step="1" required>
 
 
             <label for="descripcion">Descripción:</label>
             <textarea id="descripcion" name="descripcion" required><?php echo $producto['descripcion']; ?></textarea>
 
+
+            <!--
             <label for="tipo">Tipo:</label>
             <input type="text" id="tipo" name="tipo" value="<?php echo $producto['tipo']; ?>" required>
+            -->
+
+                <!--Hacer desplegable para escoger el tipo-->
+                <label for="tipoPlato">Tipo:</label>
+                <select id="tipoPlato" name="tipoPlato" required>
+
+                    <?php
+                         while($tipo_row = mysqli_fetch_array($result_tipo)) {
+                            $tipo = $tipo_row['tipo'];
+                    ?>
+                        <option value="<?php echo $tipo;?>"><?php echo $tipo; ?></option>
+                    <?php  
+                        }
+                    ?>
+                    </select>
+            </label>
+
 
             <label for="imagen">Imagen:</label>
             
@@ -95,6 +118,8 @@ if (isset($_GET['id'])) {
             <?php endif; ?>
             
             <input type="file" id="imagen" name="imagen">
+
+            <input type="hidden" id="idPlato" name="idPlato" value="<?php echo $producto['idPlato']; ?>">
 
             <button type="submit" class="boton"><?php echo isset($_GET['id']) ? 'Guardar Cambios' : 'Añadir Producto'; ?></button>
         </form> 
