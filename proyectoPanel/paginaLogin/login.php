@@ -30,6 +30,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Master</title>
+    <link rel='stylesheet' href='./paginaLogin/loginMovil.css' media='(max-width: 845px)'/>
     <link rel='stylesheet' href='./paginaLogin/login.css'/>
 </head>
 <body>
@@ -63,7 +64,7 @@
                     <button class="boton" type="submit">Iniciar Sesión</button>
                 </div>
                     
-
+                <!--
                 <hr>
 
                 <div class="dReg">
@@ -72,6 +73,8 @@
 
                 </div>
                 
+                -->
+
             </form>
 
 

@@ -45,6 +45,16 @@
             
     }
 
+    if ($_GET['idBorrar']>0){
+
+        $borrarPlato = "delete from plato where idPlato =".$_GET['idBorrar'];
+        if(mysqli_query($db, $borrarPlato)){
+            $mensaje="El producto ha sido eliminado con exito";
+        }
+
+
+    }
+
     $query_tipo = "SELECT distinct tipo FROM plato";
     $result_tipo = mysqli_query($db, $query_tipo);
 
@@ -64,6 +74,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Carta</title>
+    <link rel='stylesheet' href='./paginaModificarCarta/modificarCartaMovil.css' media='(max-width: 845px)'/>
+
     <link rel='stylesheet' href='./paginaModificarCarta/modificarCarta.css'/>
 
 </head>
@@ -116,11 +128,18 @@
     
     <div class="cuerpo">
     
+
+
+        <!--Mensaje tras añadir, modificar o eliminar productos-->
+
         <?php
             if(!empty($mensaje)){
-                echo "<div>$mensaje</div>";
+                echo "<div class='contMensaje'>$mensaje</div>";
             }
         ?>
+
+
+
 
         <div class="contenedorCategorias">
 
@@ -157,7 +176,8 @@
                     <td class="descripcion"><?php echo $plato['descripcion'];?></td>
                     <td><?php echo $plato['imagen'];?></td>
                     <td><a href='index.php?pag=modificarproducto&id=<?php echo $plato['idPlato'];?>' title='Modificar producto'><img class='iconoMod' src='imagenesPanel/iconos/iconoModificar.png' alt='Icono modificar'></a></td>
-                    <td><a href='index.php?pag=modificarcarta&id=<?php echo $plato['idPlato'];?>' title='Eliminar producto'><img class='iconoBor' src='imagenesPanel/iconos/iconoBorrar.png' alt='Icono eliminar'></a></td>
+                    <td><a href='index.php?pag=modificarcarta&idBorrar=<?php echo $plato['idPlato'];?>' onclick="confirmarBorrado(<?php echo $plato['idPlato'];?>);return false" title='Eliminar producto'><img class='iconoBor' src='imagenesPanel/iconos/iconoBorrar.png' alt='Icono eliminar'></a></td>
+                    <!--Return false es para que se espere a que el usuario de la confirmación antes de eliminar, sino elimina directamente-->
                 </tr>
                     
                 <?php
@@ -183,15 +203,16 @@
 
         <script>
         
-        function confirmarEliminar() {
-        // Mostrar ventana emergente de confirmación
+        function confirmarBorrado(idBorrar) {
+        
+            // Mostrar ventana emergente de confirmación
         var confirmar = confirm("¿Estás seguro de que deseas eliminar este plato?");
 
-        // Si el usuario confirma, redirigir a la página de eliminación
+        // Si el usuario confirma
         if (confirmar) {
-            window.location.href = "eliminar_producto.php"; // Cambia esto por la URL correcta de tu página de eliminación
+            document.location="index.php?pag=modificarcarta&idBorrar="+idBorrar;
         } else {
-            // Si el usuario cancela, no hacer nada o puedes mostrar un mensaje
+            // Si el usuario cancela
             console.log("El usuario canceló la eliminación.");
         }
         }

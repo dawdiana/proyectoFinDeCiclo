@@ -134,6 +134,21 @@
 }
 
 
+
+/*---------Mensaje de confirmación----------*/
+
+
+.contMensaje {
+    margin-top: 120px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: rgb(151, 173, 114);
+    padding: 20px;
+    box-shadow: 4px 4px 4px 2px  rgb(112, 129, 82);
+
+}
+
+
 /*-----------Categorías----------------*/
 
 .contenedorCategorias {

@@ -5,7 +5,7 @@
      pedido.idPedido, 
      CONCAT(cliente.nombre, ' ', cliente.apellido1, ' ', cliente.apellido2) AS nombreCliente,
      pedido.precioPedido, pedido.estadoPedido, pedido.tipoEntrega
-    FROM pedido INNER JOIN cliente ON pedido.fk_idCliente = cliente.idCliente";
+    FROM pedido INNER JOIN cliente ON pedido.fk_idCliente = cliente.idCliente order by pedido.fechaPedido desc";
 
 
     $result = mysqli_query($db, $query);
@@ -26,6 +26,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de pedidos</title>
+    <link rel='stylesheet' href='./paginaListaPedidos/listaPedidosMovil.css' media='(max-width: 845px)'/>
+
     <link rel='stylesheet' href='./paginaListaPedidos/listaPedidos.css'/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
@@ -85,7 +87,7 @@
 
             <?php
             while ($row = mysqli_fetch_assoc($result)) { //destacar pedidos no entregados
-                echo "<tr>";
+                echo "<tr class=". $row['estadoPedido'].">";
                 echo "<td>" . $row['idPedido'] . "</td>";
                 echo "<td>" . $row['nombreCliente'] . "</td>";
                 echo "<td>" . $row['tipoEntrega'] . "</td>";
@@ -93,29 +95,51 @@
                
                 echo "<select class='estados' name='nuevoEstado' data-idPedido='".$row['idPedido']."'>";
 
-                if($row['estadoPedido']=='Pendiente'){
-                    echo "<option value='Pendiente' selected>Pendiente</option>";
-                }else{
-                    echo "<option value='Pendiente'>Pendiente</option>";
-                }
-                
-                if($row['estadoPedido']=='En proceso'){
-                    echo "<option value='En proceso' selected>En Proceso</option>";
-                }else{
-                    echo "<option value='En proceso'>En Proceso</option>";
-                }
+                    if ($row['tipoEntrega']==='domicilio') {
+                        if($row['estadoPedido']=='Pendiente'){
+                            echo "<option value='Pendiente' selected>Pendiente</option>";
+                        }else{
+                            echo "<option value='Pendiente'>Pendiente</option>";
+                        }
+                        
+                        if($row['estadoPedido']=='En proceso'){
+                            echo "<option value='En proceso' selected>En Proceso</option>";
+                        }else{
+                            echo "<option value='En proceso'>En Proceso</option>";
+                        }
+        
+                        if($row['estadoPedido']=='Enviado'){
+                            echo "<option value='Enviado' selected display='hired'>Enviado</option>";
+                        }else{
+                            echo "<option value='Enviado'>Enviado</option>";
+                        }
+                        
+                        if($row['estadoPedido']=='Entregado'){
+                            echo "<option value='Entregado' selected>Entregado</option>";
+                        }else{
+                            echo "<option value='Entregado'>Entregado</option>";
+                        }
+                    } else {
+                        if($row['estadoPedido']=='Pendiente'){
+                            echo "<option value='Pendiente' selected>Pendiente</option>";
+                        }else{
+                            echo "<option value='Pendiente'>Pendiente</option>";
+                        }
+                        
+                        if($row['estadoPedido']=='En proceso'){
+                            echo "<option value='En proceso' selected>En Proceso</option>";
+                        }else{
+                            echo "<option value='En proceso'>En Proceso</option>";
+                        }
+                        
+                        if($row['estadoPedido']=='Entregado'){
+                            echo "<option value='Entregado' selected>Entregado</option>";
+                        }else{
+                            echo "<option value='Entregado'>Entregado</option>";
+                        }    
+                    }
 
-                if($row['estadoPedido']=='Enviado'){
-                    echo "<option value='Enviado' selected>Enviado</option>";
-                }else{
-                    echo "<option value='Enviado'>Enviado</option>";
-                }
-                
-                if($row['estadoPedido']=='Entregado'){
-                    echo "<option value='Entregado' selected>Entregado</option>";
-                }else{
-                    echo "<option value='Entregado'>Entregado</option>";
-                }
+
 
                 echo "</select>";
                 echo "<div class='resultadoAjax' id='resultadoAjax_".$row['idPedido']."'></div>";

@@ -115,7 +115,11 @@ if (isset($_GET['id'])) {
            echo "<p>Precio total = ". $sum ." €</p>"; 
            echo "<p>Nombre del cliente: ". $row['nombreCliente'] ."</p>";
            echo "<p>Estado del pedido: ". $row['estadoPedido'] ."</p>";
-           echo "<p>Dirección: ". $row['direccion'] ."</p>"; //hacer que la direccion solo se muestre cuando el pedido es a domicilio    
+            if(empty($row['direccion'])) { 
+                echo "<p>Dirección: Recogida en el local</p>"; 
+            } else {
+                echo "<p>Dirección:" . $row['direccion'] ."</p>";
+            }
            echo "</div>"; 
         ?>
 

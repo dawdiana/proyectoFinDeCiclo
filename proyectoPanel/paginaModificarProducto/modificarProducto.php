@@ -28,6 +28,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($_GET['id']) ? 'Modificar producto' : 'Crear Producto Nuevo'; ?></title>
+    <link rel='stylesheet' href='./paginaModificarProducto/modificarProductoMovil.css' media='(max-width: 845px)'/>
     <link rel='stylesheet' href='./paginaModificarProducto/modificarProducto.css'/>
 </head>
 <body>
@@ -88,12 +89,6 @@ if (isset($_GET['id'])) {
 
             <label for="descripcion">Descripción:</label>
             <textarea id="descripcion" name="descripcion" required><?php echo $producto['descripcion']; ?></textarea>
-
-
-            <!--
-            <label for="tipo">Tipo:</label>
-            <input type="text" id="tipo" name="tipo" value="<?php echo $producto['tipo']; ?>" required>
-            -->
 
                 <!--Hacer desplegable para escoger el tipo-->
                 <label for="tipoPlato">Tipo:</label>

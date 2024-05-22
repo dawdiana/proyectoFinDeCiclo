@@ -154,6 +154,14 @@
     font-weight: 600;
 }
 
+
+/*Colores de los estados*/
+
+.tablaPedidos .Entregado {
+    background-color: rgb(151, 173, 114);
+}
+
+
 .iconoPedido {
     width: 35px;
 }
@@ -175,3 +183,33 @@
     margin: 0;
     width: 100%;
 }
+
+/* Estilos específicos para pantallas pequeñas */
+/*@media (max-width: 845px) {
+    
+
+.iconosNac .contIcono {
+    width: 50px;
+}
+
+
+/*Cuerpo*/
+
+/*.cuerpo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cuerpo .tablaPedidos {
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+}
+
+.icoCarta {
+    width: 300px;
+}
+}*/
