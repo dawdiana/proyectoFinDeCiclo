@@ -4,3 +4,6 @@
     margin-bottom: 50px;
 }
 
+.cuerpo .formularioModif textarea {
+    height: 90px;
+}
