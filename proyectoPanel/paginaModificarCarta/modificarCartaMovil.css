@@ -1,23 +1,36 @@
-.cuerpo .conteneddorCategorias .categoria {
+
+
+.cuerpo .contenedorCategorias {
+    margin: 0;
+}
+
+
+.cuerpo .contenedorCategorias .categoria {
     width: 100%;
     margin: 0;
 }
 
-.conteneddorCategorias {
-    margin: 30px 0;
-}
-
 .categoria tr > th {
+    font-size: 16px;
     padding: 5px;
 }
 
 .categoria tr > td {
-    font-size: 10px;
+    font-size: 11px;
+    padding: 5px;
+}
+
+.categoria tbody {
+    width: 100%;
 }
 
 .categoria td img {
-    width: 25px;
+    width: 30px;
     margin: 0;
+}
+
+.categoria tbody tr {
+    width: 100%;
 }
 
 .cuerpo .contMensaje {

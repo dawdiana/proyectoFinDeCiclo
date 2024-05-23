@@ -104,16 +104,7 @@ if (isset($_GET['id'])) {
                     ?>
                     </select>
             </label>
-
-
-            <label for="imagen">Imagen:</label>
             
-            <?php if ($producto['imagen']): ?>
-                <p>Imagen actual: <?php echo $producto['imagen']; ?></p>
-            <?php endif; ?>
-            
-            <input type="file" id="imagen" name="imagen">
-
             <input type="hidden" id="idPlato" name="idPlato" value="<?php echo $producto['idPlato']; ?>">
 
             <button type="submit" class="boton"><?php echo isset($_GET['id']) ? 'Guardar Cambios' : 'Añadir Producto'; ?></button>

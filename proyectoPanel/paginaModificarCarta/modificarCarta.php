@@ -9,9 +9,7 @@
                 $nuevoNombrePlato = $_POST['nombre']; 
                 $nuevoPrecio = $_POST['precio'];
                 $nuevaDesc = $_POST['descripcion'];
-                $nuevoTipo = $_POST['tipoPlato'];
-                $nuevaImagen = $_POST['imagen'];
-            
+                $nuevoTipo = $_POST['tipoPlato'];            
                 $modifPlato = "update plato set nombre='$nuevoNombrePlato', precio='$nuevoPrecio', descripcion='$nuevaDesc', tipo='$nuevoTipo', imagen='$nuevaImagen' where idPlato = '$idPlato'";
 
             }else{
@@ -21,7 +19,6 @@
                 $nuevoPrecio = $_POST['precio'];
                 $nuevaDesc = $_POST['descripcion'];
                 $nuevoTipo = $_POST['tipoPlato'];
-                $nuevaImagen = $_POST['imagen'];
             
                 $modifPlato = "INSERT INTO plato (idPlato, nombre, precio, descripcion, tipo, imagen)
                 VALUES ('','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','$nuevoTipo','$nuevaImagen')";
@@ -157,7 +154,6 @@
                         <th>Nombre</th>
                         <th>Precio</th>
                         <th>Descripción</th>
-                        <th>Imagen</th>
                 </tr>
 
             <?php
@@ -174,7 +170,6 @@
                     <td><?php echo $plato['nombre'];?></td>
                     <td><?php echo $plato['precio'];?>€</td>
                     <td class="descripcion"><?php echo $plato['descripcion'];?></td>
-                    <td><?php echo $plato['imagen'];?></td>
                     <td><a href='index.php?pag=modificarproducto&id=<?php echo $plato['idPlato'];?>' title='Modificar producto'><img class='iconoMod' src='imagenesPanel/iconos/iconoModificar.png' alt='Icono modificar'></a></td>
                     <td><a href='index.php?pag=modificarcarta&idBorrar=<?php echo $plato['idPlato'];?>' onclick="confirmarBorrado(<?php echo $plato['idPlato'];?>);return false" title='Eliminar producto'><img class='iconoBor' src='imagenesPanel/iconos/iconoBorrar.png' alt='Icono eliminar'></a></td>
                     <!--Return false es para que se espere a que el usuario de la confirmación antes de eliminar, sino elimina directamente-->
