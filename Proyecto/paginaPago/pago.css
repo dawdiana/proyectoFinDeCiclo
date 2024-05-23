@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* --------------- Cabecera  ----------------  */
+body {
+    padding-top: 170px;
+}
+
+
+.cabecera {
+    width: 100%;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+    background-color: rgb(0, 128, 0, 0.1);
+    top: 0;
+}
+
+
+/*Contenedor del logo*/
+
+.d1 {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.cabecera .d1 .logo {
+    width: 300px;
+}
+
+
+/*Contenedor del icono de compra*/
+
+.d2 {
+    width: 100px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255, 0.7);
+    border-radius: 100%;
+    margin: 4px;
+    border: 2px solid rgb(248, 151, 67);
+}
+
+.icoCompra {
+    width: 80px;
+    height: 80px;
+    text-align: left;
+    position: relative;
+}
+
+
+
+.d2 #cantidadCarrito {
+    position: absolute;
+    bottom: 27px;
+    right: 24;
+    color:rgb(228, 125, 36);
+    color: rgba(44, 160, 206);
+}
+
+
+/*--------------- Cuerpo -------------*/
+
+
+.cuerpo .tituloPatita {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    margin-top: 140px;
+}
+
+.cuerpo .tituloPatita .icoPatita {
+    position: relative;
+    text-align: center;
+    width: 150px;
+    z-index: 0;
+    opacity: 0.4;
+    rotate: 180deg;
+    top: 20px;
+}
+
+
+.cuerpo .tituloPag { 
+    padding: 50px;
+    position: absolute;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+
+.titCarVacio {
+    text-align: center;
+}
+
+.contenedorPedido {
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.lineaP {
+    display: flex;
+    margin: 10px;
+}
+
+.lineaP p {
+    margin: 0 20px;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+img.icoMenos {
+    width: 37px;
+    height: 30px;
+}
+
+.lineaP button {
+    margin: 20px;
+    border: none;
+    background-color: transparent; 
+    padding: 0; 
+    margin: 0; 
+    cursor: pointer; 
+}
+
+
+hr {
+    margin: 15px 0;
+}
+
+.pTotal {
+    text-align: center;
+}
+
+
+
+/*------------Formulario de pago--------------*/
+
+.contenedorForm {
+    border: 1px solid rgba(44, 160, 206);
+}
+
+h3 {
+    text-align: center;
+    background-color:  rgb(228, 125, 36);
+    padding: 0 50px;
+}
+
+
+.formularioPago {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    width: 100%;
+
+}
+
+.formularioPago div {
+    margin: 10px 0;
+    display: flex;
+    justify-content:space-between;
+    width: 60%;
+}
+
+
+.formularioPago input, .formularioPago select {
+    width: 220px;
+}
+
+.formularioPago select {
+    text-align: center;
+}
+
+
+#direcEnvio {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: end;
+}
+
+#direcEnvio div {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+/* Botón del formulario */
+
+.formularioPago button {
+    padding: 5px;
+    margin: 20px 0;
+    transition: background-color 1s ease;
+}
+
+.formularioPago button:hover{
+    background-color: rgb(0, 128, 0, 0.1);
+}
+
+
+/*----------Anuncio----------*/
+
+#anuncio {
+    max-width: 750px;
+    margin: auto;
+    display: block;
+    margin: 60px auto;
+}
+
+
+/*----------Footer----------*/
+
+
+.footer{
+    background-color: rgb(228, 125, 36);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    padding: 50px;
+    width: 100%;
+    margin-top: 150px;
+}
+
+.footer p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5px 0;
+}
+
+.footer .condiciones {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer a {
+   text-decoration: none;
+   padding: 20px;
+   color: black;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
