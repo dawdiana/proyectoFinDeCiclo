@@ -1,0 +1,31 @@
+.cuerpo .conteneddorCategorias .categoria {
+    width: 100%;
+    margin: 0;
+}
+
+.conteneddorCategorias {
+    margin: 30px 0;
+}
+
+.categoria tr > th {
+    padding: 5px;
+}
+
+.categoria tr > td {
+    font-size: 10px;
+}
+
+.categoria td img {
+    width: 25px;
+    margin: 0;
+}
+
+.cuerpo .contMensaje {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.formularioModif .boton {
+    margin: auto;
+}
+

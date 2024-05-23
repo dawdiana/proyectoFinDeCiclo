@@ -1,0 +1,15 @@
+.cuerpo .formularioModif {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+.cuerpo .contMensaje {
+    margin: 0;
+    text-align: center;
+}
+
+.formularioModif .boton {
+    margin: auto;
+}
+

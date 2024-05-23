@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: league system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/*---------------------------CABECERA------------------------------*/
+
+
+.cabecera {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../imagenesPanel/imagenesFondo/fondoCabecera.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+}
+
+/*--------------ICONOS DE LA CABECERA-----------*/
+
+.cabecera .iconosCab {
+    display: flex;
+    background-color: rgb(255, 255, 255, 0.85);
+}
+
+/*Icono volver*/
+.contIconoVolver {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+}
+
+.contIconoVolver .icoVolver{
+    width: 40px;
+}
+
+
+.cabecera .iconosNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 95%;
+}
+
+.iconosCab .contIconoVolver , .iconosCab .iconosNav .contIcono {
+    border-radius: 100%;
+}
+
+.iconosCab .iconosNav .icoCerrarSesion {
+    width: 35px;
+}
+
+.iconosCab .iconosNav .icoCarta {
+    width: 35px;
+}
+
+.iconosCab .iconosNav .icoLista {
+    width: 43px;
+    margin: 5px 10px;
+}
+.iconosCab .iconosNav img {
+    margin: 0 10px;
+}
+
+
+.contIconoVolver .icoVolver:hover, .iconosNav img:hover {
+    scale: 1.2;
+}
+
+/*------------LOGO-------------*/
+
+
+/*Contenedor del logo*/
+.contLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 190px;
+    height: 160px;
+    border-radius: 100%;
+    margin: 10px auto;
+
+    background-color: rgb(255, 255, 255, 0.85);
+}
+
+
+.cabecera .contLogo .logo {
+    width: 150px;
+    margin: 10px;
+}
+
+
+/*--------------TÍTULO DE LA PÁGINA------------*/
+
+.cabecera .contTitulo {
+    width: 100%;
+    background-color: rgb(25, 54, 95, 0.85);
+    padding: 12px;
+}
+
+.cabecera .contTitulo h2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+
+
+
+/*----------------CUERPO DE LA PÁGINA---------------*/
+
+
+.cuerpo {
+       /* background-color: hsla(32, 58%, 55%, 0.85);*/
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 275px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*-----------Tabla detalles pedido-------------*/
+
+.tablaDetallesPedido {
+
+    padding: 10px;
+    margin-top: 120px;
+   /* background-color: hsla(32, 58%, 55%, 0.85);
+    background-color: hsla(32, 48%, 59%);*/
+    background-color: hsla(32, 63%, 66%, 0.95);
+    background-color: hsla(32, 97%, 61%, 0.55);
+    background-color: whitesmoke;
+    background-color: hsla(32, 97%, 61%, 0.55);
+
+    box-shadow: 4px 4px 4px 2px  rgb(25, 54, 95, 0.85);;
+
+    width: 70%;
+    /*border: 1px solid black;*/
+    border-radius: 10px;
+}
+
+.tablaDetallesPedido th, .tablaDetallesPedido td {
+    text-align: center;
+}
+
+.tablaDetallesPedido th, .tablaDetallesPedido td {
+    padding: 10px;
+    text-align: center;
+}
+
+.tablaDetallesPedido th {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tablaDetallesPedido td {
+    font-weight: 600;
+}
+
+.detalles {
+    margin: 20px 0;
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 3%;
+    margin-bottom: 120px;
+    background-color: hsla(32, 48%, 59%, 0.70);
+    background-color: hsla(32, 97%, 61%, 0.85);
+    background-color: whitesmoke;
+    background-color: hsla(32, 97%, 61%, 0.55);
+    width: 70%;
+    border-radius: 10px;
+}
+
+/*Footer*/
+
+.footer {
+    background-color: rgb(25, 54, 95, 0.85);
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
