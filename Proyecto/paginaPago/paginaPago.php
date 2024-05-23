@@ -118,6 +118,8 @@
     <title>Tu pedido</title>
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link rel='stylesheet' href='pagoMovil.css' media='(max-width: 845px)'/>
     <link rel='stylesheet' href='pago.css'/>
 
 </head>

@@ -34,6 +34,8 @@
     <title>Pups Pantry</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel='stylesheet' href='indexMovil.css' media='(max-width: 845px)'/>
     <link rel='stylesheet' href='index.css'/>
 
 </head>
@@ -76,7 +78,7 @@
                         while ($item = mysqli_fetch_array($resSnack)) {
                         ?>
                             <div class="etiqueta">
-                                <div class="prueba1">              
+                                <div class="cebeceraEtiqueta">              
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $item['precio'];?> €</p>
@@ -108,7 +110,7 @@
                 while ($item = mysqli_fetch_array($resMenu)) {
                 ?>
                     <div class="etiqueta">
-                        <div class="prueba1">              
+                        <div class="cebeceraEtiqueta">              
                             <h3><?php echo $item['nombre'];?></h3>
                             <div class="precio">
                                 <p><?php echo $item['precio'];?> €</p>
@@ -140,7 +142,7 @@
                         while ($item = mysqli_fetch_array($resPostre)) {
                         ?>
                             <div class="etiqueta">
-                                <div class="prueba1">              
+                                <div class="cebeceraEtiqueta">              
                                     <h3><?php echo $item['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $item['precio'];?> €</p>

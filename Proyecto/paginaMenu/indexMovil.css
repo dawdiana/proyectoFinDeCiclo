@@ -1,0 +1,63 @@
+.cuerpo .contenedorEtiquetas {
+    margin: 0;
+}
+
+
+/*-----------ICONO PATITA CON TÍTULO DE PÁGINA-----------*/
+
+.cuerpo .menu .tituloPatita .icoPatita {
+    width: 120px;
+    top: 50px;
+}
+
+.cuerpo .menu .tituloPatita h1 {
+    font-size: 25px;
+}
+
+.cuerpo .menu .tituloPatita {
+    margin-bottom: 100px;
+}
+
+/*---------CONTENIDOS MENÚ---------*/
+
+.cuerpo .etiqueta {
+    align-items: center;
+}
+
+.cuerpo .etiqueta h3 {
+    font-size: 15px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.cuerpo .etiqueta .precio p {
+    font-size: 15px;
+    text-align: center;
+}
+
+.cuerpo .precio {
+    padding: 0;
+}
+
+.cuerpo .etiqueta .imgTexto {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cuerpo .etiqueta .fotoCom {
+    width: 30%;
+}
+
+.cuerpo .etiqueta p {
+    font-size: 15px;
+    padding: 0;
+}
+
+/*------------------FOOTER-----------------*/
+
+.footer .condiciones {
+    display: flex;
+    flex-direction: column;
+}
