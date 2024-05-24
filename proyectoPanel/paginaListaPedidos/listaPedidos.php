@@ -1,6 +1,5 @@
 <?php
 
-
     $query = "SELECT
      pedido.idPedido, 
      CONCAT(cliente.nombre, ' ', cliente.apellido1, ' ', cliente.apellido2) AS nombreCliente,
@@ -25,8 +24,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Lista de pedidos</title>
-    <link rel='stylesheet' href='./paginaListaPedidos/listaPedidosMovil.css' media='(max-width: 845px)'/>
+    
+    <!--ESTILO PANTALLAS PEQUEÑAS (MÓVILES) -->
+    <link rel='stylesheet' href='./paginaListaPedidos/listaPedidosMovil.css' media='(max-width: 576px)'/>
+
+    
+    <!--ESTILO PANTALLAS MEDIANAS (TABLETS )-->
+    <link rel='stylesheet' href='./paginaListaPedidos/listaPedidosTablet.css' media='(min-width: 577px) and (max-width: 992px)'/>
+
 
     <link rel='stylesheet' href='./paginaListaPedidos/listaPedidos.css'/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -34,47 +41,48 @@
 <body>
 
 
-<div class="cabecera">
+<!-- CABECERA -->
 
-    <div class="iconosCab">
+    <div class="cabecera">
 
-        <!--ICONOS ARRIBA-->
- 
+        <!-- CONTENEDOR ICONOS DE NAVEGACIÓN -->
+
         <div class="iconosNav">
-                <div class="contIcono">
-                    <a href="index.php?pag=pedidos" title="Lista de pedidos">
+                    <a href="index.php?pag=pedidos" id="visitado" title="Lista de pedidos">
                         <img class="icoLista" src="imagenesPanel/iconos/iconoVermas.png" alt="Icono lista"/>
                     </a>
-                </div>  
-                <div class="contIcono">
+
                     <a href="index.php?pag=modificarcarta"  title="Información Menú">
                         <img class="icoCarta" src="imagenesPanel/iconos/iconoCarta.png" alt="Icono carta"/>
                     </a>
-                </div>  
-                <div class="contIcono">
+
                     <a href="index.php?pag=logout"  title="Cerrar sesión">
                         <img class="icoCerrarSesion" src="./imagenesPanel/iconos/iconoCerrarSesion3.png" alt="Icono cierre de sesión"/>
                     </a>
-                </div>  
         </div>
-    </div>
 
-
-    <div class="contLogo">
-        <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Imagen logo"/></a>
-    </div>   
         
+        <!-- CONTENEDOR LOGO PÁGINA -->
+
+        <div class="contLogo">
+            <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Imagen logo"/></a>
+        </div>   
             
-    <!-- TÍTULO PÁGINA  -->
-    <div class="contTitulo">
-        <h2>Lista de pedidos</h2>
+        <!-- CONTENEDOR TÍTULO PÁGINA  -->
+
+        <div class="contTitulo">
+            <h2>Lista de pedidos</h2>
+        </div>
+
     </div>
 
-</div>
 
-
+    <!-- CUERPO DE LA PÁGINA -->
 
     <div class="cuerpo">
+
+
+        <!-- TABLA DE PEDIDOS -->
 
         <table  class="tablaPedidos">
             <tr>
@@ -86,15 +94,14 @@
             </tr>
 
             <?php
-            while ($row = mysqli_fetch_assoc($result)) { //destacar pedidos no entregados
-                echo "<tr class=". $row['estadoPedido'].">";
+            while ($row = mysqli_fetch_assoc($result)) { 
+                echo "<tr class=". $row['estadoPedido'].">"; //Clase hecha para destacar pedidos entregados
                 echo "<td>" . $row['idPedido'] . "</td>";
                 echo "<td>" . $row['nombreCliente'] . "</td>";
                 echo "<td>" . $row['tipoEntrega'] . "</td>";
                 echo "<td>";
                
                 echo "<select class='estados' name='nuevoEstado' data-idPedido='".$row['idPedido']."'>";
-
                     if ($row['tipoEntrega']==='domicilio') {
                         if($row['estadoPedido']=='Pendiente'){
                             echo "<option value='Pendiente' selected>Pendiente</option>";
@@ -145,7 +152,7 @@
                 echo "<div class='resultadoAjax' id='resultadoAjax_".$row['idPedido']."'></div>";
                
                 echo "<td>" . $row['precioPedido'] . "€</td>";
-                echo "<td><a href='index.php?pag=detallepedido&id=" . $row['idPedido'] . "' title='Detalles de pedido'><img class='iconoPedido' src='imagenesPanel/iconos/iconoVerDetalles.png' alt='Icono pedido'></a></td>";
+                echo "<td><a href='index.php?pag=detallepedido&id=" . $row['idPedido'] . "' title='Detalles de pedido'><img class='iconoPedido' src='imagenesPanel/iconos/iconoVerDetalles.png' alt='Icono detalles de pedido'></a></td>";
                 echo "</tr>";
                  }
             ?>
@@ -159,6 +166,9 @@
         <div>
 
     </div>
+
+            
+    <!-- SCRIPT PARA HACER LLAMADA AJAX PARA USAR LA FUNCIÓN DE CAMBIAR ESTADO DE PEDIDO -->
 
     <script>
         $(document).ready(function() {

@@ -63,17 +63,6 @@
                 <div class="contBoton">
                     <button class="boton" type="submit">Iniciar Sesión</button>
                 </div>
-                    
-                <!--
-                <hr>
-
-                <div class="dReg">
-                    <p>¿No tienes cuenta?</p>
-                    <a href="#">Formulario de registro</a>
-
-                </div>
-                
-                -->
 
             </form>
 

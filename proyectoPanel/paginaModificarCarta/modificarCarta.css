@@ -24,57 +24,30 @@
 
 /*--------------ICONOS DE LA CABECERA-----------*/
 
-.cabecera .iconosCab {
-    display: flex;
-    background-color: rgb(255, 255, 255, 0.85);
-}
-
-/*Icono volver*/
-.contIconoVolver {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-}
-
-.contIconoVolver .icoVolver{
-    width: 40px;
-}
-
-
 .cabecera .iconosNav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 95%;
+    width: 100%;
+    display: flex;
+    background-color: rgb(255, 255, 255, 0.85);
 }
 
-.iconosCab .contIconoVolver , .iconosCab .iconosNav .contIcono {
-    border-radius: 100%;
+.iconosNav .icoCerrarSesion, .iconosNav .icoCarta { 
+    width: 40px; 
 }
 
-.iconosCab .iconosNav .icoCerrarSesion {
-    width: 35px;
+ .iconosNav .icoLista { 
+    width: 50px; 
 }
 
-.iconosCab .iconosNav .icoCarta {
-    width: 35px;
+ .iconosNav img { 
+    margin: 3px 20px; 
 }
 
-.iconosCab .iconosNav .icoLista {
-    width: 43px;
-    margin: 5px 10px;
+.iconosNav a:not(#visitado):hover { 
+    scale: 1.2; 
 }
-
-.iconosCab .iconosNav img {
-    margin: 0 10px;
-}
-
-
-.contIconoVolver .icoVolver:hover{
-    scale: 1.2;
-}
-
 /*------------LOGO-------------*/
 
 
@@ -119,8 +92,6 @@
 /*Fondo de imagen para todo el cuerpo*/
 
 .cuerpo {
-   
-
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -130,6 +101,7 @@
     align-items: center;
     justify-content: center;
 
+    width: 100%;
     margin-top: 260px;
 }
 
@@ -152,6 +124,7 @@
 /*-----------Categorías----------------*/
 
 .contenedorCategorias {
+    margin: 100%;
     margin: 30px;
 }
 
@@ -169,19 +142,17 @@
 }
 
 .categoria {
-    display: flex;
+   /* display: flex;
     flex-direction: column;
-    width: 90%;
+    justify-content: space-between;
+    flex-wrap: wrap; */
+    width: 100%;
     height: auto;
-    flex-wrap: wrap; 
     vertical-align: middle;
     margin: auto;
     border: 1px solid #44699c;
     border-radius: 10px;
     padding: 20px;
-    background-color: rgba(184, 208, 241, 0.85);
-    background-color: rgba(206, 230, 163, 0.85);
-    background-color: rgba(184, 208, 241, 0.85);
     background-color: hsla(32, 97%, 61%, 0.55);
 
 }

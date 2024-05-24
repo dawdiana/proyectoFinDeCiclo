@@ -1,3 +1,6 @@
+
+/*INDICACIONES GENERALES*/
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,61 +14,49 @@
 .cabecera {
     display: flex;
     flex-direction: column;
-    background-image: url("../imagenesPanel/imagenesFondo/fondoCabecera.jpg");
+    background-image: url("../imagenesPanel/imagenesFondo/fondoCabecera.jpg"); /* Fondo de la cabecera */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
-
     position: fixed;
     top: 0;
 }
 
+
 /*--------------ICONOS DE LA CABECERA-----------*/
 
-.cabecera .iconosCab {
-    display: flex;
-    background-color: rgb(255, 255, 255, 0.85);
-}
-
-.cabecera .iconosNav {
+.cabecera .iconosNav {  /* Estilo del contenedor de iconos */ 
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 95%;
-}
-
-.iconosCab .contIconoVolver , .iconosCab .iconosNav .contIcono {
-    border-radius: 100%;
-}
-
-.iconosCab .iconosNav .icoCerrarSesion {
-    width: 35px;
-}
-
-.iconosCab .iconosNav .icoCarta {
-    width: 35px;
-}
-
-.iconosCab .iconosNav .icoLista {
-    width: 43px;
-    margin: 5px 10px;
-}
-
-.iconosCab .iconosNav img {
-    margin: 0 10px;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.85);
 }
 
 
-.contIconoVolver .icoVolver:hover, .iconosNav img:hover {
-    scale: 1.2;
+ .iconosNav .icoCerrarSesion, .iconosNav .icoCarta { 
+    width: 40px; 
 }
 
-/*------------LOGO-------------*/
+ .iconosNav .icoLista { 
+    width: 50px; 
+}
+
+ .iconosNav img { 
+    margin: 3px 20px; 
+}
+
+.iconosNav a:not(#visitado):hover { 
+    scale: 1.2; 
+}
 
 
-/*Contenedor del logo*/
-.contLogo {
+
+/*---------------LOGO ----------------*/
+
+
+.contLogo { /* Estilo del contenedor del logo */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +70,8 @@
 }
 
 
-.cabecera .contLogo .logo {
+.cabecera .contLogo .logo { /* Estilo del logo */
+
     width: 150px;
     margin: 10px;
 }
@@ -100,44 +92,30 @@
 }
 
 
-/*--------------------CUERPO PÁGINA-------------------*/
-
-
-/*Fondo de imagen para todo el cuerpo*/
+/*----------------CUERPO PÁGINA-----------------*/
 
 .cuerpo {
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     margin-top: 300px;
-    
 }
 
-/*---------Tabla pedidos----------*/
+/*---------TABLA DE PEDIDOS----------*/
 
 
 .tablaPedidos {
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: hsla(32, 33%, 56%, 0.95);
-    background-color: hsla(32, 58%, 55%, 0.95);
-    background-color: hsla(32, 63%, 66%, 0.95);
-    background-color: hsla(32, 97%, 61%, 0.55);
-
-    margin: 70px auto;
-    padding: 30px;
+    /*display: flex;
+    justify-content: center;*/
     width: 85%;
-    border-radius: 1%;
+    margin: 70px auto;
+    padding: 20px;
     margin-top: 50px;
+
+    background-color: hsla(32, 97%, 61%, 0.55);
+    border: 1px solid black;
+    border-radius: 20px;
 }
 
 .tablaPedidos th, .tablaPedidos td {
@@ -161,10 +139,10 @@
     background-color: rgb(151, 173, 114);
 }
 
-
 .iconoPedido {
     width: 35px;
 }
+
 
 
 .iconoPedido:hover{
@@ -184,32 +162,3 @@
     width: 100%;
 }
 
-/* Estilos específicos para pantallas pequeñas */
-/*@media (max-width: 845px) {
-    
-
-.iconosNac .contIcono {
-    width: 50px;
-}
-
-
-/*Cuerpo*/
-
-/*.cuerpo {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.cuerpo .tablaPedidos {
-    width: 100%;
-}
-
-.footer {
-    width: 100%;
-}
-
-.icoCarta {
-    width: 300px;
-}
-}*/
