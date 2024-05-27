@@ -9,9 +9,10 @@
         $query="SELECT * FROM restaurante WHERE usuario='$usuario_posteado' AND contrasena='$contrasena_posteada'";
         $query_result = mysqli_query($db, $query) or die('Query error');
         if (mysqli_num_rows($query_result) > 0) {
-
+            $row = mysqli_fetch_assoc($query_result);
 			$_SESSION['user'] = $usuario_posteado;
             $_SESSION['pass'] = $contrasena_posteada;
+            $_SESSION['idRestaurante'] = $row['idRestaurante'];
 			header('Location: index.php?pag=pedidos');
 
         }else{

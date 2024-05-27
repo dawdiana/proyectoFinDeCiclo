@@ -8,12 +8,11 @@ if (isset($_GET['id'])) {
     //que me interesa coger del pedido? tipo de pedido? me entra que segun sea a domicilio o 
     //o a recogida salgan diferentes opciones de select?
 
-        $query = "SELECT plato.nombre AS nombrePlato, lineapedido.cantidad AS unidadesPlato, 
-            plato.precio as precioPlato, pedido.estadoPedido,  
+        $query = "SELECT lineaPedido.nombrePlato, lineaPedido.cantidad AS unidadesPlato, 
+            lineaPedido.precioUnidad as precioPlato, pedido.estadoPedido,  
             CONCAT(cliente.nombre, ' ', cliente.apellido1, ' ', cliente.apellido2) AS nombreCliente,
             pedido.direccion
             FROM lineapedido
-            INNER JOIN plato ON lineapedido.fk_idPlato = plato.idPlato
             INNER JOIN pedido ON lineapedido.fk_idPedido = pedido.idPedido
             INNER JOIN cliente ON pedido.fk_idCliente = cliente.idCliente
             WHERE lineapedido.fk_idPedido = '$idPedido'";
@@ -118,7 +117,7 @@ if (isset($_GET['id'])) {
             if(empty($row['direccion'])) { 
                 echo "<p>Dirección: Recogida en el local</p>"; 
             } else {
-                echo "<p>Dirección:" . $row['direccion'] ."</p>";
+                echo "<p>Dirección: " . $row['direccion'] ."</p>";
             }
            echo "</div>"; 
         ?>

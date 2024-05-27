@@ -16,13 +16,14 @@
 
                 //Insertar nuevo producto
                 $nuevoNombrePlato = $_POST['nombre']; 
+                $idRestaurante = $_POST['idRestaurante']; 
                 $nuevoPrecio = $_POST['precio'];
                 $nuevaDesc = $_POST['descripcion'];
                 $nuevoTipo = $_POST['tipoPlato'];
             
-                $modifPlato = "INSERT INTO plato (idPlato, nombre, precio, descripcion, tipo, imagen)
-                VALUES ('','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','$nuevoTipo','$nuevaImagen')";
-
+                $modifPlato = "INSERT INTO plato (idPlato, fk_idRestaurante, nombre, precio, descripcion, tipo)
+                VALUES ('', '$idRestaurante','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','$nuevoTipo')";
+                echo $modifPlato;
             }
 
             if(mysqli_query($db, $modifPlato)){

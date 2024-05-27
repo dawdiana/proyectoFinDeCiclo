@@ -151,7 +151,7 @@
                 echo "</select>";
                 echo "<div class='resultadoAjax' id='resultadoAjax_".$row['idPedido']."'></div>";
                
-                echo "<td>" . $row['precioPedido'] . "€</td>";
+                echo "<td>" . $row['precioPedido'] . " €</td>";
                 echo "<td><a href='index.php?pag=detallepedido&id=" . $row['idPedido'] . "' title='Detalles de pedido'><img class='iconoPedido' src='imagenesPanel/iconos/iconoVerDetalles.png' alt='Icono detalles de pedido'></a></td>";
                 echo "</tr>";
                  }

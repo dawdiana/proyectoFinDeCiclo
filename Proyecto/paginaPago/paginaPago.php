@@ -33,9 +33,8 @@
         $query1 = "select idCliente from cliente where correoE ='$correoE'";
         
         $result1 = $db->query($query1); 
-
         if ($result1->num_rows < 1) {
-            $sqlInsertCliente = "INSERT INTO cliente (idCliente, nombre, apellido1, apellido2, correoE) VALUES ('','$nombreCliente', '$apellido1', '$apellido2', '$correoE')";
+            $sqlInsertCliente = "INSERT INTO cliente (idCliente, fk_idRestaurante, nombre, apellido1, apellido2, correoE) VALUES ('', '".$_SESSION['idRestaurante']."', '$nombreCliente', '$apellido1', '$apellido2', '$correoE')";
             if ($db->query($sqlInsertCliente) === TRUE) {
                 $aMensajes[]="Nuevo cliente insertado correctamente.";
                     // OBTENER ID DEL CLIENTE CREADO
@@ -68,7 +67,7 @@
         }
 
 
-        //Guardar datos del envío en tabla pedidos
+        //Guardar datos del pedido en tabla pedidos
         $sqlInsertPedido = "INSERT INTO pedido (fk_idCliente, fechaPedido, precioPedido, tipoEntrega, direccion, codPostal, poblacion)
             VALUES ('$idCliente',now(),'$pTotalPedido','$tipoEntrega','$direccion','$codPostal','$poblacion')";
         
@@ -92,8 +91,8 @@
                 $productoNombre = obtenerNombrePlato($productId, $db);
                 $productoCantidad = $aDatos['cantidad'];
 
-                $sqlInsertLineaPedido = "INSERT INTO LineaPedido (fk_idPedido, fk_idPlato, cantidad, nombrePlato, precioUnidad)
-                VALUES ('$idPedido','$productId','$productoCantidad','$productoNombre','$productoPrecio')";
+                $sqlInsertLineaPedido = "INSERT INTO lineaPedido (fk_idPedido, cantidad, nombrePlato, precioUnidad)
+                VALUES ('$idPedido','$productoCantidad','$productoNombre','$productoPrecio')";
 
                     if ($db->query($sqlInsertLineaPedido) === TRUE) {
                         $aMensajes[]="Nueva/s línea/s de pedido insertada/s.";
@@ -104,6 +103,7 @@
 
         }
 
+        //SE DESTRUYEN LOS DATOS DE LA SESIÓN
         session_destroy();
         unset($_SESSION);
 
@@ -119,6 +119,8 @@
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+    <link rel="icon" href="Imagenes/iconosLogo/icono_fav.ico" type="image/ico">
+
     <link rel='stylesheet' href='pagoMovil.css' media='(max-width: 845px)'/>
     <link rel='stylesheet' href='pago.css'/>
 

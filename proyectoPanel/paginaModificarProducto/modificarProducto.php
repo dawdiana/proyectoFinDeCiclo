@@ -20,6 +20,7 @@ if (isset($_GET['id'])) {
 
 } 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -106,6 +107,7 @@ if (isset($_GET['id'])) {
             </label>
             
             <input type="hidden" id="idPlato" name="idPlato" value="<?php echo $producto['idPlato']; ?>">
+            <input type="hidden" id="idRestaurante" name="idRestaurante" value="<?php echo $_SESSION['idRestaurante']; ?>">
 
             <button type="submit" class="boton"><?php echo isset($_GET['id']) ? 'Guardar Cambios' : 'Añadir Producto'; ?></button>
         </form> 
