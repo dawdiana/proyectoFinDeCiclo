@@ -172,6 +172,7 @@
                         $precio=$precio + $totalLinea;
             
                         echo "<div class='lineaP'>";
+                        echo "<a href='?idSumar=$productId' class='botonSumar' id='$productId'><img class='icoMas' src='../Imagenes/iconosLogo/iconoMas1.png'/></a>";
                         echo "<a href='?idBorrar=$productId' class='botonEliminar' id='$productId'><img class='icoMenos' src='../Imagenes/iconosLogo/iconoMenos.png'/></a>";
                         echo "<p class='cantidad'>x".$aDatos['cantidad']."</p>";
                         echo "<p class='nombreP'>".$productoNombre."</p>";
@@ -296,6 +297,24 @@
                     },
                     error: function(xhr, status, error) {
                         console.error('Error al eliminar producto del carrito:', error);
+                    }
+                });
+            });
+
+            $(".botonSumar").click(function() {
+                console.log("Botón de sumar pulsado");
+                var productId = $(this).attr('id');
+                console.log("ID del producto: " + productId);
+
+                $.ajax({
+                    url: '../funcionesCarrito/sumarCarrito.php',
+                    type: 'POST',
+                    data: { productId: productId },
+                    success: function(response) {
+                        $("#cantidadCarrito").text(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error al sumar producto al carrito:', error);
                     }
                 });
             });
