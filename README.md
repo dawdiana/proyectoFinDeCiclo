@@ -25,6 +25,11 @@
 
 <h1 align="center" id="ap1"> Descripción del Proyecto </h1>
 
+El proyecto se divide en dos partes: 
+  
+  * Una aplicación web que contiene una carta con opción de seleccionar productos y una página para realizar pedidos.
+  * Un programa con el que el administrador del restaurante podrá gestionar la carta y los pedidos de este.
+
 <h1 align="center" id="ap2"> Estado del Proyecto </h1>
 
 <h1 align="center" id="ap3"> Demostración de Funciones y Aplicaciones </h1>
