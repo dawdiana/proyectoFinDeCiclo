@@ -3,16 +3,42 @@
 
 ![portada_proyecto](https://github.com/dawdiana/proyectoFinDeCiclo/assets/145001704/fb264739-9f7d-4a59-ad6e-eecfe49bd117)
 
-<h1 align="center"> Descripción del Proyecto </h1>
 
-<h1 align="center"> Estado del Proyecto </h1>
+<h2>Índice</h2>
 
-<h1 align="center"> Demostración de Funciones y Aplicaciones </h1>
+* ✍️ [Descripción del proyecto](#ap1)  
 
-<h1 align="center"> Tecnologías Utilizadas </h1>
+* 🎚️ [Estado del proyecto](#ap2)
 
-<h1 align="center"> Personas Contribuyentes </h1>
+* 💠 [Demostración de funciones y aplicaciones](#ap3)
 
-<h1 align="center"> Personas Desarrolladoras del Proyecto </h1>
+* 🖥️ [Tecnologías utilizadas](#ap4)
 
-<h1 align="center"> Licencia </h1>
+* 👷‍♀️👷 [Personas Contribuyentes](#ap5)
+
+* 👩‍💻 [Personas Desarrolladoras del Proyecto](#ap6)
+
+* 🌐 [Licencia](#ap7)
+
+* 🤔 [Conclusión](#ap9)   
+
+
+<h1 align="center" id="ap1"> Descripción del Proyecto </h1>
+
+<h1 align="center" id="ap2"> Estado del Proyecto </h1>
+
+<h1 align="center" id="ap3"> Demostración de Funciones y Aplicaciones </h1>
+
+<h1 align="center" id="ap4"> Tecnologías Utilizadas </h1>
+
+* PHP 
+* MySQL
+* JavaScript
+* HTML
+* CSS
+
+<h1 align="center" id="ap5"> Personas Contribuyentes </h1>
+
+<h1 align="center" id="ap6"> Personas Desarrolladoras del Proyecto </h1>
+
+<h1 align="center" id='ap7'> Licencia </h1>
