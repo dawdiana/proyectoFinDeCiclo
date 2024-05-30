@@ -32,12 +32,14 @@ El proyecto se divide en dos partes:
 
 <h1 align="center" id="ap2"> Estado del Proyecto </h1>
 
+![Badget de estado](https://img.shields.io/badge/ESTADO-EN%20DESAROLLO-3B66BC?style)
+
 <h1 align="center" id="ap3"> Demostración de Funciones y Aplicaciones </h1>
 
 <h1 align="center" id="ap4"> Tecnologías Utilizadas </h1>
 
 * PHP 
-* MySQL
+* MySQL 
 * JavaScript
 * HTML
 * CSS
