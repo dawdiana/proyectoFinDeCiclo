@@ -47,6 +47,11 @@ El proyecto se divide en dos partes:
 
 <h1 align="center" id="ap5"> Personas Contribuyentes </h1>
 
+* Diana Shevchenko
+* David Castro Rodríguez
+
 <h1 align="center" id="ap6"> Personas Desarrolladoras del Proyecto </h1>
+
+* Diana Shevchenko
 
 <h1 align="center" id='ap7'> Licencia </h1>
