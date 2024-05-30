@@ -128,7 +128,7 @@
 <body>
     <div class="cabecera">
         <div class="d1">
-            <a href="../paginaMenu/index.php">
+            <a href="../index.php">
              <img class="logo" src="../Imagenes/iconosLogo/logo.png" alt="Logo página"/>
             </a>
         </div> 

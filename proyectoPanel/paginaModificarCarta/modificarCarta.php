@@ -10,7 +10,7 @@
                 $nuevoPrecio = $_POST['precio'];
                 $nuevaDesc = $_POST['descripcion'];
                 $nuevoTipo = $_POST['tipoPlato'];            
-                $modifPlato = "update plato set nombre='$nuevoNombrePlato', precio='$nuevoPrecio', descripcion='$nuevaDesc', tipo='$nuevoTipo', imagen='$nuevaImagen' where idPlato = '$idPlato'";
+                $modifPlato = "update plato set nombre='$nuevoNombrePlato', precio='$nuevoPrecio', descripcion='$nuevaDesc', tipo='$nuevoTipo' where idPlato = '$idPlato'";
 
             }else{
 
@@ -20,9 +20,8 @@
                 $nuevoPrecio = $_POST['precio'];
                 $nuevaDesc = $_POST['descripcion'];
                 $nuevoTipo = $_POST['tipoPlato'];
-            
                 $modifPlato = "INSERT INTO plato (idPlato, fk_idRestaurante, nombre, precio, descripcion, tipo)
-                VALUES ('', '$idRestaurante','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','$nuevoTipo')";
+                VALUES ('', '$idRestaurante','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','','$nuevoTipo')"; //He decidido no añadir la opción de actualizar o añadir imagen nueva por dificultades de xampp
                 echo $modifPlato;
             }
 

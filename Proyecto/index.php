@@ -2,7 +2,7 @@
     header('Content-Type: text/html; charset=utf-8');
     session_start(); // Iniciamos sesión 
 
-    include '../funcionesPedido.php';
+    include './funcionesPedido.php';
 
 
     //Conexión a la BD
@@ -35,18 +35,18 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel='stylesheet' href='indexMovil.css' media='(max-width: 845px)'/>
-    <link rel='stylesheet' href='index.css'/>
+    <link rel='stylesheet' href='./estilosIndex/indexMovil.css' media='(max-width: 845px)'/>
+    <link rel='stylesheet' href='./estilosIndex/index.css'/>
 
 </head>
 <body>
     <div class="cabecera">
        <div class="d1">
-            <img class="logo" src="../Imagenes/iconosLogo/logo.png" alt="Logo página"/>
+            <img class="logo" src="./Imagenes/iconosLogo/logo.png" alt="Logo página"/>
        </div> 
         <div class="d2">
-            <a href="../paginaPago/paginaPago.php"> 
-                <img class="icoCompra" src="../Imagenes/iconosLogo//iconoCompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
+            <a href="./paginaPago/paginaPago.php"> 
+                <img class="icoCompra" src="./Imagenes/iconosLogo//iconoCompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
             </a>
             <p id="cantidadCarrito">0</p>
         </div>
@@ -63,7 +63,7 @@
             
         
             <div class="tituloPatita">
-                <img class="icoPatita" src="../Imagenes/iconosLogo/iconoPatita.png" alt="Icono de patita"/>
+                <img class="icoPatita" src="./Imagenes/iconosLogo/iconoPatita.png" alt="Icono de patita"/>
                 <h1 class="titMenu">Nuestra Carta</h1>
             </div>
             
@@ -75,20 +75,20 @@
                 <div class="contenedorEtiquetas">
 
                     <?php 
-                        while ($item = mysqli_fetch_array($resSnack)) {
+                        while ($plato = mysqli_fetch_array($resSnack)) {
                         ?>
                             <div class="etiqueta">
                                 <div class="cebeceraEtiqueta">              
-                                    <h3><?php echo $item['nombre'];?></h3>
+                                    <h3><?php echo $plato['nombre'];?></h3>
                                     <div class="precio">
-                                        <p><?php echo $item['precio'];?> €</p>
-                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="../Imagenes/iconosLogo//iconoMas1.png"/></button>
-                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="../Imagenes/iconosLogo//iconoMenos.png"/></button>
+                                        <p><?php echo $plato['precio'];?> €</p>
+                                        <button class="botonAñadir" id="<?php echo $plato['idPlato'];?>"><img class="icoMas" src="./Imagenes/iconosLogo//iconoMas1.png"/></button>
+                                        <button class="botonEliminar" id="<?php echo $plato['idPlato'];?>"><img class="icoMenos" src="./Imagenes/iconosLogo//iconoMenos.png"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
-                                    <img class="fotoCom" src="../Imagenes/platos/<?php echo $item['imagen'];?>">
-                                    <p><?php echo $item['descripcion'];?></p>
+                                    <img class="fotoCom" src="./Imagenes/platos/<?php echo $plato['imagen'];?>">
+                                    <p><?php echo $plato['descripcion'];?></p>
                                 </div>
                             </div>
                         <?php
@@ -107,21 +107,20 @@
 
                 <?php 
                 // Recorre el resultado
-                while ($item = mysqli_fetch_array($resMenu)) {
+                while ($plato = mysqli_fetch_array($resMenu)) {
                 ?>
                     <div class="etiqueta">
                         <div class="cebeceraEtiqueta">              
-                            <h3><?php echo $item['nombre'];?></h3>
+                            <h3><?php echo $plato['nombre'];?></h3>
                             <div class="precio">
-                                <p><?php echo $item['precio'];?> €</p>
-                              <!--<img class="icoMas" src="Imagenes/iconoMas1.png"/>-->
-                                <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="../Imagenes/iconosLogo/iconoMas1.png"/></button>
-                                <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="../Imagenes/iconosLogo/iconoMenos.png"/></button>
+                                <p><?php echo $plato['precio'];?> €</p>
+                                <button class="botonAñadir" id="<?php echo $plato['idPlato'];?>"><img class="icoMas" src="./Imagenes/iconosLogo/iconoMas1.png"/></button>
+                                <button class="botonEliminar" id="<?php echo $plato['idPlato'];?>"><img class="icoMenos" src="./Imagenes/iconosLogo/iconoMenos.png"/></button>
                             </div>   
                         </div>
                         <div class="imgTexto">
-                            <img class="fotoCom" src="../Imagenes/platos/<?php echo $item['imagen'];?>">
-                            <p><?php echo $item['descripcion'];?></p>
+                            <img class="fotoCom" src="./Imagenes/platos/<?php echo $plato['imagen'];?>">
+                            <p><?php echo $plato['descripcion'];?></p>
                         </div>
                     </div>
                 <?php
@@ -139,20 +138,20 @@
                 <div class="contenedorEtiquetas">
 
                     <?php 
-                        while ($item = mysqli_fetch_array($resPostre)) {
+                        while ($plato = mysqli_fetch_array($resPostre)) {
                         ?>
                             <div class="etiqueta">
                                 <div class="cebeceraEtiqueta">              
-                                    <h3><?php echo $item['nombre'];?></h3>
+                                    <h3><?php echo $plato['nombre'];?></h3>
                                     <div class="precio">
-                                        <p><?php echo $item['precio'];?> €</p>
-                                        <button class="botonAñadir" id="<?php echo $item['idPlato'];?>"><img class="icoMas" src="../Imagenes/iconosLogo/iconoMas1.png"/></button>
-                                        <button class="botonEliminar" id="<?php echo $item['idPlato'];?>"><img class="icoMenos" src="../Imagenes/iconosLogo/iconoMenos.png"/></button>
+                                        <p><?php echo $plato['precio'];?> €</p>
+                                        <button class="botonAñadir" id="<?php echo $plato['idPlato'];?>"><img class="icoMas" src="./Imagenes/iconosLogo/iconoMas1.png"/></button>
+                                        <button class="botonEliminar" id="<?php echo $plato['idPlato'];?>"><img class="icoMenos" src="./Imagenes/iconosLogo/iconoMenos.png"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
-                                    <img class="fotoCom" src="../Imagenes/platos/<?php echo $item['imagen'];?>">
-                                    <p><?php echo $item['descripcion'];?></p>
+                                    <img class="fotoCom" src="./Imagenes/platos/<?php echo $plato['imagen'];?>">
+                                    <p><?php echo $plato['descripcion'];?></p>
                                 </div>
                             </div>
                         <?php
@@ -184,7 +183,7 @@
             // Cuando la página se carga, hace una solicitud al servidor para obtener el valor actual del carrito
             $(document).ready(function() {
                 $.ajax({
-                    url: '../funcionesCarrito/mostrarValorCarrito.php', // Ruta al script PHP que obtiene el valor del carrito
+                    url: './funcionesCarrito/mostrarValorCarrito.php', // Ruta al script PHP que obtiene el valor del carrito
                     type: 'GET', // Método de solicitud
                     success: function(response) { // Función a ejecutar cuando la solicitud tiene éxito
                         $("#cantidadCarrito").text(response); // Actualizar el contador del carrito en el DOM
@@ -202,7 +201,7 @@
                 console.log("ID del producto: " + productId);
                
                 $.ajax({
-                    url: '../funcionesCarrito/sumarCarrito.php', 
+                    url: './funcionesCarrito/sumarCarrito.php', 
                     type: 'POST', 
                     data: { productId: productId }, // Datos a enviar al servidor (ID del producto)
                     success: function(response) {
@@ -220,7 +219,7 @@
                 console.log("ID del producto: " + productId);
 
                 $.ajax({
-                    url: '../funcionesCarrito/restarCarrito.php',
+                    url: './funcionesCarrito/restarCarrito.php',
                     type: 'POST',
                     data: { productId: productId },
                     success: function(response) {
