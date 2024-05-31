@@ -2,6 +2,7 @@
     error_reporting(E_ERROR | E_PARSE);
     header('Content-Type: text/html; charset=utf-8');
     session_start(); // Iniciamos sesión 
+    $_SESSION['idRestaurante']=1;
 
     //Conexión a la BD
     $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
@@ -35,6 +36,7 @@
         $result1 = $db->query($query1); 
         if ($result1->num_rows < 1) {
             $sqlInsertCliente = "INSERT INTO cliente (idCliente, fk_idRestaurante, nombre, apellido1, apellido2, correoE) VALUES ('', '".$_SESSION['idRestaurante']."', '$nombreCliente', '$apellido1', '$apellido2', '$correoE')";
+
             if ($db->query($sqlInsertCliente) === TRUE) {
                 $aMensajes[]="Nuevo cliente insertado correctamente.";
                     // OBTENER ID DEL CLIENTE CREADO

@@ -141,10 +141,8 @@ img.icoMas {
 }
 
 .icoMas:hover, .icoMenos:hover{
-    /*    scale: 1.3;*/
         border: 1px solid green;
-    
-    }
+}
 
 
 .lineaP button {

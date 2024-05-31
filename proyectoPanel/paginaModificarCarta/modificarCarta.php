@@ -189,16 +189,16 @@
         
         function confirmarBorrado(idBorrar) {
         
-            // Mostrar ventana emergente de confirmación
+        // Mostrar ventana emergente de confirmación
         var confirmar = confirm("¿Estás seguro de que deseas eliminar este plato?");
 
         // Si el usuario confirma
         if (confirmar) {
             document.location="index.php?pag=modificarcarta&idBorrar="+idBorrar;
         } else {
-            // Si el usuario cancela
-            console.log("El usuario canceló la eliminación.");
-        }
+                // Si el usuario cancela
+                console.log("El usuario canceló la eliminación.");
+            }
         }
         </script>
 </body>

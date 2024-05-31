@@ -1,12 +1,9 @@
 <?php
 
 if (isset($_GET['id'])) {
+    
     // Obtener el ID del pedido de la URL
     $idPedido = $_GET['id'];
-
-
-    //que me interesa coger del pedido? tipo de pedido? me entra que segun sea a domicilio o 
-    //o a recogida salgan diferentes opciones de select?
 
         $query = "SELECT lineaPedido.nombrePlato, lineaPedido.cantidad AS unidadesPlato, 
             lineaPedido.precioUnidad as precioPlato, pedido.estadoPedido,  
@@ -91,7 +88,6 @@ if (isset($_GET['id'])) {
                 <th>Unidades</th>
                 <th>Nombre</th>
                 <th>Precio</th>
-               <!-- <th>Estado</th>-->
             </tr>
         <?php
             $sum=0;
@@ -127,8 +123,6 @@ if (isset($_GET['id'])) {
         </div>
 
     <div>
-
-
     </body>
 </html>
 
