@@ -11,7 +11,7 @@
 .cabecera {
     display: flex;
     flex-direction: column;
-    background-image: url("../imagenesPanel/imagenesFondo/fondoCabecera.jpg");
+    background-image: url("../../imagenesPanel/imagenesFondo/fondoCabecera.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

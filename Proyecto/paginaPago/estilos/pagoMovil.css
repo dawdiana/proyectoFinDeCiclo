@@ -1,0 +1,126 @@
+
+/*DISEÑO RESPONSIVE PANTALLAS PEQUEÑAS*/
+
+
+
+/*-----------ICONO PATITA CON TÍTULO DE PÁGINA-----------*/
+
+body .cuerpo .tituloPatita .icoPatita {
+    width: 120px;
+    top: 30px;
+}
+
+.tituloPatita h1 {
+    font-size: 25px;
+}
+
+body .cuerpo .tituloPatita {
+    margin-bottom: 80px;
+}
+
+/*-------MENSAJE CARRITO VACÍO-------*/
+
+.contenedorPedido h2 {
+    font-size: 20px;
+}
+
+
+/*-------CONTENEDOR INFORMACIÓN Y FORMULARIO DE PEDIDO-------*/
+
+
+.cuerpo .contenedorPedido {
+    padding: 0;
+    margin: 0;
+}
+
+/*Líneas de pedido*/
+
+
+.cuerpo .contenedorPedido .lineaP {
+    justify-content:space-between;
+
+}
+
+/*Iconos líneas de pedido*/
+.cuerpo .contenedorPedido .lineaP .icoMas {
+    margin: 0 5px;
+    width: 30px;
+}
+
+.cuerpo .contenedorPedido .lineaP .icoMenos {
+    width: 36px;
+}
+
+
+/*Iconos párrafos líneas de pedido*/
+.cuerpo .contenedorPedido .lineaP p {
+    font-size: 15px;
+    margin: 10px;
+    text-align: center;
+}
+
+/*Nombre plato*/
+.cuerpo .contenedorPedido .lineaP .nombreP {
+    width: 75px;
+}
+
+/*Precio total*/
+.cuerpo .contenedorPedido .pTotal {
+    font-size: 18px;
+}
+
+
+/*Formulario de pago*/
+.cuerpo .contenedorPedido .contenedorForm{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.cuerpo .contenedorPedido h3{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.contenedorPedido .formularioPago div {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedorPedido .formularioPago div label {
+    font-size: 15px;
+    margin: 8px;
+}
+
+.contenedorPedido .formularioPago div input {
+    height: 25px;
+}
+
+.contenedorPedido .formularioPago div select {
+    font-size: 15px;
+}
+
+
+/*------ANUNCIO PÁGINA-----*/
+
+.cuerpo #anuncio {
+    width: 100%;
+    display: none;
+    color: black;
+}
+
+
+/*------------------FOOTER-----------------*/
+
+body .footer {
+    margin-top: 50px;
+}
+
+.footer .condiciones {
+    display: flex;
+    flex-direction: column;
+}

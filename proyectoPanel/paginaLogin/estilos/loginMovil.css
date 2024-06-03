@@ -1,0 +1,15 @@
+
+.cuerpo {
+    height: 100%;
+}
+
+.cuerpo .contenedorForm {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    background-image: none;
+    background-color: black;
+}

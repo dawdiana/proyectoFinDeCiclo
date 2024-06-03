@@ -3,7 +3,6 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
             print_r($_POST);
             if($_POST['idPlato']>0){
-                
                 //Modificar producto existente
                 $idPlato = $_POST['idPlato'];
                 $nuevoNombrePlato = $_POST['nombre']; 
@@ -21,7 +20,7 @@
                 $nuevaDesc = $_POST['descripcion'];
                 $nuevoTipo = $_POST['tipoPlato'];
                 $modifPlato = "INSERT INTO plato (idPlato, fk_idRestaurante, nombre, precio, descripcion, tipo)
-                VALUES ('', '$idRestaurante','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','','$nuevoTipo')"; //He decidido no añadir la opción de actualizar o añadir imagen nueva por dificultades de xampp
+                VALUES ('', '$idRestaurante','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','$nuevoTipo')"; //He decidido no añadir la opción de actualizar o añadir imagen nueva por dificultades de xampp
                 echo $modifPlato;
             }
 
@@ -71,9 +70,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Carta</title>
-    <link rel='stylesheet' href='./paginaModificarCarta/modificarCartaMovil.css' media='(max-width: 845px)'/>
 
-    <link rel='stylesheet' href='./paginaModificarCarta/modificarCarta.css'/>
+    <!--ESTILO PANTALLAS PEQUEÑAS (MÓVILES) -->
+    <link rel='stylesheet' href='./paginaModificarCarta/estilos/modificarCartaMovil.css' media='(max-width: 540px)'/>
+    
+    <!--ESTILO PANTALLAS MEDIANAS (TABLETS) -->
+    <link rel='stylesheet' href='./paginaModificarCarta/estilos/modificarCartaTablet.css' media='(min-width: 541px) and (max-width: 720px)'/>
+    
+    <!--ESTILO PANTALLAS GRANDES (ORDENADORES) -->
+    <link rel='stylesheet' href='./paginaModificarCarta/estilos/modificarCarta.css' />
+
 
 </head>
 <body>

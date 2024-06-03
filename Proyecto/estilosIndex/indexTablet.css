@@ -1,4 +1,4 @@
-/*DISEÑO RESPONSIVE PANTALLAS PEQUEÑAS*/
+/*DISEÑO RESPONSIVE PANTALLAS MEDIANAS*/
 
 
 .cuerpo .contenedorEtiquetas {
@@ -9,12 +9,12 @@
 /*-----------ICONO PATITA CON TÍTULO DE PÁGINA-----------*/
 
 .cuerpo .menu .tituloPatita .icoPatita {
-    width: 120px;
+    width: 140px;
     top: 50px;
 }
 
 .cuerpo .menu .tituloPatita h1 {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .cuerpo .menu .tituloPatita {
@@ -26,6 +26,7 @@
 /*Títulos*/
 .cuerpo h2 {
     padding: 10px;
+    font-size: 25PX;
 }
 
 /*Contenido categorías*/
@@ -37,25 +38,21 @@
 /*Contenido cabeceras*/
 .etiqueta .cebeceraEtiqueta {
     display:flex;
+    padding: 15px;
     justify-content: space-between;
-    padding: 10px;
-    padding-bottom: 0;
+    align-items: center;
 }
 
 .cuerpo .etiqueta h3 {
-    font-size: 17px;
+    font-size: 20px;
     text-align: center;
+    font-weight: 600;
     padding: 0;
     margin: 0;
 }
 
-/*Iconos de añadir y restar de carrito*/
-.cuerpo .etiqueta .icoMas, .cuerpo .etiqueta .icoMenos {
-    margin: 0;
-}
-
 .cuerpo .etiqueta .precio p {
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
     margin: 0 40px;
 }
@@ -66,9 +63,15 @@
 
 /*Contenido foto y texto plato*/
 .cuerpo .etiqueta .imgTexto {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
+}
+
+
+/*Descripción comida*/
+.cuerpo .etiqueta .imgTexto P {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 /*Foto comida*/
@@ -86,5 +89,4 @@
 
 .footer .condiciones {
     display: flex;
-    flex-direction: column;
 }

@@ -35,7 +35,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel='stylesheet' href='./estilosIndex/indexMovil.css' media='(max-width: 845px)'/>
+    <!--ESTILO PANTALLAS PEQUEÑAS (MÓVILES) -->
+    <link rel='stylesheet' href='./estilosIndex/indexMovil.css' media='(max-width: 540px)'/>
+    <!--ESTILO PANTALLAS MEDIANAS (TABLETS) -->
+    <link rel='stylesheet' href='./estilosIndex/indexTablet.css' media='(min-width: 541px) and (max-width: 720px)'/>
+    <!--ESTILO PANTALLAS GRANDES (ORDENADORES) -->
     <link rel='stylesheet' href='./estilosIndex/index.css'/>
 
 </head>
@@ -46,7 +50,7 @@
        </div> 
         <div class="d2">
             <a href="./paginaPago/paginaPago.php"> 
-                <img class="icoCompra" src="./Imagenes/iconosLogo//iconoCompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
+                <img class="icoCompra" src="./Imagenes/iconosLogo/iconoCompra.png"/>  <!--Se actualiza cuando añadimos productos al carrito-->
             </a>
             <p id="cantidadCarrito">0</p>
         </div>
@@ -87,7 +91,13 @@
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
-                                    <img class="fotoCom" src="./Imagenes/platos/<?php echo $plato['imagen'];?>">
+                                    <?php 
+                                        if($plato['imagen']){
+                                            echo '<img class="fotoCom" src="./Imagenes/platos/'.$plato['imagen'].'" alt="Imagen plato"/>';
+                                        } else {
+                                            echo '<img class="fotoCom" src="./Imagenes/platos/noImagen.png" alt="Imagen falta plato"/>';
+                                        }
+                                    ?>
                                     <p><?php echo $plato['descripcion'];?></p>
                                 </div>
                             </div>
@@ -119,7 +129,13 @@
                             </div>   
                         </div>
                         <div class="imgTexto">
-                            <img class="fotoCom" src="./Imagenes/platos/<?php echo $plato['imagen'];?>">
+                            <?php 
+                                if($plato['imagen']){
+                                    echo '<img class="fotoCom" src="./Imagenes/platos/'.$plato['imagen'].'" alt="Imagen plato"/>';
+                                 } else {
+                                    echo '<img class="fotoCom" src="./Imagenes/platos/noImagen.png" alt="Imagen falta plato"/>';
+                                }
+                            ?>
                             <p><?php echo $plato['descripcion'];?></p>
                         </div>
                     </div>
@@ -150,7 +166,13 @@
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
-                                    <img class="fotoCom" src="./Imagenes/platos/<?php echo $plato['imagen'];?>">
+                                    <?php 
+                                        if($plato['imagen']){
+                                            echo '<img class="fotoCom" src="./Imagenes/platos/'.$plato['imagen'].'" alt="Imagen plato"/>';
+                                        } else {
+                                            echo '<img class="fotoCom" src="./Imagenes/platos/noImagen.png" alt="Imagen falta plato"/>';
+                                        }
+                                    ?>
                                     <p><?php echo $plato['descripcion'];?></p>
                                 </div>
                             </div>

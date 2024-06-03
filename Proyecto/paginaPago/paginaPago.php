@@ -123,8 +123,12 @@
     
     <link rel="icon" href="Imagenes/iconosLogo/icono_fav.ico" type="image/ico">
 
-    <link rel='stylesheet' href='pagoMovil.css' media='(max-width: 845px)'/>
-    <link rel='stylesheet' href='pago.css'/>
+    <!--ESTILO PANTALLAS PEQUEÑAS (MÓVILES) -->
+    <link rel='stylesheet' href='./estilos/pagoMovil.css' media='(max-width: 540px)'/>
+    <!--ESTILO PANTALLAS MEDIANAS (TABLETS)-->
+    <link rel='stylesheet' href='./estilos/pagoTablet.css' media='(min-width: 541px) and (max-width: 720px)'/>
+    <!--ESTILO PANTALLAS GRANDES (ORDENADORES) -->
+    <link rel='stylesheet' href='./estilos/pago.css'/>
 
 </head>
 <body>

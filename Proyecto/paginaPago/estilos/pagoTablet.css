@@ -1,0 +1,107 @@
+/*DISEÑO RESPONSIVE PANTALLAS MEDIANAS*/
+
+
+
+/*-----------ICONO PATITA CON TÍTULO DE PÁGINA-----------*/
+
+body .cuerpo .tituloPatita .icoPatita {
+    width: 140px;
+    top: 30px;
+}
+
+.tituloPatita h1 {
+    font-size: 30px;
+}
+
+body .cuerpo .tituloPatita {
+    margin-bottom: 80px;
+}
+
+/*-------MENSAJE CARRITO VACÍO-------*/
+
+.contenedorPedido h2 {
+    font-size: 25px;
+    padding-bottom: 50px;
+}
+
+
+/*-------CONTENEDOR INFORMACIÓN Y FORMULARIO DE PEDIDO-------*/
+
+
+.cuerpo .contenedorPedido {
+    padding: 0;
+    margin: 0;
+}
+
+
+/*Líneas de pedido*/
+
+.cuerpo .contenedorPedido .lineaP {
+    justify-content:space-between;
+
+}
+
+/*Iconos párrafos líneas de pedido*/
+.cuerpo .contenedorPedido .lineaP p {
+    font-size: 17px;
+    margin: 0 15px;
+}
+
+/*Nombre plato*/
+.cuerpo .contenedorPedido .lineaP .nombreP {
+    width: 85px;
+    text-align: center;
+}
+
+/*Precio total*/
+.cuerpo .contenedorPedido .pTotal {
+    font-size: 18px;
+}
+
+
+/*Formulario de pago*/
+.cuerpo .contenedorPedido .contenedorForm{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedorPedido .formularioPago div {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedorPedido .formularioPago div label {
+    font-size: 19px;
+    margin: 8px;
+}
+
+.contenedorPedido .formularioPago div input {
+    height: 25px;
+}
+
+.contenedorPedido .formularioPago div select {
+    font-size: 16px;
+}
+
+
+/*------ANUNCIO PÁGINA-----*/
+
+.cuerpo #anuncio {
+    width: 100%;
+    margin: 0;
+}
+
+
+/*------------------FOOTER-----------------*/
+
+body .footer {
+    margin-top: 0px;
+}
+
+.footer .condiciones {
+    display: flex;
+    justify-content: space-between;
+}

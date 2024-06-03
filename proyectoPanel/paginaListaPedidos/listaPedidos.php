@@ -28,14 +28,12 @@
     <title>Lista de pedidos</title>
     
     <!--ESTILO PANTALLAS PEQUEÑAS (MÓVILES) -->
-    <link rel='stylesheet' href='./paginaListaPedidos/listaPedidosMovil.css' media='(max-width: 576px)'/>
-
-    
+    <link rel='stylesheet' href='./paginaListaPedidos/estilos/listaPedidosMovil.css' media='(max-width: 540px)'/>
     <!--ESTILO PANTALLAS MEDIANAS (TABLETS )-->
-    <link rel='stylesheet' href='./paginaListaPedidos/listaPedidosTablet.css' media='(min-width: 577px) and (max-width: 992px)'/>
+    <link rel='stylesheet' href='./paginaListaPedidos/estilos/listaPedidosTablet.css' media='(min-width: 541px) and (max-width: 720px)'/>
+    <!--ESTILO PANTALLAS GRANDES (ORDENADORES) -->
+    <link rel='stylesheet' href='./paginaListaPedidos/estilos/listaPedidos.css'/>
 
-
-    <link rel='stylesheet' href='./paginaListaPedidos/listaPedidos.css'/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>

@@ -29,8 +29,14 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($_GET['id']) ? 'Modificar producto' : 'Crear Producto Nuevo'; ?></title>
-    <link rel='stylesheet' href='./paginaModificarProducto/modificarProductoMovil.css' media='(max-width: 845px)'/>
-    <link rel='stylesheet' href='./paginaModificarProducto/modificarProducto.css'/>
+
+    <!--ESTILO PANTALLAS PEQUEÑAS (MÓVILES) -->
+    <link rel='stylesheet' href='./paginaModificarProducto/estilos/modificarProductoMovil.css' media='(max-width: 540px)'/>
+    <!--ESTILO PANTALLAS MEDIANAS (TABLETS)-->
+    <link rel='stylesheet' href='./paginaModificarProducto/estilos/modificarProductoTablet.css' media='(min-width: 541px) and (max-width: 720px)'/>
+    <!--ESTILO PANTALLAS GRANDES (ORDENADORES) -->
+    <link rel='stylesheet' href='./paginaModificarProducto/estilos/modificarProducto.css'/>
+    
 </head>
 <body>
 <div class="cabecera">
