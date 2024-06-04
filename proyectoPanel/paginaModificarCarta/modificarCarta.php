@@ -20,7 +20,7 @@
                 $nuevaDesc = $_POST['descripcion'];
                 $nuevoTipo = $_POST['tipoPlato'];
                 $modifPlato = "INSERT INTO plato (idPlato, fk_idRestaurante, nombre, precio, descripcion, tipo)
-                VALUES ('', '$idRestaurante','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','$nuevoTipo')"; //He decidido no añadir la opción de actualizar o añadir imagen nueva por dificultades de xampp
+                VALUES ('', '$idRestaurante','$nuevoNombrePlato','$nuevoPrecio','$nuevaDesc','$nuevoTipo')"; 
                 echo $modifPlato;
             }
 
@@ -54,7 +54,7 @@
     $query_tipo = "SELECT distinct tipo FROM plato";
     $result_tipo = mysqli_query($db, $query_tipo);
 
-    if (!$result_tipo) { //si no hay resultado, avisa de ha habido un error
+    if (!$result_tipo) { //si no hay resultado, avisa de que ha habido un error
         die("Error en la consulta: " . mysqli_error($db));
         
     }

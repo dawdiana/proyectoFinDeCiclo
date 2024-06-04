@@ -18,19 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $salida['mensaje']='Cambio NO realizado';
     }
 
-    if($nuevoEstado!="Pendiente") {
-
-        $para = 'dshevchenko22@fpcoruna.afundacion.org';
-        $titulo = 'El estado de su envío';
-        $mensaje   = 'Le estamos contactando para avisarle de que su envío está'.$nuevoEstado;
-        $cabeceras = 'From: dshevchenko22@fpcoruna.afundacion.org' . "\r\n" .
-                     'Reply-To: dshevchenko22@fpcoruna.afundacion.org' . "\r\n" .
-                     'X-Mailer: PHP/' . phpversion();
-
-        mail($para, $titulo, $mensaje, $cabeceras);
-
-    }
-
     echo json_encode($salida);
 
 }
