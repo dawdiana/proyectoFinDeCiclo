@@ -48,9 +48,6 @@
     width: 95%;
 }
 
-.iconosCab .contIconoVolver , .iconosCab .iconosNav .contIcono {
-    border-radius: 100%;
-}
 
 .iconosCab .iconosNav .icoCerrarSesion {
     width: 35px;

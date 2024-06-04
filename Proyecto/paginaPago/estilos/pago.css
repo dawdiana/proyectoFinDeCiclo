@@ -5,6 +5,9 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+body {
+    padding-top: 350px;
+}
 
 /* --------------- Cabecera  ----------------  */
 body {
@@ -268,15 +271,22 @@ h3 {
     margin-top: 150px;
 }
 
+
+/*Textos del footer*/
+
 .footer p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 5px 0;
 }
 
+/*Contenedor de links*/
 .footer .condiciones {
     width: 100%;
     margin-top: 20px;
 }
+
+
+/*Links del footer*/
 
 .footer a {
    text-decoration: none;

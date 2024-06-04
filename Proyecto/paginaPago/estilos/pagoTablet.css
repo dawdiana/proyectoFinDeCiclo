@@ -41,6 +41,17 @@ body .cuerpo .tituloPatita {
 
 }
 
+
+/*Iconos de sumar y restar*/
+img.icoMenos{
+    width: 50px;
+}
+
+img.icoMas {
+    margin: 0 15px;
+    width: 36px;
+}
+
 /*Iconos párrafos líneas de pedido*/
 .cuerpo .contenedorPedido .lineaP p {
     font-size: 17px;

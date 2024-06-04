@@ -1,20 +1,23 @@
 <?php
     error_reporting(E_ERROR | E_PARSE);
     header('Content-Type: text/html; charset=utf-8');
-    session_start(); // Iniciamos sesión 
-    $_SESSION['idRestaurante']=1;
+    
+    session_start(); // Inicio de sesión 
+    $_SESSION['idRestaurante']=1; //Id del restaurante
 
     //Conexión a la BD
     $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
     mysqli_set_charset($db, "utf8");
 
+    //Se incluye el archivo de funciones de pedido para poder recurrir a sus funciones
     include '../funcionesPedido.php'; 
 
+    //Si el método es un post
     if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
         
         $aMensajes=array();
 
-        //VARIABLES PARA ALMACENAR DATOS DEL FORMULARIO
+        //Variables para almacenar los datos del formulario
         $nombreCliente = $_POST['nombre']; 
         $apellido1 = $_POST['apellido1'];
         $apellido2 = $_POST['apellido2'];
@@ -24,47 +27,41 @@
         $codPostal = $_POST['cp'];
         $poblacion = $_POST['pob'];
             
-        
-        //CONEXIÓN A LA BASE DE DATOS
-        $db = mysqli_connect('localhost', 'root', '', 'proyectopfc') or die('Fail');
-        mysqli_set_charset($db, "utf8");
 
-
-        // COMPROBACIÓN DE SI EL CLIENTE YA EXISTE EN LA BASE DE DATO (SINO, SE GUARDA)
+        // Verificación de si el cliente está en la base de datos o si hay que registrarlo
         $query1 = "select idCliente from cliente where correoE ='$correoE'";
-        
         $result1 = $db->query($query1); 
+        
+        //Si el cliente no está en la base de datos, se crea nuevo registro
         if ($result1->num_rows < 1) {
             $sqlInsertCliente = "INSERT INTO cliente (idCliente, fk_idRestaurante, nombre, apellido1, apellido2, correoE) VALUES ('', '".$_SESSION['idRestaurante']."', '$nombreCliente', '$apellido1', '$apellido2', '$correoE')";
 
             if ($db->query($sqlInsertCliente) === TRUE) {
+                
                 $aMensajes[]="Nuevo cliente insertado correctamente.";
-                    // OBTENER ID DEL CLIENTE CREADO
-                    $idCliente = $db->insert_id; 
+                $idCliente = $db->insert_id; // Obtener el id del nuevo cliente
             
             } else {
-                $aMensajes[]="Error al insertar cliente: " . $db->error;
+                $aMensajes[]="Error al insertar cliente: " . $db->error; //Mensaje de error en caso de que el cliente no se haya podido insertar
             }
         
-        } else {
+        } else { 
+            // En caso de que el cliente no sea nuevo
             $aMensajes[]="El cliente ya está registrado.";
-            // OBTENER ID DEL CLIENTE EXISTENTE
             $row = $result1->fetch_assoc(); 
-            $idCliente = $row['idCliente'];
+            $idCliente = $row['idCliente']; // Obtener id del cliente existente
         }
 
 
-
-        //CÁLCULO DEL PRECIO TOTAL DEL PEDIDO
+        // Cálculo precio total de pedido
         if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0){
             
             $pTotalPedido = 0;
             
             foreach ($_SESSION['cart'] as $productId => $aDatos) {
-                
                 $productoPrecio = obtenerPrecioPlato($productId, $db);
-                $pTotalLinea = $aDatos['cantidad'] * $productoPrecio; //precio de la unidad por la cantidad
-                $pTotalPedido = $pTotalPedido + $pTotalLinea; //precio total del pedido
+                $pTotalLinea = $aDatos['cantidad'] * $productoPrecio; //Precio de la unidad por la cantidad
+                $pTotalPedido = $pTotalPedido + $pTotalLinea; //Precio total del pedido
             }
         }
 
@@ -84,7 +81,7 @@
 
 
 
-        //GUARDAR LINEA/S DE PEDIDO
+        //Guardar línea/s de pedido
         if(isset($_SESSION['cart']) && count($_SESSION['cart']) > 0){
 
             foreach ($_SESSION['cart'] as $productId => $aDatos){
@@ -105,7 +102,7 @@
 
         }
 
-        //SE DESTRUYEN LOS DATOS DE LA SESIÓN
+        //Al final todo el proceso, se destruyen los datos de la sesión
         session_destroy();
         unset($_SESSION);
 
@@ -197,7 +194,7 @@
                     ?>
 
                     <div class="contenedorForm">
-                        <h3>Detalles de la entrega</h3>
+                        <h3 id="titEntrega">Detalles de la entrega</h3>
 
                         <form class="formularioPago" action="paginaPago.php" method="POST">
                                 <div>
@@ -249,7 +246,9 @@
 
                     <?php
                 } else {
-                    echo "<h2 class='titCarVacio'>No hay productos en la bolsa</h2>";
+                    echo "<hr>";
+                    echo "<h2 class='titCarVacio'>No hay productos en la bolsa!</h2>";
+                    echo "<hr>";
                 }    
             ?>
         </div>
@@ -258,8 +257,7 @@
             <img id="anuncio" src="../imagenes/anuncio_orderMaster.gif" alt="Anuncio de orderMaster"/>
     </div>
 
-      <!--Footer-->
-
+      <!--FOOTER-->
       <div class="footer">
             <p>Pup´s Pantry</p>
             <p>600 630 621</p>
@@ -271,8 +269,6 @@
             </div>
 
         </div>
-
-
     
 
     <script>
@@ -325,9 +321,6 @@
                 });
             });
 
-
-            //Mirar
-
             // Verificar el valor inicial de tipoEntrega al cargar la página
             window.addEventListener("load", function() {
                 var tipoEntrega = document.getElementById("tipoEntrega");
@@ -356,11 +349,6 @@
     </script>
 </body>
 </html>
-
-<!--
-        IMPORTANTE .> CERRAR LAS VARIABLES DE SESIÓN 
-
--->
 
 <?php
 

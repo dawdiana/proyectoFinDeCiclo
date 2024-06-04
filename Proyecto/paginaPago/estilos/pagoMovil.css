@@ -2,20 +2,19 @@
 /*DISEÑO RESPONSIVE PANTALLAS PEQUEÑAS*/
 
 
-
 /*-----------ICONO PATITA CON TÍTULO DE PÁGINA-----------*/
 
 body .cuerpo .tituloPatita .icoPatita {
     width: 120px;
-    top: 30px;
+    top: 50px;
 }
 
-.tituloPatita h1 {
-    font-size: 25px;
+body .cuerpo .tituloPatita h1 {
+    font-size: 30px;
 }
 
 body .cuerpo .tituloPatita {
-    margin-bottom: 80px;
+    margin-bottom: 90px;
 }
 
 /*-------MENSAJE CARRITO VACÍO-------*/
@@ -57,6 +56,17 @@ body .cuerpo .tituloPatita {
     font-size: 15px;
     margin: 10px;
     text-align: center;
+}
+
+
+/*Iconos de sumar y restar*/
+img.icoMenos{
+    width: 50px;
+}
+
+img.icoMas {
+    margin: 0 15px;
+    width: 36px;
 }
 
 /*Nombre plato*/

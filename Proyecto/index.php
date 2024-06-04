@@ -74,7 +74,7 @@
             
             <!-- Muestra los platos de tipo snack -->
 
-            <h2>SNACKS</h2>
+            <h2 class="nombreCat">SNACKS</h2>
 
                 <div class="contenedorEtiquetas">
 
@@ -83,11 +83,11 @@
                         ?>
                             <div class="etiqueta">
                                 <div class="cebeceraEtiqueta">              
-                                    <h3><?php echo $plato['nombre'];?></h3>
+                                    <h3 class="tituloPlato"><?php echo $plato['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $plato['precio'];?> €</p>
-                                        <button class="botonAñadir" id="<?php echo $plato['idPlato'];?>"><img class="icoMas" src="./Imagenes/iconosLogo//iconoMas1.png"/></button>
-                                        <button class="botonEliminar" id="<?php echo $plato['idPlato'];?>"><img class="icoMenos" src="./Imagenes/iconosLogo//iconoMenos.png"/></button>
+                                        <button class="botonAñadir" id="<?php echo $plato['idPlato'];?>"><img class="icoMas" src="./Imagenes/iconosLogo//iconoMas1.png" alt="Icono suma"/></button>
+                                        <button class="botonEliminar" id="<?php echo $plato['idPlato'];?>"><img class="icoMenos" src="./Imagenes/iconosLogo//iconoMenos.png" alt="Icono resta"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">
@@ -111,7 +111,7 @@
             <!-- Muestra los platos de tipo menú -->
 
             
-            <h2>GOURMET</h2>
+            <h2 class="nombreCat">GOURMET</h2>
             
             <div class="contenedorEtiquetas">
 
@@ -121,11 +121,11 @@
                 ?>
                     <div class="etiqueta">
                         <div class="cebeceraEtiqueta">              
-                            <h3><?php echo $plato['nombre'];?></h3>
+                            <h3 class="tituloPlato"><?php echo $plato['nombre'];?></h3>
                             <div class="precio">
                                 <p><?php echo $plato['precio'];?> €</p>
-                                <button class="botonAñadir" id="<?php echo $plato['idPlato'];?>"><img class="icoMas" src="./Imagenes/iconosLogo/iconoMas1.png"/></button>
-                                <button class="botonEliminar" id="<?php echo $plato['idPlato'];?>"><img class="icoMenos" src="./Imagenes/iconosLogo/iconoMenos.png"/></button>
+                                <button class="botonAñadir" id="<?php echo $plato['idPlato'];?>"><img class="icoMas" src="./Imagenes/iconosLogo/iconoMas1.png" alt="Icono suma"/></button>
+                                <button class="botonEliminar" id="<?php echo $plato['idPlato'];?>"><img class="icoMenos" src="./Imagenes/iconosLogo/iconoMenos.png" alt="Icono resta"/></button>
                             </div>   
                         </div>
                         <div class="imgTexto">
@@ -149,7 +149,7 @@
               <!-- Muestra los platos de tipo postre -->
 
 
-                <h2>POSTRES</h2>
+                <h2 class="nombreCat">POSTRES</h2>
 
                 <div class="contenedorEtiquetas">
 
@@ -158,11 +158,11 @@
                         ?>
                             <div class="etiqueta">
                                 <div class="cebeceraEtiqueta">              
-                                    <h3><?php echo $plato['nombre'];?></h3>
+                                    <h3 class="tituloPlato"><?php echo $plato['nombre'];?></h3>
                                     <div class="precio">
                                         <p><?php echo $plato['precio'];?> €</p>
-                                        <button class="botonAñadir" id="<?php echo $plato['idPlato'];?>"><img class="icoMas" src="./Imagenes/iconosLogo/iconoMas1.png"/></button>
-                                        <button class="botonEliminar" id="<?php echo $plato['idPlato'];?>"><img class="icoMenos" src="./Imagenes/iconosLogo/iconoMenos.png"/></button>
+                                        <button class="botonAñadir" id="<?php echo $plato['idPlato'];?>"><img class="icoMas" src="./Imagenes/iconosLogo/iconoMas1.png" alt="Icono suma"/></button>
+                                        <button class="botonEliminar" id="<?php echo $plato['idPlato'];?>"><img class="icoMenos" src="./Imagenes/iconosLogo/iconoMenos.png" alt="Icono resta"/></button>
                                     </div>   
                                 </div>
                                 <div class="imgTexto">

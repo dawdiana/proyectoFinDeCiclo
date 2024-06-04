@@ -12,7 +12,7 @@
 .cabecera {
     display: flex;
     flex-direction: column;
-    background-image: url("../../imagenesPanel/imagenesFondo/fondoCabecera.jpg");
+    background-image: url("../imagenesPanel/imagenesFondo/fondoCabecera.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -24,30 +24,56 @@
 
 /*--------------ICONOS DE LA CABECERA-----------*/
 
-.cabecera .iconosNav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
+.cabecera .iconosCab {
     display: flex;
     background-color: rgb(255, 255, 255, 0.85);
 }
 
-.iconosNav .icoCerrarSesion, .iconosNav .icoCarta { 
-    width: 40px; 
+/*Icono volver*/
+.contIconoVolver {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
 }
 
- .iconosNav .icoLista { 
-    width: 50px; 
+.contIconoVolver .icoVolver{
+    width: 40px;
 }
 
- .iconosNav img { 
-    margin: 3px 20px; 
+
+.cabecera .iconosNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 95%;
 }
 
-.iconosNav a:not(#visitado):hover { 
-    scale: 1.2; 
+.iconosCab .contIconoVolver , .iconosCab .iconosNav .contIcono {
+    border-radius: 100%;
 }
+
+.iconosCab .iconosNav .icoCerrarSesion {
+    width: 35px;
+}
+
+.iconosCab .iconosNav .icoCarta {
+    width: 35px;
+}
+
+.iconosCab .iconosNav .icoLista {
+    width: 43px;
+    margin: 5px 10px;
+}
+.iconosCab .iconosNav img {
+    margin: 0 10px;
+}
+
+
+.contIconoVolver .icoVolver:hover, .iconosNav img:hover {
+    scale: 1.2;
+}
+
 /*------------LOGO-------------*/
 
 
@@ -77,7 +103,6 @@
 .cabecera .contTitulo {
     width: 100%;
     background-color: rgb(25, 54, 95, 0.85);
-    
     padding: 12px;
 }
 
@@ -86,6 +111,7 @@
     color: rgb(255, 255, 255);
     text-transform: uppercase;
 }
+
 /*--------------------CUERPO PÁGINA-------------------*/
 
 
@@ -142,10 +168,6 @@
 }
 
 .categoria {
-   /* display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap; */
     width: 100%;
     height: auto;
     vertical-align: middle;
