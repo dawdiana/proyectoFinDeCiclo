@@ -159,6 +159,7 @@
 
 .categoria th {
     text-decoration: underline;
+    text-transform: uppercase;
 }
 
 .categoria th, .categoria td {

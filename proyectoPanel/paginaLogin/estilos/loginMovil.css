@@ -1,15 +1,22 @@
+/*DISEÑO RESPONSIVE PANTALLAS PEQUEÑAS*/
 
 .cuerpo {
     height: 100%;
 }
 
+/* Estilo formulario */
+
 .cuerpo .contenedorForm {
     width: 100%;
     height: 100%;
+    margin-top: 0;
+}
+
+.cuerpo .contenedorForm .formulario .etiquetaR .icoLabel label {
+    font-size: 18px;
 }
 
 
 body {
-    background-image: none;
     background-color: black;
 }

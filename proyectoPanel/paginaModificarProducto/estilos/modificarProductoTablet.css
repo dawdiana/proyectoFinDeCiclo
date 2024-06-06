@@ -6,3 +6,19 @@
 .cuerpo .formularioModif {
     width: 95%;
 }
+
+
+.cuerpo .formularioModif textarea {
+    height: 90px;
+}
+
+.formularioModif {
+    font-size: 14px;
+    padding: 5px;
+}
+
+/* Estilo botón */
+
+.formularioModif .boton {
+    font-size: 14px;
+}

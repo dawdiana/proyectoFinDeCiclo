@@ -1,7 +1,6 @@
 <?php
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-            print_r($_POST);
             if($_POST['idPlato']>0){
                 //Modificar producto existente
                 $idPlato = $_POST['idPlato'];

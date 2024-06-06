@@ -23,3 +23,14 @@ body .cabecera .iconosNav  {
 .cuerpo .formularioModif textarea {
     height: 90px;
 }
+
+.formularioModif {
+    font-size: 13px;
+    padding: 5px;
+}
+
+/* Estilo botón */
+
+.formularioModif .boton {
+    font-size: 13px;
+}

@@ -9,6 +9,13 @@ body .cabecera .iconosNav  {
 }
 
 
+/* Mensaje */
+.cuerpo .contMensaje {
+    margin-top: 70px;
+    text-align: center;
+    font-size: 14px;
+}
+
 /*Estilo títulos categorías*/
 
 .cuerpo h3 {
@@ -27,12 +34,12 @@ body .cabecera .iconosNav  {
 }
 
 .categoria tr > th {
-    font-size: 14px;
+    font-size: 13px;
     padding: 5px;
 }
 
 .categoria tr > td {
-    font-size: 11px;
+    font-size: 13px;
     padding: 5px;
 }
 
@@ -47,10 +54,5 @@ body .cabecera .iconosNav  {
 
 .categoria tbody tr {
     width: 100%;
-}
-
-.cuerpo .contMensaje {
-    margin-top: 50px;
-    text-align: center;
 }
 

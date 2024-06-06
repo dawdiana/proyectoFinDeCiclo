@@ -27,16 +27,11 @@ body .cabecera .iconosNav  {
     width: 98%;
 }
 
-.cuerpo .tablaDetallesPedido {
-    margin-top: 50px;
-}
-
-
 .cuerpo .tablaDetallesPedido tr {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .cuerpo .detalles p {
-    font-size: 12px;
+    font-size: 13px;
 }
 
