@@ -117,7 +117,6 @@
         <div class="cuerpo">
         
 
-
             <!--Mensaje tras añadir, modificar o eliminar productos-->
             <?php
                 if(!empty($mensaje)){

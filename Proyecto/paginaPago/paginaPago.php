@@ -144,7 +144,8 @@
     <div class="mensajes">
         <?php
         foreach ($aMensajes as $key => $valor) {
-            echo "<p>$valor</p>";
+            //echo "<p>$valor</p>";
+            echo "<script>console.log('$valor');</script>";
         }
         ?>
     </div>
