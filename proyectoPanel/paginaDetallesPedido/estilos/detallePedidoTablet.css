@@ -1,0 +1,20 @@
+/*DISEÑO RESPONSIVE PANTALLAS MEDIANAS*/
+
+
+/* Estilo tablas */
+
+.cuerpo .tablaDetallesPedido, .cuerpo .detalles {
+    width: 95%;
+}
+
+.cuerpo .tablaDetallesPedido {
+    margin-top: 50px;
+}
+
+.cuerpo .tablaDetallesPedido tr {
+    font-size: 14px;
+}
+
+.cuerpo .detalles p {
+    font-size: 14px;
+}

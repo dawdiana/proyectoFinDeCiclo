@@ -1,0 +1,42 @@
+/*DISEÑO RESPONSIVE PANTALLAS PEQUEÑAS*/
+
+/* Estilo contenedor iconos cabecera */
+
+body .cabecera .iconosNav  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabecera .contIconoVolver {
+    width: 50px;
+}
+
+/* Estilo cuerpo de la página */
+
+.cuerpo {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Estilo tablas */
+
+.cuerpo .tablaDetallesPedido, .cuerpo .detalles {
+    width: 98%;
+}
+
+.cuerpo .tablaDetallesPedido {
+    margin-top: 50px;
+}
+
+
+.cuerpo .tablaDetallesPedido tr {
+    font-size: 12px;
+}
+
+.cuerpo .detalles p {
+    font-size: 12px;
+}
+

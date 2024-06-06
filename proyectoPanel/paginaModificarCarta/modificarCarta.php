@@ -114,16 +114,12 @@
         </div>
 
     </div>
-
-
-        <!-- hacer tabla con informacion de la carta, ¿Categorías? ¿Con orden de prioridad?-->
         
         <div class="cuerpo">
         
 
 
             <!--Mensaje tras añadir, modificar o eliminar productos-->
-
             <?php
                 if(!empty($mensaje)){
                     echo "<div class='contMensaje'>$mensaje</div>";
@@ -167,20 +163,14 @@
                         <td class="descripcion"><?php echo $plato['descripcion'];?></td>
                         <td><a href='index.php?pag=modificarproducto&id=<?php echo $plato['idPlato'];?>' title='Modificar producto'><img class='iconoMod' src='imagenesPanel/iconos/iconoModificar.png' alt='Icono modificar'></a></td>
                         <td><a href='index.php?pag=modificarcarta&idBorrar=<?php echo $plato['idPlato'];?>' onclick="confirmarBorrado(<?php echo $plato['idPlato'];?>);return false" title='Eliminar producto'><img class='iconoBor' src='imagenesPanel/iconos/iconoBorrar.png' alt='Icono eliminar'></a></td>
-                        <!--Return false es para que se espere a que el usuario de la confirmación antes de eliminar, sino elimina directamente-->
-                    </tr>
-                        
+                    </tr>   
                     <?php
                         
                         }
                     ?>
                         <td><a href='index.php?pag=modificarproducto' title='Crear producto'><img class='iconoAn' src='imagenesPanel/iconos/iconoAnadir2.png' alt='Icono añadir'></a></td>
-
             </table>
-
-
-            <?php
-                        
+            <?php        
                 }
             ?>
             </div>

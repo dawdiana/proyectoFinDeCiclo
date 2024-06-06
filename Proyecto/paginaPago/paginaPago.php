@@ -340,7 +340,6 @@
                     }
                 }
 
-
                 actualizarDireccion();
                 tipoEntrega.addEventListener("change", actualizarDireccion);
 

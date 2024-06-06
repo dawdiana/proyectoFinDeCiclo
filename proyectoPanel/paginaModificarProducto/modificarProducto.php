@@ -41,39 +41,33 @@ if (isset($_GET['id'])) {
 <body>
 <div class="cabecera">
 
-    <div class="iconosCab">
-
-        <!--ICONOS ARRIBA-->
-        <div class="contIconoVolver">
-            <a href="index.php?pag=modificarcarta" title="Volver a la página anterior">
-                <img class="icoVolver" src="imagenesPanel/iconos/iconoVolver.png" alt="Icono de volver atrás"/>
-            </a>
+<!--ICONOS DE NAVEGACIÓN-->
+<div class="iconosCab">
+            <!--ICONOS ARRIBA-->
+            <div class="contIconoVolver">
+                <a href="index.php?pag=modificarcarta" title="Volver a la página anterior">
+                    <img class="icoVolver" src="imagenesPanel/iconos/iconoVolver.png" alt="Icono de volver atrás"/>
+                </a>
+            </div>
+            
+            <div class="iconosNav">
+                        <a href="index.php?pag=pedidos" title="Lista de pedidos">
+                            <img class="icoLista" src="imagenesPanel/iconos/iconoVermas.png" alt="Icono lista"/>
+                        </a>
+                        <a href="index.php?pag=modificarcarta"  title="Información Menú">
+                            <img class="icoCarta" src="imagenesPanel/iconos/iconoCarta.png" alt="Icono carta"/>
+                        </a> 
+                        <a href="index.php?pag=logout"  title="Cerrar sesión">
+                            <img class="icoCerrarSesion" src="./imagenesPanel/iconos/iconoCerrarSesion3.png" alt="Icono cierre de sesión"/>
+                        </a>
+            </div>
         </div>
-        
-        <div class="iconosNav">
-                <div class="contIcono">
-                    <a href="index.php?pag=pedidos" title="Lista de pedidos">
-                        <img class="icoLista" src="imagenesPanel/iconos/iconoVermas.png" alt="Icono lista"/>
-                    </a>
-                </div>  
-                <div class="contIcono">
-                    <a id="visitado" href="index.php?pag=modificarcarta"  title="Información Menú">
-                        <img class="icoCarta" src="imagenesPanel/iconos/iconoCarta.png" alt="Icono carta"/>
-                    </a>
-                </div>  
-                <div class="contIcono">
-                    <a href="index.php?pag=logout"  title="Cerrar sesión">
-                        <img class="icoCerrarSesion" src="./imagenesPanel/iconos/iconoCerrarSesion3.png" alt="Icono cierre de sesión"/>
-                    </a>
-                </div>  
-        </div>
-    </div>
 
 
-    <div class="contLogo">
-        <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Imagen logo"/></a>
-    </div>   
-        
+<div class="contLogo">
+    <a href="index.php?pag=pedidos"><img class="logo" src="imagenesPanel/iconos/logoOrderMaster.png" alt="Imagen logo"/></a>
+</div>   
+    
             
     <!-- TÍTULO PÁGINA  -->
     <div class="contTitulo">

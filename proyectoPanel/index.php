@@ -64,7 +64,7 @@ if(empty($_GET['pag'])){
         header('Location: index.php'); 
     }
 
-} /** ??????? */
+}
 
 
 mysqli_close($db);

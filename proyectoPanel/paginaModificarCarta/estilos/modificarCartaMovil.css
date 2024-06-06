@@ -1,9 +1,25 @@
+/*DISEÑO RESPONSIVE PANTALLAS PEQUEÑAS*/
 
+/* Estilo contenedor iconos cabecera */
+
+body .cabecera .iconosNav  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Estilo títulos categorías*/
+
+.cuerpo h3 {
+    font-size: 16px;
+}
+
+/*Estilo categorías*/
 
 .cuerpo .contenedorCategorias {
     margin: 0;
 }
-
 
 .cuerpo .contenedorCategorias .categoria {
     width: 100%;
@@ -11,7 +27,7 @@
 }
 
 .categoria tr > th {
-    font-size: 16px;
+    font-size: 14px;
     padding: 5px;
 }
 
@@ -36,9 +52,5 @@
 .cuerpo .contMensaje {
     margin-top: 50px;
     text-align: center;
-}
-
-.formularioModif .boton {
-    margin: auto;
 }
 

@@ -6,8 +6,8 @@ error_reporting(E_ERROR | E_PARSE);  //Muestra solo los errores graves del códi
 session_start();  //Inicia la sesión
 
 if(isset($_POST['productId'])) {  //Verifica que se haya recibido la id del producto a través de la solicitud post
+    
     $productId = $_POST['productId'];  //Asigna a una variable el id obtenido
-   
     if(isset($_SESSION['cart'])) {  //Si el carrito está definido en la sesión (no está vacío)
         if((int)$_SESSION['cart'][$productId]['cantidad']>0){  //Y la cantidad del producto a restar es superior a "0"
             $_SESSION['cart'][$productId]['cantidad'] = (int)$_SESSION['cart'][$productId]['cantidad'] - 1; // La cantidad actual es igual a "cantidad -1"
@@ -29,7 +29,7 @@ if(isset($_POST['productId'])) {  //Verifica que se haya recibido la id del prod
         echo $sum; //Muestra esas cantidades
         
         } else {
-            echo "Error: El carrito no está definido en la sesión."; // Si el carrito no está definido en la sesión, devolvemos un mensaje de error
+            echo "0"; // Si el carrito no está definido en la sesión, devolvemos un cero
         }
         
 } else {

@@ -35,13 +35,19 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del pedido</title>
-    <link rel='stylesheet' href='./paginaDetallesPedido/detallePedido.css'/>
+
+    <!--ESTILO PANTALLAS PEQUEÑAS (MÓVILES) -->
+    <link rel='stylesheet' href='./paginaDetallesPedido/estilos/detallePedidoMovil.css' media='(max-width: 540px)'/>
+    <!--ESTILO PANTALLAS MEDIANAS (TABLETS )-->
+    <link rel='stylesheet' href='./paginaDetallesPedido/estilos/detallePedidoTablet.css' media='(min-width: 541px) and (max-width: 720px)'/>
+    <!--ESTILO PANTALLAS GRANDES (ORDENADORES) -->
+    <link rel='stylesheet' href='./paginaDetallesPedido/estilos/detallePedido.css'/>
+
 </head>
 <body>
     <div class="cabecera">
 
         <div class="iconosCab">
-
             <!--ICONOS ARRIBA-->
             <div class="contIconoVolver">
                 <a href="index.php?pag=pedidos" title="Volver a la página anterior">
@@ -50,21 +56,15 @@ if (isset($_GET['id'])) {
             </div>
             
             <div class="iconosNav">
-                    <div class="contIcono">
                         <a href="index.php?pag=pedidos" title="Lista de pedidos">
                             <img class="icoLista" src="imagenesPanel/iconos/iconoVermas.png" alt="Icono lista"/>
                         </a>
-                    </div>  
-                    <div class="contIcono">
                         <a href="index.php?pag=modificarcarta"  title="Información Menú">
                             <img class="icoCarta" src="imagenesPanel/iconos/iconoCarta.png" alt="Icono carta"/>
-                        </a>
-                    </div>  
-                    <div class="contIcono">
+                        </a> 
                         <a href="index.php?pag=logout"  title="Cerrar sesión">
                             <img class="icoCerrarSesion" src="./imagenesPanel/iconos/iconoCerrarSesion3.png" alt="Icono cierre de sesión"/>
                         </a>
-                    </div>  
             </div>
         </div>
 

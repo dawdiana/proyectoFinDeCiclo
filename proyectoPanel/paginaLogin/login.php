@@ -44,7 +44,6 @@
     <div class="cuerpo">
 
         <div class="contenedorForm">
-            
             <form class="formulario" action="index.php" method="post">
                 <div class="etiquetaR">
                     <div class="icoLabel">

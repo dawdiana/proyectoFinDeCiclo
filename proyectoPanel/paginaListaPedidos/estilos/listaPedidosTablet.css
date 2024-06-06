@@ -1,0 +1,21 @@
+body {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+
+.cuerpo .tablaPedidos {
+    width: 95%;
+}
+
+.tablaPedidos tr th {
+    font-size: 13px;
+}
+
+.tablaPedidos tr td {
+    font-size: 13px;
+}
+
+.tablaPedidos tr td select {
+    font-size: 13px;
+}

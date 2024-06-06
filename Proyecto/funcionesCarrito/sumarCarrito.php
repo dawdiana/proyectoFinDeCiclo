@@ -25,6 +25,7 @@ if (isset($_POST['productId'])) {
     echo $sum;
 
 } else {
+    http_response_code(400);
     echo "Error: No se recibió el ID del producto."; // Mensaje de error en caso de que no se haya recibido la id del producto
 }
 ?>

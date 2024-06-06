@@ -12,8 +12,7 @@
     // Verificar si hubo un error en la consulta
     if (!$result) {
         die("Error en la consulta: " . mysqli_error($db));
-        
-}
+    }
 
 
 ?>

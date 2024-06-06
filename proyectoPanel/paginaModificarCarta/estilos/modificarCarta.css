@@ -12,73 +12,50 @@
 .cabecera {
     display: flex;
     flex-direction: column;
-    background-image: url("../imagenesPanel/imagenesFondo/fondoCabecera.jpg");
+    background-image: url("../../imagenesPanel/imagenesFondo/fondoCabecera.jpg"); /* Fondo de la cabecera */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
-
     position: fixed;
     top: 0;
 }
 
+
 /*--------------ICONOS DE LA CABECERA-----------*/
 
-.cabecera .iconosCab {
-    display: flex;
-    background-color: rgb(255, 255, 255, 0.85);
-}
-
-/*Icono volver*/
-.contIconoVolver {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-}
-
-.contIconoVolver .icoVolver{
-    width: 40px;
-}
-
-
-.cabecera .iconosNav {
+/* Estilo del contenedor de iconos */
+.cabecera .iconosNav {   
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 95%;
-}
-
-.iconosCab .contIconoVolver , .iconosCab .iconosNav .contIcono {
-    border-radius: 100%;
-}
-
-.iconosCab .iconosNav .icoCerrarSesion {
-    width: 35px;
-}
-
-.iconosCab .iconosNav .icoCarta {
-    width: 35px;
-}
-
-.iconosCab .iconosNav .icoLista {
-    width: 43px;
-    margin: 5px 10px;
-}
-.iconosCab .iconosNav img {
-    margin: 0 10px;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.85);
 }
 
 
-.contIconoVolver .icoVolver:hover, .iconosNav img:hover {
-    scale: 1.2;
+ .iconosNav .icoCerrarSesion, .iconosNav .icoCarta { 
+    width: 40px; 
 }
 
-/*------------LOGO-------------*/
+ .iconosNav .icoLista { 
+    width: 50px; 
+}
+
+ .iconosNav img { 
+    margin: 3px 20px; 
+}
+
+.iconosNav a:not(#visitado):hover { 
+    scale: 1.2; 
+}
 
 
-/*Contenedor del logo*/
-.contLogo {
+
+/*---------------LOGO ----------------*/
+
+/* Estilo del contenedor del logo */
+.contLogo { 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +69,9 @@
 }
 
 
-.cabecera .contLogo .logo {
+/* Estilo del logo */
+.cabecera .contLogo .logo { 
+
     width: 150px;
     margin: 10px;
 }
@@ -111,6 +90,7 @@
     color: rgb(255, 255, 255);
     text-transform: uppercase;
 }
+
 
 /*--------------------CUERPO PÁGINA-------------------*/
 
@@ -143,7 +123,6 @@
     background-color: rgb(151, 173, 114);
     padding: 20px;
     box-shadow: 4px 4px 4px 2px  rgb(112, 129, 82);
-
 }
 
 
@@ -172,11 +151,10 @@
     height: auto;
     vertical-align: middle;
     margin: auto;
-    border: 1px solid #44699c;
-    border-radius: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
     padding: 20px;
     background-color: hsla(32, 97%, 61%, 0.55);
-
 }
 
 .categoria th {
@@ -189,6 +167,7 @@
 }
 .categoria td {
     font-size: 15px;
+    font-weight: 600;
 }
 
 .iconoMod {

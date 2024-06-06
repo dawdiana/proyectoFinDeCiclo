@@ -1,0 +1,25 @@
+/*DISEÑO RESPONSIVE PANTALLAS MEDIANAS*/
+
+/*Estilo títulos categorías*/
+
+.cuerpo h3 {
+    font-size: 18px;
+}
+
+/*Estilo categorías*/
+.contenedorCategorias {
+    width: 100%;
+}
+.contenedorCategorias .categoria {
+    width: 95%;
+}
+
+.contenedorCategorias .categoria th {
+    text-transform: uppercase;
+}
+
+.contenedorCategorias .categoria td, .contenedorCategorias .categoria th  {
+    font-size: 13px;
+
+}
+

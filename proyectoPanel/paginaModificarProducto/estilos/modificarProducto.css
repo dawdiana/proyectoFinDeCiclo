@@ -11,15 +11,15 @@
 .cabecera {
     display: flex;
     flex-direction: column;
-    background-image: url("../../imagenesPanel/imagenesFondo/fondoCabecera.jpg");
+    background-image: url("../../imagenesPanel/imagenesFondo/fondoCabecera.jpg"); /* Fondo de la cabecera */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
-
     position: fixed;
     top: 0;
 }
+
 
 /*--------------ICONOS DE LA CABECERA-----------*/
 
@@ -40,42 +40,35 @@
     width: 40px;
 }
 
-
-.cabecera .iconosNav {
+.cabecera .iconosNav {   
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 95%;
+    width: 100%;
 }
 
 
-.iconosCab .iconosNav .icoCerrarSesion {
-    width: 35px;
+ .iconosNav .icoCerrarSesion, .iconosNav .icoCarta { 
+    width: 40px; 
 }
 
-.iconosCab .iconosNav .icoCarta {
-    width: 35px;
+ .iconosNav .icoLista { 
+    width: 50px; 
 }
 
-.iconosCab .iconosNav .icoLista {
-    width: 43px;
-    margin: 5px 10px;
-}
-
-.iconosCab .iconosNav img {
-    margin: 0 10px;
+ .iconosNav img { 
+    margin: 3px 20px; 
 }
 
 
-.contIconoVolver .icoVolver:hover{
+.contIconoVolver .icoVolver:hover, .iconosNav img:hover {
     scale: 1.2;
 }
 
-/*------------LOGO-------------*/
+/*---------------LOGO ----------------*/
 
-
-/*Contenedor del logo*/
-.contLogo {
+/* Estilo del contenedor del logo */
+.contLogo { 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,7 +82,9 @@
 }
 
 
-.cabecera .contLogo .logo {
+/* Estilo del logo */
+.cabecera .contLogo .logo { 
+
     width: 150px;
     margin: 10px;
 }
@@ -109,13 +104,11 @@
     text-transform: uppercase;
 }
 
-
-
 /*---------------------------CUERPO----------------------------*/
 
 
 .cuerpo {
-    margin-top: 350px;
+    margin-top: 350px;    
 }
 
 
@@ -124,16 +117,13 @@
 .formularioModif {
     display: flex;
     flex-direction: column;
-
     padding: 50px;
     width: 70%;
     margin: 30px auto;
-    background-color: hsla(32, 58%, 55%, 0.95);
-    background-color: rgba(159, 192, 238, 0.85);
     background-color: hsla(32, 97%, 61%, 0.55);
-
     border: 1px solid black;
-    border-radius: 1%;
+    border-radius: 20px;
+    margin-bottom: 50px;
 }
 
 
@@ -159,8 +149,7 @@
 .formularioModif .boton {
     width: 150px;
     padding: 5px;
-   /* margin: 0 15%;*/
-    /* margin: auto;*/
+
 }
 
 
