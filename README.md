@@ -18,10 +18,7 @@
 
 * 👩‍💻 [Personas Desarrolladoras del Proyecto](#ap6)
 
-* 🌐 [Licencia](#ap7)
-
-* 🤔 [Conclusión](#ap9)   
-
+* 🌐 [Licencia](#ap7)   
 
 <h1 align="center" id="ap1"> Descripción del Proyecto </h1>
 
