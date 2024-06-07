@@ -39,11 +39,18 @@ El proyecto se divide en dos partes:
 
 <h1 align="center" id="ap4"> Tecnologías Utilizadas </h1>
 
-* PHP 
-* MySQL 
-* JavaScript
-* HTML
-* CSS
+* ![Badget de código](https://img.shields.io/badge/PHP-blue?style=for-thebadge&logo=PHP&logoColor=white)
+
+* ![Badget de código](https://img.shields.io/badge/PhPMyAdmin-orange?style=for-the-badge&logo=PhPMyAdmin&logoColor=white)
+
+* ![Badget de código](https://img.shields.io/badge/JavaScript-blue?style=for-thebadge&logo=JavaScript&logoColor=white)
+
+* ![Badget de código](https://img.shields.io/badge/HTML-orange?style=for-thebadge&logo=HTML&logoColor=white)
+
+* ![Badget de código](https://img.shields.io/badge/CSS-blue?style=for-thebadge&logo=CSS&logoColor=white)
+
+
+
 
 <h1 align="center" id="ap5"> Personas Contribuyentes </h1>
 
