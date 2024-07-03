@@ -35,7 +35,7 @@ El proyecto se divide en dos partes:
 
 ## :hammer:Funcionalidades del proyecto
 
-- `Funcionalidad 1`: Poner en venta una serie de opciones de comida para anaimales 
+- `Funcionalidad 1`: Poner en venta una serie de opciones de comida para animales 
 - `Funcionalidad 2`: Permitir señalar a que dirección y a qué nombra se mandarán los envíos 
 - `Funcionalidad 3`: Permitir administrar el estado de los pedidos
 - `Funcionalidad 4`: Permitir modificar una carta online, editando, creando o eliminando productos
